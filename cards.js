@@ -19,6 +19,8 @@ buttons = m.querySelectorAll('button');
 
 if (players.length > 2 && players.length % 2 === 0 || players.length > 3) m.classList.add('grid');
 
+m.dataset.players = players.length;
+
 players[0].classList.add('active');
 
 function hit(a) {
