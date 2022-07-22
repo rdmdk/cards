@@ -9,7 +9,7 @@ let deck = [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random(
 players, buttons;
 
 for (i = 0; i < r; i++) {
-	if (i > 12) { break; } 
+	if (i === 12) { break; } 
 	const h = '<section class="player"><h2></h2><div class="hand"></div><span class="actions"><button class="hit">hit</button><button class="stand">stand</button></span></section>';
 	m.insertAdjacentHTML('beforeend', h);
 }
