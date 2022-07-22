@@ -1,5 +1,5 @@
 const m = document.querySelector('main'),
-r = window.location.search ? Number(window.location.search.substring(1)) : Math.random() * (12 - 2) + 2,
+r = window.location.search && Number(window.location.search.substring(1)) > 12 ? 12 : Number(window.location.search.substring(1)) : window.location.search ? Number(window.location.search.substring(1)) : Math.random() * (12 - 2) + 2,
 clubs = ['c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'cj', 'cq', 'ck', 'ca'],
 diamonds = ['d2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'd10', 'dj', 'dq', 'dk', 'da'],
 hearts = ['h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'h8', 'h9', 'h10', 'hj', 'hq', 'hk', 'ha'],
