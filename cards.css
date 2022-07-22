@@ -29,6 +29,8 @@ body::after {
 
 main {
 	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
 	transform: translateY(-45%);
 	position: fixed;
 	top: 50%;
