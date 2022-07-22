@@ -17,6 +17,8 @@ for (i = 0; i < r; i++) {
 players = m.querySelectorAll('.player');
 buttons = m.querySelectorAll('button');
 
+if (players.length > 2 && players.length % 2 === 0 || players.length > 3) m.dataset.grid = '';
+
 players[0].classList.add('active');
 
 function hit(a) {
