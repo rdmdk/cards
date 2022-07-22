@@ -1,5 +1,6 @@
 # about
 It's like Blackjack except instead of playing against the dealer, you're playing against everyone else at the table
+
 2 - 12 players
 
 # rules
