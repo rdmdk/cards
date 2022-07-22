@@ -29,6 +29,7 @@ body::after {
 
 main {
 	width: 100%;
+	display: grid;
 	grid-template-rows: repeat(2, auto);
 	grid-auto-flow: column;
 	transform: translateY(-45%);
