@@ -29,9 +29,8 @@ body::after {
 
 main {
 	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	grid-template-rows: repeat(2, auto);
+	grid-auto-flow: column;
 	transform: translateY(-45%);
 	position: fixed;
 	top: 50%;
