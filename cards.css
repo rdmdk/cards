@@ -237,13 +237,13 @@ button ~ button {margin-left: 0.5rem}
 @media (orientation: landscape) {
 	html {font-size: 2vw}
 	
-	html[data-players="2"] {}
-	html[data-players="3"] {}
-	html[data-players="4"] {}
+	html[data-players="2"] {font-size: 4vw}
+	html[data-players="3"] {font-size: 4vw}
+	html[data-players="4"] {font-size: 4vh}
 	html[data-players="5"] {}
 	html[data-players="6"] {}
-	html[data-players="7"] {}
-	html[data-players="8"] {}
+	html[data-players="7"] {font-size: 5vh}
+	html[data-players="8"] {font-size: 5vh}
 	html[data-players="9"] {}
 	html[data-players="10"] {}
 	html[data-players="11"] {}
