@@ -5,7 +5,7 @@ html, body {
 	height: 100%;
 }
 
-html {font-size: 3vw}
+html {font-size: 2vh}
         
 body {
 	font: 0 arial, sans-serif;
@@ -30,8 +30,8 @@ body::after {
 main {
 	width: 100%;
 	display: grid;
-	grid-template-rows: repeat(2, auto);
-	grid-auto-flow: column;
+	grid-template-columns: repeat(2, auto);
+    	grid-auto-flow: row;
 	transform: translateY(-45%);
 	position: fixed;
 	top: 50%;
@@ -219,5 +219,9 @@ button ~ button {margin-left: 0.5rem}
 
 @media (orientation: landscape) {
 	html {font-size: 4vh}
+	main {
+		grid-template-rows: repeat(2, auto);
+		grid-auto-flow: column;
+	}
 	.player {min-width: calc(100vw / 7)}
 }
