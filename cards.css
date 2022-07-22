@@ -218,7 +218,7 @@ button:hover {background: rgb(255 255 255 / 33%)}
 button ~ button {margin-left: 0.5rem}
 
 @media (orientation: landscape) {
-	html {font-size: 4vh}
+	html {font-size: 2vw}
 	main {
 		grid-template-rows: repeat(2, auto);
 		grid-auto-flow: column;
