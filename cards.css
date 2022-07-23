@@ -24,7 +24,9 @@ body {
 	background: green;
 	overflow: hidden;
 	user-select: none;
-	position: relative;
+	position: fixed;
+	left: 0;
+	top: 0;
 }
 
 body::after {
