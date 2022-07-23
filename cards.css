@@ -203,7 +203,7 @@ h2 {
 .h10::before, .h10::after,
 .s10::before, .s10::after {width: 1.5em}
 
-.card span {font-size: 1rem}
+.card span {font-size: 1.5rem}
 
 .card[class^=c] span::after {content: "♣"}
 .card[class^=d] span::after {content: "♦"}
