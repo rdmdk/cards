@@ -29,6 +29,7 @@ body {
 	background: green;
 	overflow: hidden;
 	user-select: none;
+	position: relative;
 }
 
 body::after {
@@ -51,7 +52,7 @@ main {
 	position: fixed;
 	top: 50%;
 	left: 0;
-	z-index: 5;
+	z-index: 10;
 }
 
 .grid {
