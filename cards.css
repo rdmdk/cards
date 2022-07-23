@@ -5,7 +5,12 @@ html, body {
 	height: 100%;
 }
 
-html {font-size: 2vh}
+html {
+	font-size: 2vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
 
 html[data-players="2"] {font-size: 7vw}
 html[data-players="3"] {font-size: 7vw}
@@ -24,9 +29,6 @@ body {
 	background: green;
 	overflow: hidden;
 	user-select: none;
-	position: fixed;
-	left: 0;
-	top: 0;
 }
 
 body::after {
