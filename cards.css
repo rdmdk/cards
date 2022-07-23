@@ -111,13 +111,13 @@ h2 {
 	left: 0;
 }
 
-.card:nth-child(2) {transform: translate(-0.25em, -0.25em)}
-.card:nth-child(3) {transform: translate(-0.5em, -0.5em)}
-.card:nth-child(4) {transform: translate(-0.75em, -0.75em)}
-.card:nth-child(5) {transform: translate(-1em, -1em)}
-.card:nth-child(6) {transform: translate(-1.25em, -1.25em)}
-.card:nth-child(7) {transform: translate(-1.5em, -1.5em)}
-.card:nth-child(8) {transform: translate(-1.75em, -1.75em)}
+.card:nth-child(2) {transform: translateY(0.4em)}
+.card:nth-child(3) {transform: translateY(0.8em)}
+.card:nth-child(4) {transform: translateY(1.2em)}
+.card:nth-child(5) {transform: translateY(1.6em)}
+.card:nth-child(6) {transform: translateY(2em)}
+.card:nth-child(7) {transform: translateY(2.4em)}
+.card:nth-child(8) {transform: translateY(2.8em)}
 
 .card::before,
 .card::after {
