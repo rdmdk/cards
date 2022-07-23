@@ -46,12 +46,12 @@ function stand(a) {
 
 function blackjack(a) {
 	a.classList.add('blackjack', 'done', 'winner');
-	a.querySelector('h2').innerText = 'blackjack!';
+	a.querySelector('h2').innerHTML = '<em>blackjack!</em>';
 }
 
 function bust(a) {
 	a.classList.add('busted', 'done');
-	a.querySelector('h2').innerText = 'busted';
+	a.querySelector('h2').innerHTML = '<em>busted</em>';
 }
 
 function next_turn() {
@@ -74,7 +74,7 @@ function game_over(a) {
 
 	players.forEach(p => p.classList.add('done'));
 
-	if (m.querySelector('.winner')) setTimeout(() => m.querySelector('.winner h2').innerText = 'winner!', 1e3);
+	if (m.querySelector('.winner')) setTimeout(() => m.querySelector('.winner h2').innerHTML = '<em>winner!</em>', 1e3);
 	else {
 		let total = 0;
 
@@ -89,7 +89,7 @@ function game_over(a) {
 			}
 		});
 
-		setTimeout(() => m.querySelector('.winner h2').innerText = 'winner!', 1e3);
+		setTimeout(() => m.querySelector('.winner h2').innerHTML = '<em>winner!</em>', 1e3);
 	}
 }
 
