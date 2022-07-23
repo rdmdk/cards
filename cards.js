@@ -74,7 +74,7 @@ function game_over(a) {
 
 	players.forEach(p => p.classList.add('done'));
 
-	if (m.querySelector('.winner')) setTimeout(() => m.querySelector('.winner h2').innerHTML = '<em>winner!</em>', 2e3);
+	if (m.querySelector('.winner')) setTimeout(() => m.querySelector('.winner h2').innerHTML = '<em>winner!</em>', 1500);
 	else {
 		let total = 0;
 
@@ -89,7 +89,7 @@ function game_over(a) {
 			}
 		});
 
-		setTimeout(() => m.querySelector('.winner h2').innerHTML = '<em>winner!</em>', 2e3);
+		setTimeout(() => m.querySelector('.winner h2').innerHTML = '<em>winner!</em>', 1500);
 	}
 }
 
