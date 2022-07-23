@@ -48,7 +48,7 @@ main {
 	width: 100%;
 	display: flex;
 	justify-content: space-evenly;
-	transform: translateY(-45%);
+	transform: translateY(-40%);
 	position: fixed;
 	top: 50%;
 	left: 0;
@@ -95,7 +95,8 @@ h2 {
 	background-size: 100%;
 	width: 2.5em;
 	height: 3.5em;
-	display: inline-block;
+	display: inline-grid;
+	place-content: center;
 	border-radius: 0.1em;
 	box-shadow: 0 0 0.5em rgb(0 0 0 / 10%);
 	position: relative;
@@ -140,11 +141,6 @@ h2 {
 
 .card[class^=d],
 .card[class^=h] {color: red}
-
-.card[class^=c] {background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='20px'><text x='6' y='13' fill='black' font-size='10px'>♣</text></svg>")}
-.card[class^=d] {background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='20px'><text x='6' y='13' fill='red' font-size='10px'>♦</text></svg>")}
-.card[class^=h] {background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='20px'><text x='6' y='13' fill='red' font-size='10px'>♥</text></svg>")}
-.card[class^=s] {background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='20px'><text x='6' y='13' fill='black' font-size='10px'>♠</text></svg>")}
 
 .c2::before, .c2::after {content: "2♣"}
 .c3::before, .c3::after {content: "3♣"}
@@ -206,6 +202,14 @@ h2 {
 .d10::before, .d10::after,
 .h10::before, .h10::after,
 .s10::before, .s10::after {width: 1.5em}
+
+.card span {font-size: 1rem}
+
+.card[class^=c] span::after {content: "♣"}
+.card[class^=d] span::after {content: "♦"}
+.card[class^=h] span::after {content: "♥"}
+.card[class^=s] span::after {content: "♠"}
+
 
 .actions {
 	margin: 1rem 0 0;
