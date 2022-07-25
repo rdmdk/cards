@@ -76,13 +76,14 @@ h2 {
 	transition: filter 0.6s ease;
 }
 
+.over .player:not(.winner) h2 {filter: opacity(0)}
+
 .done h2 em {
 	transform: translateX(-50%);
 	position: absolute;
 	top: 0;
 	left: 50%;
-
-.over .player:not(.winner) h2 {filter: opacity(0)}
+}
 
 .hand {
 	text-align: center;
