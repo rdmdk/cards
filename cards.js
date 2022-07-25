@@ -49,12 +49,12 @@ function stand(a) {
 
 function blackjack(a) {
 	a.classList.add('blackjack', 'done', 'winner');
-	a.querySelector('h2').innerHTML = '<em>blackjack!</em>';
+	a.querySelector('h2').innerHTML = '&nbsp;<em>blackjack!</em>';
 }
 
 function bust(a) {
 	a.classList.add('busted', 'done');
-	a.querySelector('h2').innerHTML = '<em>busted</em>';
+	a.querySelector('h2').innerHTML = '&nbsp;<em>busted</em>';
 }
 
 function next_turn() {
@@ -94,7 +94,6 @@ function game_over(a) {
 	
 	setTimeout(() => {
 		const h2 = m.querySelector('.winner h2');
-		//h2.style.width = h2.clientWidth + 'px';
 		h2.innerHTML = '&nbsp;<em>winner!</em>';
 	}, 1500);
 }
