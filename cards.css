@@ -283,6 +283,6 @@ button ~ button {margin-left: 0.5rem}
 	html[data-players="12"] {font-size: 5vh}
 }
 
-@media (orientation: landscape and min-width: 1200px) {
+@media (orientation: landscape) and (min-width: 1200px) {
 	html {font-size: 4vh !important}
 }
