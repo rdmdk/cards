@@ -77,8 +77,7 @@ function game_over(a) {
 
 	players.forEach(p => p.classList.add('done'));
 
-	if (m.querySelector('.winner')) setTimeout(() => m.querySelector('.winner h2').innerHTML = '<em>winner!</em>', 1500);
-	else {
+	if (!m.querySelector('.winner')) {
 		let total = 0;
 
 		players.forEach(p => {
@@ -91,9 +90,13 @@ function game_over(a) {
 				p.classList.add('winner');
 			}
 		});
-
-		setTimeout(() => m.querySelector('.winner h2').innerHTML = '<em>winner!</em>', 1500);
 	}
+	
+	setTimeout(() => {
+		const h2 = m.querySelector('h2');
+		h2.style.width = h2.clientWidth + 'px';
+		h2.innerHTML = '<em>winner!</em>';
+	}, 1500);
 }
 
 players.forEach(p => hit(p));
