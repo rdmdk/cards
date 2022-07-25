@@ -94,7 +94,7 @@ function game_over(a) {
 	
 	setTimeout(() => {
 		const h2 = m.querySelector('.winner h2');
-		h2.style.width = h2.clientWidth + 'px';
+		//h2.style.width = h2.clientWidth + 'px';
 		h2.innerHTML = '&nbsp;<em>winner!</em>';
 	}, 1500);
 }
