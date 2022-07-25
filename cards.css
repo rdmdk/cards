@@ -60,6 +60,16 @@ main {
     	grid-auto-flow: row;
 }
 
+html[data-players="4"] .grid {grid-template-columns: repeat(2, auto)}
+html[data-players="5"] .grid {grid-template-columns: repeat(2, auto)}
+html[data-players="6"] .grid {grid-template-columns: repeat(2, auto)}
+html[data-players="7"] .grid {grid-template-columns: repeat(3, auto)}
+html[data-players="8"] .grid {grid-template-columns: repeat(3, auto)}
+html[data-players="9"] .grid {grid-template-columns: repeat(3, auto)}
+html[data-players="10"] .grid {grid-template-columns: repeat(4, auto)}
+html[data-players="11"] .grid {grid-template-columns: repeat(4, auto)}
+html[data-players="12"] .grid {grid-template-columns: repeat(4, auto)}
+
 .player {
 	text-align: center;
 	align-self: center;
@@ -269,9 +279,19 @@ button ~ button {margin-left: 0.5rem}
 	html[data-players="12"] {font-size: 5vh}
 	
 	.grid {   
-		grid-template-columns: repeat(2, auto);
+		grid-template-rows: repeat(2, auto);
 		grid-auto-flow: column;
 	}
+	
+	html[data-players="4"] .grid {grid-template-rows: repeat(2, auto)}
+	html[data-players="5"] .grid {grid-template-rows: repeat(2, auto)}
+	html[data-players="6"] .grid {grid-template-rows: repeat(2, auto)}
+	html[data-players="7"] .grid {grid-template-rows: repeat(3, auto)}
+	html[data-players="8"] .grid {grid-template-rows: repeat(3, auto)}
+	html[data-players="9"] .grid {grid-template-rows: repeat(3, auto)}
+	html[data-players="10"] .grid {grid-template-rows: repeat(4, auto)}
+	html[data-players="11"] .grid {grid-template-rows: repeat(4, auto)}
+	html[data-players="12"] .grid {grid-template-rows: repeat(4, auto)}
 	
 	.player {min-width: calc(100vw / 7)}
 }
