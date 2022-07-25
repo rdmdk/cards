@@ -131,6 +131,7 @@ h2 {
 .card ~ .card[style] {
 	filter: opacity(0);
 	transform: translateY(0);
+}
 
 .card:nth-child(2) {transform: translateY(0.4em)}
 .card:nth-child(3) {transform: translateY(0.8em)}
