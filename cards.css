@@ -281,10 +281,6 @@ button ~ button {margin-left: 0.5rem}
 	html[data-players="10"] {font-size: 5vh}
 	html[data-players="11"] {font-size: 5vh}
 	html[data-players="12"] {font-size: 5vh}
-	
-	.grid {grid-auto-flow: row}
-		
-	.player {min-width: calc(100vw / 7)}
 }
 
 @media (orientation: landscape and min-width: 1200px) {
