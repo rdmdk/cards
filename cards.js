@@ -104,9 +104,11 @@ buttons.forEach(b => {
 	const player = b.closest('.player');
 
 	b.addEventListener('click', () => {
-		if (b.classList.contains('hit')) hit(player);
-		else stand(player);
-		setTimeout(() => next_turn(), 100);
+		if (!player.classList.contains('done')) {
+			if (b.classList.contains('hit')) hit(player);
+			else stand(player);
+			setTimeout(() => next_turn(), 100);
+		}
 	});
 });
 
