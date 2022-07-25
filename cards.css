@@ -49,10 +49,7 @@ main {
 	width: 100%;
 	display: flex;
 	justify-content: space-evenly;
-	transform: translateY(-50%);
-	position: fixed;
-	top: 50%;
-	left: 0;
+	position: relative;
 	z-index: 10;
 }
 
