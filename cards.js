@@ -37,13 +37,13 @@ function hit(a) {
 			total += value;
 			c.removeAttribute('style');
 		});
+		
+		if (total > 21) bust(a);
+		else if (total === 21) blackjack(a);
+		else a.querySelector('h2').innerText = total;
+
+		deck.shift();
 	}, 300);
-
-	if (total > 21) bust(a);
-	else if (total === 21) blackjack(a);
-	else a.querySelector('h2').innerText = total;
-
-	deck.shift();
 }
 
 function stand(a) {
