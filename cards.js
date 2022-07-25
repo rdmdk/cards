@@ -39,11 +39,9 @@ function hit(a) {
 			c.removeAttribute('style');
 		});
 		
-		setTimeout(() => {
-			if (total > 21) bust(a);
-			else if (total === 21) blackjack(a);
-			else a.querySelector('h2').innerText = total;
-		}, 300);
+		if (total > 21) bust(a);
+		else if (total === 21) blackjack(a);
+		else a.querySelector('h2').innerText = total;
 	}, 100);
 	
 	deck.shift();
@@ -113,7 +111,7 @@ buttons.forEach(b => {
 		if (!player.classList.contains('done')) {
 			if (b.classList.contains('hit')) hit(player);
 			else stand(player);
-			setTimeout(() => next_turn(), 100);
+			setTimeout(() => next_turn(), 150);
 		}
 	});
 });
@@ -125,7 +123,7 @@ document.addEventListener('keydown', e => {
 		if (!active_player.classList.contains('done')) {		
 			if (e.code === 'KeyH') hit(active_player);
 			else stand(active_player);
-			setTimeout(() => next_turn(), 100);
+			setTimeout(() => next_turn(), 150);
 		}
 	} else if (e.code === 'Space') window.location.reload();
 });
