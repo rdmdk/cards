@@ -66,6 +66,7 @@ function bust(a) {
 function next_turn() {
 	const active_player = m.querySelector('.active');
 	
+	active_player.classList.remove('active');
 	m.classList.add('hold');
 	
 	setTimeout(() => {
@@ -76,7 +77,6 @@ function next_turn() {
 			let ii = [...players].indexOf(active_player);
 			let iii = ++ii % players.length;
 
-			m.querySelector('.active').classList.remove('active');
 			players[iii].classList.add('active');
 
 			if (players[iii].classList.contains('done')) next_turn();
