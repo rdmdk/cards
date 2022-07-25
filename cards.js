@@ -54,7 +54,7 @@ function stand(a) {
 }
 
 function blackjack(a) {
-	a.classList.add('blackjack', 'done', 'winner');
+	a.classList.add('blackjack', 'done');
 	a.querySelector('h2').innerHTML = '&nbsp;<em>blackjack!</em>';
 }
 
@@ -89,7 +89,7 @@ function game_over(a) {
 
 	players.forEach(p => p.classList.add('done'));
 
-	if (!m.querySelector('.winner')) {
+	if (!m.querySelector('.winner') && !m.querySelector('.blackjack')) {
 		let total = 0;
 
 		players.forEach(p => {
