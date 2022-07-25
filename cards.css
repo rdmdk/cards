@@ -94,7 +94,7 @@ h2 {
 .over h2 {filter: opacity(0)}
 
 .over .winner h2,
-.over .blackjack h2 {filter: opacity(1)}
+.over .blackjack h2 {filter: opacity(0.66)}
 
 .done h2 em {
 	transform: translateX(-50%);
