@@ -43,7 +43,7 @@ function hit(a) {
 		else a.querySelector('h2').innerText = total;
 
 		deck.shift();
-	}, 300);
+	}, 100);
 }
 
 function stand(a) {
