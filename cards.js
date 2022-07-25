@@ -115,8 +115,11 @@ buttons.forEach(b => {
 document.addEventListener('keydown', e => {
 	if (e.code === 'KeyH' || e.code === 'KeyS') {
 		const active_player = m.querySelector('.active');
-		if (e.code === 'KeyH') hit(active_player);
-		else stand(active_player);
-		setTimeout(() => next_turn(), 100);
+		
+		if (!active_player.classList.contains('done'))		
+			if (e.code === 'KeyH') hit(active_player);
+			else stand(active_player);
+			setTimeout(() => next_turn(), 100);
+		}
 	} else if (e.code === 'Space') window.location.reload();
 });
