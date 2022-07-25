@@ -116,7 +116,7 @@ document.addEventListener('keydown', e => {
 	if (e.code === 'KeyH' || e.code === 'KeyS') {
 		const active_player = m.querySelector('.active');
 		
-		if (!active_player.classList.contains('done'))		
+		if (!active_player.classList.contains('done')) {		
 			if (e.code === 'KeyH') hit(active_player);
 			else stand(active_player);
 			setTimeout(() => next_turn(), 100);
