@@ -65,17 +65,23 @@ function bust(a) {
 
 function next_turn() {
 	const active_player = m.querySelector('.active');
+	
+	m.classList.add('hold');
+	
+	setTimeout(() => {
+		m.classList.remove('hold');
+		
+		if (m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === m.querySelectorAll('.player').length || m.querySelectorAll('.done').length === m.querySelectorAll('.player').length) game_over();
+		else {
+			let ii = [...players].indexOf(active_player);
+			let iii = ++ii % players.length;
 
-	if (m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === m.querySelectorAll('.player').length || m.querySelectorAll('.done').length === m.querySelectorAll('.player').length) game_over();
-	else {
-		let ii = [...players].indexOf(active_player);
-		let iii = ++ii % players.length;
+			m.querySelector('.active').classList.remove('active');
+			players[iii].classList.add('active');
 
-		m.querySelector('.active').classList.remove('active');
-		players[iii].classList.add('active');
-
-		if (players[iii].classList.contains('done')) next_turn();
-	}
+			if (players[iii].classList.contains('done')) next_turn();
+		}
+	}, 500);
 }
 
 function game_over(a) {
