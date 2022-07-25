@@ -67,7 +67,6 @@ main {
 	text-align: center;
 	align-self: center;
 	min-width: calc(100vw / 5);
-	margin: 2rem 0.5rem;
 	position: relative;
 }
 
