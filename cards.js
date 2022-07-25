@@ -89,23 +89,21 @@ function game_over(a) {
 
 	players.forEach(p => p.classList.add('done'));
 
-	setTimeout(() => {
-		if (m.querySelector('.blackjack')) m.querySelector('.blackjack').classList.add('winner');
-		else if (!m.querySelector('.winner')) {
-			let total = 0;
+	if (m.querySelector('.blackjack')) m.querySelector('.blackjack').classList.add('winner');
+	else if (!m.querySelector('.winner')) {
+		let total = 0;
 
-			players.forEach(p => {
-				const player_total = Number(p.querySelector('h2').innerText);
+		players.forEach(p => {
+			const player_total = Number(p.querySelector('h2').innerText);
 
-				if (player_total > total) {
-					total = player_total;
+			if (player_total > total) {
+				total = player_total;
 
-					if (m.querySelector('.winner')) m.querySelector('.winner').classList.remove('winner');
-					p.classList.add('winner');
-				}
-			});
-		}
-	}, 500);
+				if (m.querySelector('.winner')) m.querySelector('.winner').classList.remove('winner');
+				p.classList.add('winner');
+			}
+		});
+	}
 	
 	setTimeout(() => {
 		const h2 = m.querySelector('.winner h2');
