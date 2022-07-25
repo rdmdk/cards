@@ -91,7 +91,10 @@ h2 {
 	position: relative;
 }
 
-.over .player:not(.winner) h2 {filter: opacity(0)}
+.over h2 {filter: opacity(0)}
+
+.over .winner h2,
+.over .blackjack h2 {filter: opacity(0.33)}
 
 .done h2 em {
 	transform: translateX(-50%);
