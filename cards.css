@@ -76,7 +76,7 @@ h2 {
 	transition: filter 0.6s ease;
 }
 
-.winner h2 em {
+.done h2 em {
 	transform: translateX(-50%);
 	position: absolute;
 	top: 0;
