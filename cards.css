@@ -68,7 +68,7 @@ main {
 }
 
 h2 {
-	font: 1rem georgia, times, serif;
+	font: 1rem/1 georgia, times, serif;
 	color: #fff;
 	margin: 0 0 1rem;
 	filter: opacity(0.33);
