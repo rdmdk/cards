@@ -57,7 +57,7 @@ main {
 .grid {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
-    	grid-auto-flow: column;
+    	grid-auto-flow: row;
 }
 
 .player {
@@ -268,10 +268,7 @@ button ~ button {margin-left: 0.5rem}
 	html[data-players="11"] {font-size: 5vh}
 	html[data-players="12"] {font-size: 5vh}
 	
-	.grid {
-		grid-template-rows: repeat(2, auto);
-		grid-auto-flow: column;
-	}
+	.grid {grid-auto-flow: column}
 	
 	.player {min-width: calc(100vw / 7)}
 }
