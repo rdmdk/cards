@@ -89,7 +89,8 @@ function game_over(a) {
 
 	players.forEach(p => p.classList.add('done'));
 
-	if (!m.querySelector('.winner') && !m.querySelector('.blackjack')) {
+	if (m.querySelector('.blackjack')) m.querySelector('.blackjack').classList.add('winner');
+	else if (!m.querySelector('.winner')) {
 		let total = 0;
 
 		players.forEach(p => {
