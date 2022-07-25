@@ -57,7 +57,7 @@ main {
 .grid {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
-    	grid-auto-flow: row;
+    	grid-auto-flow: column;
 }
 
 .player {
