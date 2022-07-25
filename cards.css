@@ -141,13 +141,13 @@ h2 {
 .card:nth-child(7) {transform: translateY(2.4em)}
 .card:nth-child(8) {transform: translateY(2.8em)}
 
-.winner .card:nth-child(2) {transform: translateY(1.4em)}
-.winner .card:nth-child(3) {transform: translateY(2.8em)}
-.winner .card:nth-child(4) {transform: translateY(4.2em)}
-.winner .card:nth-child(5) {transform: translateY(5.6em)}
-.winner .card:nth-child(6) {transform: translateY(7em)}
-.winner .card:nth-child(7) {transform: translateY(8.4em)}
-.winner .card:nth-child(8) {transform: translateY(9.8em)}
+.winner .card:nth-child(2) {transform: translateY(1.2em)}
+.winner .card:nth-child(3) {transform: translateY(2.4em)}
+.winner .card:nth-child(4) {transform: translateY(3.6em)}
+.winner .card:nth-child(5) {transform: translateY(4.8em)}
+.winner .card:nth-child(6) {transform: translateY(6em)}
+.winner .card:nth-child(7) {transform: translateY(7.2em)}
+.winner .card:nth-child(8) {transform: translateY(8.4em)}
 
 .card::before,
 .card::after {
