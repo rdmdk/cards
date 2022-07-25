@@ -30,11 +30,14 @@ function hit(a) {
 	const hand = a.querySelector('.hand');
 	let total = 0;
 
-	hand.insertAdjacentHTML('beforeend', '<span class="' + deck[0] + ' card"><span></span></span>');
-	hand.querySelectorAll('.card').forEach(c => {
-		let value = /[jqk]/gm.test(c.classList[0]) ? 10 : /a/gm.test(c.classList[0]) && total >= 10 ? 1 : /a/gm.test(c.classList[0]) ? 11 : Number(c.classList[0].substring(1));
-		total += value;
-	});
+	hand.insertAdjacentHTML('beforeend', '<span style class="' + deck[0] + ' card"><span></span></span>');
+	setTimeout(() => {
+		hand.querySelectorAll('.card').forEach(c => {
+			let value = /[jqk]/gm.test(c.classList[0]) ? 10 : /a/gm.test(c.classList[0]) && total >= 10 ? 1 : /a/gm.test(c.classList[0]) ? 11 : Number(c.classList[0].substring(1));
+			total += value;
+			c.removeAttribute('style');
+		});
+	}, 300);
 
 	if (total > 21) bust(a);
 	else if (total === 21) blackjack(a);
