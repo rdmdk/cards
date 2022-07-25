@@ -39,9 +39,11 @@ function hit(a) {
 			c.removeAttribute('style');
 		});
 		
-		if (total > 21) bust(a);
-		else if (total === 21) blackjack(a);
-		else a.querySelector('h2').innerText = total;
+		setTimeout(() => {
+			if (total > 21) bust(a);
+			else if (total === 21) blackjack(a);
+			else a.querySelector('h2').innerText = total;
+		}, 300);
 	}, 100);
 	
 	deck.shift();
