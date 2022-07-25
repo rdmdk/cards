@@ -232,6 +232,7 @@ h2 {
 
 
 .actions {
+	white-space: nowrap;
 	margin: 1rem 0 0;
 	filter: opacity(0.25);
 	display: block;
