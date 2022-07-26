@@ -81,7 +81,7 @@ function next_turn() {
 
 			if (players[iii].classList.contains('done')) next_turn();
 		}
-	}, 100);
+	}, 500);
 }
 
 function game_over(a) {
@@ -120,7 +120,7 @@ buttons.forEach(b => {
 		if (!player.classList.contains('done')) {
 			if (b.classList.contains('hit')) hit(player);
 			else stand(player);
-			setTimeout(() => next_turn(), 100);
+			setTimeout(() => next_turn(), 10);
 		}
 	});
 });
@@ -132,7 +132,7 @@ document.addEventListener('keydown', e => {
 		if (!active_player.classList.contains('done') && !m.classList.contains('hold')) {		
 			if (e.code === 'KeyH') hit(active_player);
 			else stand(active_player);
-			setTimeout(() => next_turn(), 100);
+			setTimeout(() => next_turn(), 10);
 		}
 	} else if (e.code === 'Space') window.location.reload();
 });
