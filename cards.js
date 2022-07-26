@@ -70,7 +70,7 @@ function next_turn() {
 	active_player.classList.remove('active');
 	
 	m.classList.add('hold');
-	setTimeout(() => m.classList.remove('hold'), 500);
+	setTimeout(() => m.classList.remove('hold'), 400);
 		
 	setTimeout(() => {
 		const condition = m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === m.querySelectorAll('.player').length || m.querySelectorAll('.done').length === m.querySelectorAll('.player').length;
@@ -85,7 +85,7 @@ function next_turn() {
 			if (condition) game_over();
 			else if (players[iii].classList.contains('done')) next_turn();
 		}
-	}, 500);
+	}, 400);
 }
 
 function game_over(a) {
@@ -127,7 +127,7 @@ buttons.forEach(b => {
 		if (!player.classList.contains('done')) {
 			if (b.classList.contains('hit')) hit(player);
 			else stand(player);
-			next_turn();
+			setTimeout(() => next_turn(), 100);
 		}
 	});
 });
@@ -139,7 +139,7 @@ document.addEventListener('keydown', e => {
 		if (!active_player.classList.contains('done') && !m.classList.contains('hold')) {		
 			if (e.code === 'KeyH') hit(active_player);
 			else stand(active_player);
-			next_turn();
+			setTimeout(() => next_turn(), 100);
 		}
 	} else if (e.code === 'Space') window.location.reload();
 });
