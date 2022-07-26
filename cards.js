@@ -56,7 +56,7 @@ function stand(a) {
 function blackjack(a) {
 	a.classList.add('blackjack', 'winner', 'done');
 	a.querySelector('h2').innerHTML = '&nbsp;<em>blackjack!</em>';
-	game_over();
+	setTimeout(() => game_over(), 100);
 }
 
 function bust(a) {
