@@ -85,7 +85,7 @@ function next_turn() {
 			if (condition) game_over();
 			else if (players[iii].classList.contains('done')) next_turn();
 		}
-	}, 100);
+	}, 500);
 }
 
 function game_over(a) {
