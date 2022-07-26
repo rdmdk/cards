@@ -56,6 +56,7 @@ function stand(a) {
 function blackjack(a) {
 	a.classList.add('blackjack', 'winner', 'done');
 	a.querySelector('h2').innerHTML = '&nbsp;<em>blackjack!</em>';
+	game_over();
 }
 
 function bust(a) {
