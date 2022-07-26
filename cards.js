@@ -113,7 +113,7 @@ function game_over(a) {
 		const winner = m.querySelector('.winner');
 		
 		if (winner) winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
-		else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>';
+		else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
 	}, 1500);
 }
 
