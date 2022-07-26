@@ -119,7 +119,7 @@ buttons.forEach(b => {
 		if (!player.classList.contains('done')) {
 			if (b.classList.contains('hit')) hit(player);
 			else stand(player);
-			setTimeout(() => next_turn(), 10);
+			setTimeout(() => next_turn(), 100);
 		}
 	});
 });
@@ -131,7 +131,7 @@ document.addEventListener('keydown', e => {
 		if (!active_player.classList.contains('done') && !m.classList.contains('hold')) {		
 			if (e.code === 'KeyH') hit(active_player);
 			else stand(active_player);
-			setTimeout(() => next_turn(), 10);
+			setTimeout(() => next_turn(), 100);
 		}
 	} else if (e.code === 'Space') window.location.reload();
 });
