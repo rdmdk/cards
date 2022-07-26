@@ -71,17 +71,15 @@ function next_turn() {
 	
 	setTimeout(() => m.classList.remove('hold'), 500);
 		
-	setTimeout(() => {
-		if (m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === m.querySelectorAll('.player').length || m.querySelectorAll('.done').length === m.querySelectorAll('.player').length) game_over();
-		else {
-			let ii = [...players].indexOf(active_player);
-			let iii = ++ii % players.length;
+	if (m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === m.querySelectorAll('.player').length || m.querySelectorAll('.done').length === m.querySelectorAll('.player').length) game_over();
+	else {
+		let ii = [...players].indexOf(active_player);
+		let iii = ++ii % players.length;
 
-			players[iii].classList.add('active');
+		players[iii].classList.add('active');
 
-			if (players[iii].classList.contains('done')) next_turn();
-		}
-	}, 100);
+		if (players[iii].classList.contains('done')) next_turn();
+	}
 }
 
 function game_over(a) {
