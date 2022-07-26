@@ -56,7 +56,7 @@ function stand(a) {
 function blackjack(a) {
 	a.classList.add('blackjack', 'winner', 'done');
 	a.querySelector('h2').innerHTML = '&nbsp;<em>blackjack!</em>';
-	setTimeout(() => game_over(), 100);
+	//setTimeout(() => game_over(), 100);
 }
 
 function bust(a) {
@@ -68,19 +68,23 @@ function next_turn() {
 	const active_player = m.querySelector('.active');
 	
 	active_player.classList.remove('active');
-	m.classList.add('hold');
 	
+	m.classList.add('hold');
 	setTimeout(() => m.classList.remove('hold'), 500);
 		
-	if (m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === m.querySelectorAll('.player').length || m.querySelectorAll('.done').length === m.querySelectorAll('.player').length) game_over();
-	else {
-		let ii = [...players].indexOf(active_player);
-		let iii = ++ii % players.length;
+	setTimeout(() => {
+		if (m.querySelector('.blackjack')) game_over();
+		else if (m.querySelectorAll('.busted').length + 1 === m.querySelectorAll('.player').length) game_over();
+		else if (m.querySelectorAll('.done').length === m.querySelectorAll('.player').length) game_over();
+		else {
+			let ii = [...players].indexOf(active_player);
+			let iii = ++ii % players.length;
 
-		players[iii].classList.add('active');
+			players[iii].classList.add('active');
 
-		if (players[iii].classList.contains('done')) next_turn();
-	}
+			if (players[iii].classList.contains('done')) next_turn();
+		}
+	}, 100);
 }
 
 function game_over(a) {
@@ -119,7 +123,7 @@ buttons.forEach(b => {
 		if (!player.classList.contains('done')) {
 			if (b.classList.contains('hit')) hit(player);
 			else stand(player);
-			setTimeout(() => next_turn(), 100);
+			next_turn();
 		}
 	});
 });
@@ -131,7 +135,7 @@ document.addEventListener('keydown', e => {
 		if (!active_player.classList.contains('done') && !m.classList.contains('hold')) {		
 			if (e.code === 'KeyH') hit(active_player);
 			else stand(active_player);
-			setTimeout(() => next_turn(), 100);
+			next_turn();
 		}
 	} else if (e.code === 'Space') window.location.reload();
 });
