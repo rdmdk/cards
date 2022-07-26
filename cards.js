@@ -93,11 +93,12 @@ function game_over(a) {
 	players.forEach(p => p.classList.add('done'));
 
 	if (m.querySelector('.blackjack')) m.querySelector('.blackjack').classList.add('winner');
-	else if (!m.querySelector('.winner')) {
+	else {
 		let total = 0;
 
 		players.forEach(p => {
-			const player_total = Number(p.querySelector('h2').innerText);
+			const h2 = p.querySelector('h2').innerText;
+			const player_total = !isNaN(h2) ? Number(p.querySelector('h2').innerText) : -1;
 
 			if (player_total > total) {
 				total = player_total;
@@ -109,8 +110,10 @@ function game_over(a) {
 	}
 	
 	setTimeout(() => {
-		const h2 = m.querySelector('.winner h2');
-		h2.innerHTML = '&nbsp;<em>winner!</em>';
+		const winner = m.querySelector('.winner');
+		
+		if (winner) winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
+		else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>';
 	}, 1500);
 }
 
