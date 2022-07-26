@@ -69,9 +69,9 @@ function next_turn() {
 	active_player.classList.remove('active');
 	m.classList.add('hold');
 	
-	setTimeout(() => {
-		m.classList.remove('hold');
+	setTimeout(() => m.classList.remove('hold'), 500);
 		
+	setTimeout(() => {
 		if (m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === m.querySelectorAll('.player').length || m.querySelectorAll('.done').length === m.querySelectorAll('.player').length) game_over();
 		else {
 			let ii = [...players].indexOf(active_player);
@@ -81,7 +81,7 @@ function next_turn() {
 
 			if (players[iii].classList.contains('done')) next_turn();
 		}
-	}, 500);
+	}, 100);
 }
 
 function game_over(a) {
