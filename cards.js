@@ -71,8 +71,12 @@ function bust(a) {
 
 function bet(a) {
 	const banks = sessionStorage.banks ? sessionStorage.banks.split(',') : Array(r).fill(5),
-	      bank = sessionStorage.banks ? Number(banks[[...players].indexOf(a)]) : 5,
+	      bank = Number(banks[[...players].indexOf(a)]),
 	      betting = Math.floor((Math.random() * (bank - 5) + 5) / 5) * 5;
+	      
+	console.log(banks);
+	console.log(bank);
+	console.log(betting);
 		
 	a.querySelector('.bank').innerText = bank - betting;
 	a.querySelector('.bet').innerText = betting;	
