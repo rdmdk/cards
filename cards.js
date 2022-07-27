@@ -74,9 +74,7 @@ function bet(a) {
 	      bank = Number(banks[[...players].indexOf(a)]),
 	      betting = Math.floor((Math.random() * (bank - 5) + 5) / 5) * 5;
 	      
-	console.log(banks);
 	console.log(bank);
-	console.log(betting);
 		
 	a.querySelector('.bank').innerText = bank - betting < 5 ? 5 : bank - betting;
 	a.querySelector('.bet').innerText = betting;	
@@ -97,13 +95,13 @@ function winnings() {
 			
 			betting.innerText = 0;
 		});
-		
-		console.log(banks);
 
 		setTimeout(() => {
 			winner.querySelector('h3 .bank').innerText = total;
 			sessionStorage.jackpot = total;
 			sessionStorage.banks = banks;
+			
+			console.log(banks);
 			
 		}, 1e3);
 	}
