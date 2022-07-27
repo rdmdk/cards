@@ -65,7 +65,8 @@ function bust(a) {
 }
 
 function next_turn() {
-	const active_player = m.querySelector('.active');
+	const active_player = m.querySelector('.active'),
+	      to = m.querySelectorAll('.done').length + 1 === players.length ? 100 : 400;
 	
 	active_player.classList.remove('active');
 	
@@ -73,7 +74,7 @@ function next_turn() {
 	setTimeout(() => m.classList.remove('hold'), 400);
 		
 	setTimeout(() => {
-		const condition = m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === m.querySelectorAll('.player').length || m.querySelectorAll('.done').length === m.querySelectorAll('.player').length;
+		const condition = m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === players.length || m.querySelectorAll('.done').length === players.length;
 		
 		if (condition) game_over();
 		else {
@@ -85,7 +86,7 @@ function next_turn() {
 			if (condition) game_over();
 			else if (players[iii].classList.contains('done')) next_turn();
 		}
-	}, 400);
+	}, to);
 }
 
 function game_over(a) {
