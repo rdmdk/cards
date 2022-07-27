@@ -87,7 +87,7 @@ function winnings() {
 	setTimeout(() => {
 		const winning_bank = m.querySelector('.winner .bank');
 		
-		winning_bank.innerText = Number(winning_bank.innertText) + total;
+		winning_bank.innerText = Number(winning_bank.innerText) + total;
 		
 		players.forEach(p => {
 			const bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText),
