@@ -81,23 +81,14 @@ function bet(a) {
 }
 
 function winnings() {
-	const winner = m.querySelector('.winner');
 	let total = 0,
 	    banks = [];
 	
-	players.forEach(p => {
-		const betting = p.querySelector('.bet');
-		
-		total += Number(betting.innerText);
-		betting.innerText = 0;
-	});
+	players.forEach(p => total += Number(p.querySelector('.bet').innerText));
 
 	setTimeout(() => {
 		m.querySelector('.winner .bank').innerText = total;
-		players.forEach(p => {
-			const bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
-			banks.push(bank);
-		});
+		players.forEach(p => banks.push(Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText)));
 		sessionStorage.banks = banks;
 	}, 100);
 }
