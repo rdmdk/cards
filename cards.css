@@ -76,7 +76,6 @@ html[data-players="12"] .grid {grid-template-columns: repeat(4, auto)}
 .player {
 	text-align: center;
 	align-self: center;
-	min-width: calc(100vw / 5);
 	padding: 0.5rem;
 	position: relative;
 }
