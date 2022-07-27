@@ -85,26 +85,19 @@ function winnings() {
 	let total = 0,
 	    banks = [];
 	
-	if (winner) {		
-		players.forEach(p => {
-			const betting = p.querySelector('h3 .bet'),
-			      bank = p.querySelector('h3 .bank');
-			
-			total += Number(betting.innerText);
-			banks.push(Number(bank.innerText));
-			
-			betting.innerText = 0;
-		});
+	players.forEach(p => {
+		const betting = p.querySelector('.bet');
+		
+		total += Number(betting.innerText);
+		betting.innerText = 0;
+	});
 
-		setTimeout(() => {
-			winner.querySelector('h3 .bank').innerText = total;
-			sessionStorage.jackpot = total;
-			sessionStorage.banks = banks;
-			
-			console.log(banks);
-			
-		}, 1e3);
-	}
+	setTimeout(() => {
+		m.querySelector('.winner .bank').innerText = total;
+		players.forEach(p => banks.push(p.querySelector('.bank')));
+		sessionStorage.banks = banks;
+		console.log(banks);	
+	}, 100);
 }
 
 function next_turn() {
@@ -112,7 +105,6 @@ function next_turn() {
 	      to = m.querySelectorAll('.done').length + 1 === players.length ? 100 : 400;
 	
 	active_player.classList.remove('active');
-	
 	m.classList.add('hold');
 	setTimeout(() => m.classList.remove('hold'), 400);
 		
@@ -121,8 +113,8 @@ function next_turn() {
 		
 		if (condition) game_over();
 		else {
-			let ii = [...players].indexOf(active_player);
-			let iii = ++ii % players.length;
+			let ii = [...players].indexOf(active_player),
+			    iii = ++ii % players.length;
 
 			players[iii].classList.add('active');
 
