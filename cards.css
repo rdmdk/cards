@@ -103,8 +103,12 @@ h2 {
 h3 {
 	font: italic 0.5rem georgia, times, serif;
 	margin: 0.5rem 0;
+	filter: opacity(0);
 	mix-blend-mode: overlay;
+	transition: filter 0.6s ease;
 }
+
+main[style] h3 {filter: opacity(1)}
 
 h3 .bet {filter: opacity(0.5)}
 
