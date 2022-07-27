@@ -161,7 +161,7 @@ function game_over(a) {
 		
 		if (winner) {
 			winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
-			winnings();
+			setTimeout(() => winnings(), 100);
 		} else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
 	}, 1500);
 }
