@@ -62,13 +62,15 @@ main::after {
 	content: "refresh";
 	font: italic 1rem georgia, times, serif;
 	filter: opacity(0);
+	mix-blend-mode: overlay;
+	transform: translateX(-50%);
 	transition: filter 0.6s ease;
 	position: absolute;
-	bottom: 0;
+	bottom: 1rem;
 	left: 50%;
 }
 
-.over::after {filter: opacity(1)}
+.over::after {filter: opacity(0.5)}
 
 .grid {
 	display: grid;
