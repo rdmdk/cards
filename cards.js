@@ -73,9 +73,7 @@ function bet(a) {
 	const banks = sessionStorage.banks ? sessionStorage.banks.split(',') : Array(r).fill(5),
 	      bank = Number(banks[[...players].indexOf(a)]),
 	      betting = Math.floor((Math.random() * (bank - 5) + 5) / 5) * 5;
-	      
-	console.log(bank);
-		
+	      		
 	a.querySelector('.bank').innerText = bank;
 	a.querySelector('.bet').innerText = betting;	
 }
@@ -87,12 +85,16 @@ function winnings() {
 	players.forEach(p => total += Number(p.querySelector('.bet').innerText));
 
 	setTimeout(() => {
-		m.querySelector('.winner .bank').innerText = total;
+		const winning_bank = m.querySelector('.winner .bank');
+		
+		winning_bank.innerText = Number(winning_bank.innertText) + total;
+		
 		players.forEach(p => {
 			const bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText),
 			      min = bank < 5 ? 5 : bank;
 			banks.push(min);
 		});
+		
 		sessionStorage.banks = banks;
 	}, 100);
 }
