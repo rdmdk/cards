@@ -18,12 +18,12 @@ for (i = 0; i < r; i++) {
 	m.insertAdjacentHTML('beforeend', h);
 }
 
+players = m.querySelectorAll('.player');
+buttons = m.querySelectorAll('button');
+
 if (sessionStorage.winner) {
 	if (sessionStorage.jackpot) players[sessionStorage.winner].querySelector('h3').innerText = sessionStorage.jackpot;
 }
-
-players = m.querySelectorAll('.player');
-buttons = m.querySelectorAll('button');
 
 if (players.length > 2 && players.length % 2 === 0 || players.length > 3) m.classList.add('grid');
 
