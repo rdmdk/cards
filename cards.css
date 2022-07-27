@@ -69,9 +69,9 @@ html[data-players="6"] .grid {grid-template-columns: repeat(2, auto)}
 html[data-players="7"] .grid {grid-template-columns: repeat(3, auto)}
 html[data-players="8"] .grid {grid-template-columns: repeat(3, auto)}
 html[data-players="9"] .grid {grid-template-columns: repeat(3, auto)}
-html[data-players="10"] .grid {grid-template-columns: repeat(4, auto)}
-html[data-players="11"] .grid {grid-template-columns: repeat(4, auto)}
-html[data-players="12"] .grid {grid-template-columns: repeat(4, auto)}
+html[data-players="10"] .grid {grid-template-columns: repeat(3, auto)}
+html[data-players="11"] .grid {grid-template-columns: repeat(3, auto)}
+html[data-players="12"] .grid {grid-template-columns: repeat(3, auto)}
 
 .player {
 	text-align: center;
