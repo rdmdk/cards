@@ -78,7 +78,7 @@ function bet(a) {
 	console.log(bank);
 	console.log(betting);
 		
-	a.querySelector('.bank').innerText = bank - betting;
+	a.querySelector('.bank').innerText = bank - betting < 5 ? 5 : bank - betting;
 	a.querySelector('.bet').innerText = betting;	
 }
 
