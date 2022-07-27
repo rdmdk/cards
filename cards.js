@@ -66,7 +66,7 @@ function bust(a) {
 
 function winnings() {
 	const winner = m.querySelector('.winner');
-	let total = 0;
+	let total = 5;
 	
 	if (winner) {		
 		players.forEach(p => {
