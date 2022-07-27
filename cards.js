@@ -88,7 +88,7 @@ function winnings() {
 			      bank = p.querySelector('h3 .bank');
 			
 			total += Number(betting.innerText);
-			banks.push(bank.innerText);
+			banks.push(Number(bank.innerText));
 			
 			betting.innerText = 0;
 		});
