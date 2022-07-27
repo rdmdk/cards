@@ -108,7 +108,10 @@ h3 {
 	display: none;
 }
 
-h3::before {content: "$"}
+h3::before {
+	content: "$ ";
+	font-size: 0.7em;
+}
 
 .hand {
 	text-align: center;
@@ -120,6 +123,7 @@ h3::before {content: "$"}
 	font-size: 1rem;
 	background: center center no-repeat white;
 	background-size: 100%;
+	color: black;
 	width: 2.5em;
 	height: 3.5em;
 	display: inline-grid;
