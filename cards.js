@@ -5,16 +5,21 @@ hearts = ['h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'h8', 'h9', 'h10', 'hj', 'hq', 'hk
 spades = ['s2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 'sj', 'sq', 'sk', 'sa'];
 
 let deck = [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5),
-r = window.location.search ? Number(window.location.search.substring(1)) : Math.random() * (12 - 2) + 2,
+r = window.location.search ? Number(window.location.search.substring(1)) : sessionStorage.players ? Number(sessionStorage.players) : Math.random() * (12 - 2) + 2,
 players,
 buttons;
 
 r = r < 2 ? 2 : r > 12 ? 12 : r;
 
+sessionStorage.players = r;
+
 for (i = 0; i < r; i++) {
-	//if (i === 12) { break; } 
 	const h = '<section class="player"><h2>&nbsp;</h2><div class="hand"></div><h3>5</h3><span class="actions"><button class="hit">hit</button><button class="stand">stand</button></span></section>';
 	m.insertAdjacentHTML('beforeend', h);
+}
+
+if (sessionStorage.winner) {
+	if (sessionStorage.jackpot) players[sessionStorage.winner].querySelector('h3').innerText = sessionStorage.jackpot;
 }
 
 players = m.querySelectorAll('.player');
@@ -134,6 +139,8 @@ function game_over(a) {
 		if (winner) {
 			winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 			winnings();
+			sessionStorage.winner = [...players].indexOf(winner);
+			sessionStorage.jackpot = winner.querySelector('h3').innerText;
 		} else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
 	}, 1500);
 }
