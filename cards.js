@@ -85,7 +85,11 @@ function winnings() {
 			
 		});
 
-		setTimeout(() => winner.querySelector('h3').innerText = total, 1e3);
+		setTimeout(() => {
+			winner.querySelector('h3').innerText = total;
+			sessionStorage.winner = [...players].indexOf(winner);
+			sessionStorage.jackpot = total;
+		}, 1e3);
 	}
 }
 
@@ -142,8 +146,6 @@ function game_over(a) {
 		if (winner) {
 			winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 			winnings();
-			sessionStorage.winner = [...players].indexOf(winner);
-			sessionStorage.jackpot = winner.querySelector('h3').innerText;
 		} else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
 	}, 1500);
 }
