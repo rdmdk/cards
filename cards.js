@@ -11,6 +11,10 @@ buttons;
 
 r = r < 2 ? 2 : r > 12 ? 12 : r;
 
+if (sessionStorage.players && window.location.search !== '') {
+	if (Number(sessionStorage.players) !== Number(window.location.search.substring(1)) sessionStorage.clear();
+}
+
 sessionStorage.players = r;
 
 for (i = 0; i < r; i++) {
