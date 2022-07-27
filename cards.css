@@ -58,6 +58,18 @@ main {
 	z-index: 10;
 }
 
+main::after {
+	content: "refresh";
+	font: italic 1rem georgia, times, serif;
+	filter: opacity(0);
+	transition: filter 0.6s ease;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+}
+
+.over::after {filter: opacity(1)}
+
 .grid {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
