@@ -28,6 +28,7 @@ html[data-players="12"] {font-size: 3vh}
 body {
 	font: 0 arial, sans-serif;
 	background: green;
+	color: white;
 	overflow: hidden;
 	user-select: none;
 	position: relative;
@@ -102,6 +103,8 @@ h2 {
 h3 {
 	font: italic 0.5rem georgia, times, serif;
 	margin: 0.5rem 0;
+	filter: opacity(0.25);
+	mix-blend-mode: overaly;
 	display: none;
 }
 
