@@ -94,7 +94,7 @@ function winnings() {
 
 	setTimeout(() => {
 		m.querySelector('.winner .bank').innerText = total;
-		players.forEach(p => banks.push(p.querySelector('.bank')));
+		players.forEach(p => banks.push(p.querySelector('.bank').innerText));
 		sessionStorage.banks = banks;
 		console.log(banks);	
 	}, 100);
