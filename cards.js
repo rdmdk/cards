@@ -5,7 +5,7 @@ hearts = ['h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'h8', 'h9', 'h10', 'hj', 'hq', 'hk
 spades = ['s2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 'sj', 'sq', 'sk', 'sa'];
 
 let deck = [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5),
-r = window.location.search ? Number(window.location.search.substring(1)) : sessionStorage.players ? Number(sessionStorage.players) : Math.random() * (12 - 2) + 2,
+r = window.location.search ? Number(window.location.search.substring(1)) : sessionStorage.players ? Number(sessionStorage.players) : Math.floor(Math.random() * (12 - 2) + 2),
 players,
 buttons;
 
