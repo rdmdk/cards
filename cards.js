@@ -11,7 +11,7 @@ buttons;
 
 r = r < 2 ? 2 : r > 12 ? 12 : r;
 
-if (!sessionStorage.players) sessionStorage.players = Math.ceil(r);
+if (!sessionStorage.players) sessionStorage.players = r;
 
 for (i = 0; i < r; i++) {
 	const h = '<section class="player"><h2>&nbsp;</h2><div class="hand"></div><h3>5</h3><span class="actions"><button class="hit">hit</button><button class="stand">stand</button></span></section>';
