@@ -88,7 +88,11 @@ function winnings() {
 
 	setTimeout(() => {
 		m.querySelector('.winner .bank').innerText = total;
-		players.forEach(p => banks.push(Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText)));
+		players.forEach(p => {
+			const bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText),
+			      min = bank < 5 ? 5 : bank;
+			banks.push(min);
+		});
 		sessionStorage.banks = banks;
 	}, 100);
 }
