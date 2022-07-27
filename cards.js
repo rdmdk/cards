@@ -22,7 +22,7 @@ players = m.querySelectorAll('.player');
 buttons = m.querySelectorAll('button');
 
 if (sessionStorage.winner) {
-	if (sessionStorage.jackpot) players[sessionStorage.winner].querySelector('h3').innerText = sessionStorage.jackpot;
+	if (sessionStorage.jackpot) players[sessionStorage.winner].querySelector('h3 .bank').innerText = sessionStorage.jackpot;
 }
 
 if (players.length > 2 && players.length % 2 === 0 || players.length > 3) m.classList.add('grid');
@@ -72,7 +72,7 @@ function bust(a) {
 function bet(a) {
 	const bank = sessionStorage.banks ? Number(sessionStorage.banks[[...players].indexOf(a)]) : 5,
 	      betting = Math.floor((Math.random() * (bank - 5) + 5) / 5) * 5;
-	
+		
 	a.querySelector('.bank').innerText = bank - betting;
 	a.querySelector('.bet').innerText = betting;	
 }
