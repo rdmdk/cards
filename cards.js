@@ -97,6 +97,8 @@ function winnings() {
 			
 			betting.innerText = 0;
 		});
+		
+		console.log(banks);
 
 		setTimeout(() => {
 			winner.querySelector('h3 .bank').innerText = total;
