@@ -75,10 +75,13 @@ function winnings() {
 	
 	if (winner) {		
 		players.forEach(p => {
-			const h3 = p.querySelector('h3');
-			
-			total += !p.classList.contains('winner') ? Number(h3.innerText) : 0;
-			h3.innerText = 0;
+			if (!p.classList.contains('winner')) {
+				const h3 = p.querySelector('h3');
+				
+				total += Number(h3.innerText);
+				
+				h3.innerText = 0;
+			}
 			
 		});
 
