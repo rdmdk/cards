@@ -70,6 +70,7 @@ function bust(a) {
 }
 
 function bet(a) {
+	const banks = sessionStorage.banks ? sessionStorage.banks.split(',') : Array(r).fill(5);
 	const bank = sessionStorage.banks ? Number(sessionStorage.banks[[...players].indexOf(a)]) : 5,
 	      betting = Math.floor((Math.random() * (bank - 5) + 5) / 5) * 5;
 		
