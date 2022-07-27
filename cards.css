@@ -106,14 +106,16 @@ h3 {
 	mix-blend-mode: overlay;
 }
 
+h3 .bet {filter: opacity(0.5)}
+
+h3 .bank {filter: opacity(0.25)}
+
 h3 span::before {
 	content: "$ ";
 	font-size: 0.7em;
 }
 
-h3 .bet {filter: opacity(0.5)}
-
-h3 .bank {filter: opacity(0.25)}
+h3 span ~ span {margin-left: 0.5rem}
 
 .hand {
 	text-align: center;
