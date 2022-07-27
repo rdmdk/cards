@@ -14,7 +14,7 @@ r = r < 2 ? 2 : r > 12 ? 12 : r;
 if (!sessionStorage.players) sessionStorage.players = r;
 
 for (i = 0; i < r; i++) {
-	const h = '<section class="player"><h2>&nbsp;</h2><div class="hand"></div><h3>5</h3><span class="actions"><button class="hit">hit</button><button class="stand">stand</button></span></section>';
+	const h = '<section class="player"><h2>&nbsp;</h2><div class="hand"></div><h3><span class="bet>0</span><span class="bank">5</span></h3><span class="actions"><button class="hit">hit</button><button class="stand">stand</button></span></section>';
 	m.insertAdjacentHTML('beforeend', h);
 }
 
@@ -69,24 +69,29 @@ function bust(a) {
 	a.querySelector('h2').innerHTML = '&nbsp;<em>busted</em>';
 }
 
+function bet(a) {
+	const bank = sessionStorage.banks ? sessionStorage.banks[[...players].indexOf(a)] : 5,
+	      betting = 5 * (Math.floor(Math.random()) * bank);
+	
+	a.querySelector('.bank').innerText = bank;
+	a.querySelector('.bet').innerText = betting;	
+}
+
 function winnings() {
 	const winner = m.querySelector('.winner');
-	let total = 5;
+	let total = 0;
 	
 	if (winner) {		
 		players.forEach(p => {
-			if (!p.classList.contains('winner')) {
-				const h3 = p.querySelector('h3');
-				
-				total += Number(h3.innerText);
-				
-				h3.innerText = 0;
-			}
+			const betting = p.querySelector('h3 .bet');
 			
+			total += Number(betting.innerText);
+			
+			betting.innerText = 0;
 		});
 
 		setTimeout(() => {
-			winner.querySelector('h3').innerText = total;
+			winner.querySelector('h3 .bank').innerText = total;
 			sessionStorage.winner = [...players].indexOf(winner);
 			sessionStorage.jackpot = total;
 		}, 1e3);
