@@ -65,9 +65,20 @@ function bust(a) {
 }
 
 function winnings() {
-	players.forEach(p => {
-		//
-	});
+	const winner = m.querySelector('winner'),
+	      total = winner ? Number(winner.querySelector('h3') : 5;
+	
+	if (m.querySelector('.winner')) {
+		players.forEach(p => {
+			const h3 = p.querySelector('h3');
+			
+			total += !p.classList.contains('winner') ? Number(h3.innerText) : 0;
+			h3.innerText = 0;
+			
+		});
+
+		setTimeout(() => m.querySelector('.winner h3').innerText = total, 100);
+	}
 }
 
 function next_turn() {
@@ -122,6 +133,8 @@ function game_over(a) {
 		
 		if (winner) winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 		else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
+		
+		winnings();
 	}, 1500);
 }
 
