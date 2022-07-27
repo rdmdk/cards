@@ -70,7 +70,7 @@ main::after {
 	left: 50%;
 }
 
-.over::after {filter: opacity(0.5)}
+.over::after {filter: opacity(0.1)}
 
 .grid {
 	display: grid;
