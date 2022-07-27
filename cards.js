@@ -76,7 +76,7 @@ function bet(a) {
 	      
 	console.log(bank);
 		
-	a.querySelector('.bank').innerText = bank - betting < 5 ? 5 : bank - betting;
+	a.querySelector('.bank').innerText = bank;
 	a.querySelector('.bet').innerText = betting;	
 }
 
@@ -94,9 +94,11 @@ function winnings() {
 
 	setTimeout(() => {
 		m.querySelector('.winner .bank').innerText = total;
-		players.forEach(p => banks.push(p.querySelector('.bank').innerText));
+		players.forEach(p => {
+			const bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
+			banks.push(bank);
+		});
 		sessionStorage.banks = banks;
-		console.log(banks);	
 	}, 100);
 }
 
