@@ -125,6 +125,8 @@ function next_turn() {
 			else if (players[iii].classList.contains('done')) next_turn();
 		}
 	}, to);
+	
+	if (m.hasAttribute('style') m.removeAttribute('style');
 }
 
 function game_over(a) {
