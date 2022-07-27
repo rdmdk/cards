@@ -104,7 +104,7 @@ h3 {
 	font: italic 0.5rem georgia, times, serif;
 	margin: 0.5rem 0;
 	filter: opacity(0.25);
-	mix-blend-mode: overaly;
+	mix-blend-mode: overlay;
 	display: none;
 }
 
