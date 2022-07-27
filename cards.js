@@ -65,7 +65,7 @@ function bust(a) {
 }
 
 function winnings() {
-	const winner = m.querySelector('winner');
+	const winner = m.querySelector('.winner');
 	let total = 0;
 	
 	if (winner) {		
@@ -131,10 +131,10 @@ function game_over(a) {
 	setTimeout(() => {
 		const winner = m.querySelector('.winner');
 		
-		if (winner) winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
-		else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
-		
-		winnings();
+		if (winner) {
+			winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
+			winnings();
+		} else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
 	}, 1500);
 }
 
