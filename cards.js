@@ -70,22 +70,25 @@ function bust(a) {
 }
 
 function bet(a) {
-	const bank = sessionStorage.banks ? sessionStorage.banks[[...players].indexOf(a)] : 5,
+	const bank = sessionStorage.banks ? Number(sessionStorage.banks[[...players].indexOf(a)]) : 5,
 	      betting = 5 * (Math.floor(Math.random()) * bank);
 	
-	a.querySelector('.bank').innerText = bank;
+	a.querySelector('.bank').innerText = bank - betting;
 	a.querySelector('.bet').innerText = betting;	
 }
 
 function winnings() {
 	const winner = m.querySelector('.winner');
-	let total = 0;
+	let total = 0,
+	    banks = [];
 	
 	if (winner) {		
 		players.forEach(p => {
-			const betting = p.querySelector('h3 .bet');
+			const betting = p.querySelector('h3 .bet'),
+			      bank = p.querySelector('h3 .bank');
 			
 			total += Number(betting.innerText);
+			banks.push(bank);
 			
 			betting.innerText = 0;
 		});
@@ -94,6 +97,8 @@ function winnings() {
 			winner.querySelector('h3 .bank').innerText = total;
 			sessionStorage.winner = [...players].indexOf(winner);
 			sessionStorage.jackpot = total;
+			sessionStorage.banks = banks;
+			
 		}, 1e3);
 	}
 }
@@ -155,7 +160,10 @@ function game_over(a) {
 	}, 1500);
 }
 
-players.forEach(p => hit(p));
+players.forEach(p => {
+	bet(p);
+	hit(p);
+});
 
 buttons.forEach(b => {
 	const player = b.closest('.player');
