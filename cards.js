@@ -13,7 +13,7 @@ r = r < 2 ? 2 : r > 12 ? 12 : r;
 
 for (i = 0; i < r; i++) {
 	//if (i === 12) { break; } 
-	const h = '<section class="player"><h2>&nbsp;</h2><div class="hand"></div><span class="actions"><button class="hit">hit</button><button class="stand">stand</button></span></section>';
+	const h = '<section class="player"><h2>&nbsp;</h2><div class="hand"></div><h3>5</h3><span class="actions"><button class="hit">hit</button><button class="stand">stand</button></span></section>';
 	m.insertAdjacentHTML('beforeend', h);
 }
 
@@ -62,6 +62,12 @@ function blackjack(a) {
 function bust(a) {
 	a.classList.add('busted', 'done');
 	a.querySelector('h2').innerHTML = '&nbsp;<em>busted</em>';
+}
+
+function winnings() {
+	players.forEach(p => {
+		//
+	});
 }
 
 function next_turn() {
