@@ -103,14 +103,17 @@ h2 {
 h3 {
 	font: italic 0.5rem georgia, times, serif;
 	margin: 0.5rem 0;
-	filter: opacity(0.25);
 	mix-blend-mode: overlay;
 }
 
-h3::before {
+h3 span::before {
 	content: "$ ";
 	font-size: 0.7em;
 }
+
+h3 .bet {filter: opacity(0.5)}
+
+h3 .bank {filter: opacity(0.25)}
 
 .hand {
 	text-align: center;
