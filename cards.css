@@ -99,6 +99,14 @@ h2 {
 	left: 50%;
 }
 
+h3 {
+	font: italic 0.5rem georgia, times, serif;
+	margin: 0.5rem 0;
+	display: none;
+}
+
+h3::before {content: "$"}
+
 .hand {
 	text-align: center;
 	display: inline-block;
