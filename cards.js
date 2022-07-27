@@ -96,7 +96,6 @@ function winnings() {
 
 		setTimeout(() => {
 			winner.querySelector('h3 .bank').innerText = total;
-			sessionStorage.winner = [...players].indexOf(winner);
 			sessionStorage.jackpot = total;
 			sessionStorage.banks = banks;
 			
