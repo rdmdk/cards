@@ -126,7 +126,7 @@ function next_turn() {
 		}
 	}, to);
 	
-	if (m.hasAttribute('style') m.removeAttribute('style');
+	if (m.hasAttribute('style')) m.removeAttribute('style');
 }
 
 function game_over(a) {
