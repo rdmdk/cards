@@ -66,9 +66,10 @@ function bust(a) {
 
 function winnings() {
 	const winner = m.querySelector('winner'),
-	      total = winner ? Number(winner.querySelector('h3') : 5;
+	      winner_h3 = winner.querySelector('h3'),
+	      total = winner ? Number(winner_h3.innerText) : 5;
 	
-	if (m.querySelector('.winner')) {
+	if (winner) {
 		players.forEach(p => {
 			const h3 = p.querySelector('h3');
 			
@@ -77,7 +78,7 @@ function winnings() {
 			
 		});
 
-		setTimeout(() => m.querySelector('.winner h3').innerText = total, 100);
+		setTimeout(() => winner_h3.innerText = total, 100);
 	}
 }
 
