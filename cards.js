@@ -139,7 +139,7 @@ function game_over(a) {
 	else {
 		let total = 0;
 
-		players.forEach(p => {
+		[...players].filter(p => p.querySelector('.bank').innerText !== 0).forEach(p => {
 			const h2 = p.querySelector('h2').innerText;
 			const player_total = !isNaN(h2) ? Number(p.querySelector('h2').innerText) : -1;
 
