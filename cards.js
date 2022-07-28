@@ -169,6 +169,13 @@ players.forEach(p => {
 	}
 });
 
+if (sessionStorage.banks) {
+	const banks = sessionStorage.banks.split(',');
+	const max = Math.max(...banks).toString();
+	
+	players[banks.indexOf(max)].classList.add('high_roller');
+}
+
 [...players].filter(p => !p.classList.contains('done'))[0].classList.add('active');
 
 if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) {
