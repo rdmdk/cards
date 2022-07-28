@@ -18,7 +18,7 @@ if (sessionStorage.players && window.location.search !== '') {
 sessionStorage.players = r;
 
 for (i = 0; i < r; i++) {
-	const h = '<section class="player"><h2>&nbsp;</h2><div class="hand"></div><h3><span class="bet">0</span><span class="bank">5</span></h3><span class="actions"><button class="hit">hit</button><button class="stand">stand</button></span></section>';
+	const h = '<section class="player"><h2>&nbsp;</h2><div class="hand"></div><h3><span class="bet">0</span><span class="bank">100</span></h3><span class="actions"><button class="hit">hit</button><button class="stand">stand</button></span></section>';
 	m.insertAdjacentHTML('beforeend', h);
 }
 
@@ -74,7 +74,7 @@ function bust(a) {
 }
 
 function bet(a) {
-	const banks = sessionStorage.banks ? sessionStorage.banks.split(',') : Array(r).fill(5),
+	const banks = sessionStorage.banks ? sessionStorage.banks.split(',') : Array(r).fill(100),
 	      bank = Number(banks[[...players].indexOf(a)]),
 	      betting = Math.floor((Math.random() * (bank - 5) + 5) / 5) * 5;
 	      		
@@ -162,9 +162,17 @@ function game_over(a) {
 }
 
 players.forEach(p => {
-	bet(p);
-	hit(p);
+	if (p.querySelector('.bank').innerText == 0} p.classList.add('done');
+	else {
+		bet(p);
+		hit(p);
+	}
 });
+
+if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) {
+	sessionStorage.clear();
+	sessionStorage.players = r;
+}
 
 buttons.forEach(b => {
 	const player = b.closest('.player');
