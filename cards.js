@@ -149,11 +149,11 @@ function game_over(a) {
 	else {
 		let total = 0;
 
-		[...players].filter(p => p.querySelector('.bank').innerText !== 0).forEach(p => {
+		players.forEach(p => {
 			const h2 = p.querySelector('h2').innerText;
 			const player_total = !isNaN(h2) ? Number(p.querySelector('h2').innerText) : -1;
 
-			if (player_total > total) {
+			if (p.querySelector('.bank').innerText !== '0' && player_total > total) {
 				total = player_total;
 
 				if (m.querySelector('.winner')) m.querySelector('.winner').classList.remove('winner');
