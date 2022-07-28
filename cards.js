@@ -162,7 +162,7 @@ function game_over(a) {
 }
 
 players.forEach(p => {
-	if (p.querySelector('.bank').innerText == 0} p.classList.add('done');
+	if (p.querySelector('.bank').innerText == 0) p.classList.add('done');
 	else {
 		bet(p);
 		hit(p);
@@ -171,7 +171,7 @@ players.forEach(p => {
 
 if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) {
 	sessionStorage.clear();
-	sessionStorage.players = r;
+	setTimeout(() => window.location.reload(), 5e3);
 }
 
 buttons.forEach(b => {
