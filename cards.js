@@ -101,7 +101,7 @@ function winnings() {
 		
 		sessionStorage.banks = banks;
 		
-		setTimeout(() => high_roller(), 1e3);
+		setTimeout(() => high_roller(), 500);
 	}, 100);
 }
 
