@@ -100,6 +100,8 @@ function winnings() {
 		});
 		
 		sessionStorage.banks = banks;
+		
+		setTimeout(() => high_roller(), 1e3);
 	}, 100);
 }
 
@@ -167,8 +169,6 @@ function game_over(a) {
 			winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 			setTimeout(() => winnings(), 250);
 		} else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
-		
-		high_roller();
 	}, 1500);
 }
 
