@@ -112,7 +112,7 @@ function next_turn() {
 	setTimeout(() => m.classList.remove('hold'), 400);
 		
 	setTimeout(() => {
-		const condition = m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === players.length || m.querySelectorAll('.busted, .done').length === players.length;
+		const condition = m.querySelector('.blackjack') || m.querySelectorAll('.busted').length + 1 === players.length || m.querySelectorAll('.done').length === players.length;
 		
 		if (condition) game_over();
 		else {
