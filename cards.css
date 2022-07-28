@@ -109,7 +109,9 @@ h2 {
 
 .high_roller h2::before {
 	content: "♕";
-	font-size: 0.5em;
+	font-size: 0.75em;
+	line-height: 1;
+	transform: translateX(-50%);
 	position: absolute;
 	bottom: 100%;
 	left: 50%;
