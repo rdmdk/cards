@@ -129,6 +129,15 @@ function next_turn() {
 	if (m.hasAttribute('style')) m.removeAttribute('style');
 }
 
+function high_roller() {
+	const banks = sessionStorage.banks.split(',');
+	const max = Math.max(...banks).toString();
+	const highroller = m.querySelector('.high_roller');
+	
+	if (highroller) highroller.classList.remove('.high_roller');
+	players[banks.indexOf(max)].classList.add('high_roller');
+}
+
 function game_over(a) {
 	m.classList.add('over');
 
@@ -158,6 +167,8 @@ function game_over(a) {
 			winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 			setTimeout(() => winnings(), 250);
 		} else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
+		
+		high_roller();
 	}, 1500);
 }
 
@@ -169,12 +180,7 @@ players.forEach(p => {
 	}
 });
 
-if (sessionStorage.banks) {
-	const banks = sessionStorage.banks.split(',');
-	const max = Math.max(...banks).toString();
-	
-	players[banks.indexOf(max)].classList.add('high_roller');
-}
+if (sessionStorage.banks) high_roller();
 
 [...players].filter(p => !p.classList.contains('done'))[0].classList.add('active');
 
