@@ -172,6 +172,8 @@ function game_over(a) {
 	}, 1500);
 }
 
+if (sessionStorage.banks) high_roller();
+
 players.forEach(p => {
 	if (p.querySelector('.bank').innerText == 0) p.classList.add('done');
 	else {
@@ -179,8 +181,6 @@ players.forEach(p => {
 		hit(p);
 	}
 });
-
-if (sessionStorage.banks) high_roller();
 
 [...players].filter(p => !p.classList.contains('done'))[0].classList.add('active');
 
