@@ -108,12 +108,12 @@ h2 {
 .over .player:not(.winner) h2 {filter: opacity(0)}
 
 .high_roller h2::before {
-	content: "♕";
+	content: "♔";
 	font-size: 0.75em;
 	line-height: 1;
-	transform: translateX(-50%);
+	transform: translate(-50%, -75%);
 	position: absolute;
-	bottom: 100%;
+	top: 0;
 	left: 50%;
 }
 
