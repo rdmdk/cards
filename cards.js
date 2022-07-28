@@ -170,6 +170,8 @@ function game_over(a) {
 			setTimeout(() => winnings(), 250);
 		} else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
 	}, 1500);
+	
+	setTimeout(() => window.location.reload(), 5e3);
 }
 
 if (sessionStorage.banks) high_roller();
@@ -184,10 +186,7 @@ players.forEach(p => {
 
 [...players].filter(p => !p.classList.contains('done'))[0].classList.add('active');
 
-if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) {
-	sessionStorage.clear();
-	setTimeout(() => window.location.reload(), 5e3);
-}
+if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) sessionStorage.clear();
 
 buttons.forEach(b => {
 	const player = b.closest('.player');
