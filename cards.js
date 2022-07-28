@@ -33,8 +33,6 @@ if (players.length > 2 && players.length % 2 === 0 || players.length > 3) m.clas
 
 document.querySelector('html').dataset.players = players.length;
 
-[...players].filter(p => !p.classList.contains('done'))[0].classList.add('active');
-
 function hit(a) {
 	const hand = a.querySelector('.hand');
 	let total = 0;
@@ -169,6 +167,8 @@ players.forEach(p => {
 		hit(p);
 	}
 });
+
+[...players].filter(p => !p.classList.contains('done'))[0].classList.add('active');
 
 if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) {
 	sessionStorage.clear();
