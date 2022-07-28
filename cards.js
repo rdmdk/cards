@@ -33,7 +33,7 @@ if (players.length > 2 && players.length % 2 === 0 || players.length > 3) m.clas
 
 document.querySelector('html').dataset.players = players.length;
 
-players[0].classList.add('active');
+[...players].filter(p => !p.classList.contains('done'))[0].classList.add('active');
 
 function hit(a) {
 	const hand = a.querySelector('.hand');
