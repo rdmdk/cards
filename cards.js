@@ -12,7 +12,7 @@ buttons;
 r = r < 2 ? 2 : r > 12 ? 12 : r;
 
 if (window.location.search !== '') {
-	if (sessionStorage.players !== window.location.search.substring(1)) sessionStorage.clear();
+	sessionStorage.clear();
 	history.pushState(null, null, 'https://rdmdk.github.io/cards/');
 }
 
