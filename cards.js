@@ -79,7 +79,9 @@ function bet(a) {
 	      betting = Math.floor((Math.random() * (bank - 5) + 5) / 5) * 5;
 	      		
 	a.querySelector('.bank').innerText = bank;
-	a.querySelector('.bet').innerText = betting;	
+	a.querySelector('.bet').innerText = betting;
+	
+	if (bank == 0) a.classList.add('done');
 }
 
 function winnings() {
@@ -94,9 +96,8 @@ function winnings() {
 		winning_bank.innerText = Number(winning_bank.innerText) + total;
 		
 		players.forEach(p => {
-			const bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText),
-			      min = bank < 5 ? 5 : bank;
-			banks.push(min);
+			const bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
+			banks.push(bank);
 		});
 		
 		sessionStorage.banks = banks;
