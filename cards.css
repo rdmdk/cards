@@ -98,13 +98,15 @@ h2 {
 
 .high_roller h2::before {
 	content: "♔";
-	font-size: 0.75em;
+	font-size: 1.5em;
 	line-height: 1;
 	transform: translate(-50%, -100%);
 	position: absolute;
 	top: 0;
 	left: 50%;
 }
+
+h2 em {font-style: inherit}
 
 .done h2 em {
 	transform: translateX(-50%);
