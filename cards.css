@@ -107,8 +107,11 @@ html[data-players="12"] .grid {grid-template-columns: repeat(3, auto)}
 	text-align: center;
 	align-self: center;
 	padding: 0.5rem;
+	transition: filter 0.6s ease;
 	position: relative;
 }
+
+.out {filter: opacity(0)}
 
 h2 {
 	font-size: 0.75rem;
