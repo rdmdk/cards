@@ -219,6 +219,8 @@ h3 span ~ span {margin-left: 0.25rem}
 .winner .card:nth-child(7) {transform: translateY(7.2em)}
 .winner .card:nth-child(8) {transform: translateY(8.4em)}
 
+.over .player:not(.winner) .card {transform: none !important}
+
 .card::before,
 .card::after {
 	font-size: 0.4em;
