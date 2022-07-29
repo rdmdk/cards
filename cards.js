@@ -182,7 +182,7 @@ function game_over(a) {
 			game_over();
 			sessionStorage.clear();
 		} else window.location.reload();
-	}, 5500);
+	}, 4500);
 }
 
 if (sessionStorage.banks) high_roller();
