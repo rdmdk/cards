@@ -111,7 +111,7 @@ html[data-players="12"] .grid {grid-template-columns: repeat(3, auto)}
 	position: relative;
 }
 
-.out {filter: opacity(0)}
+.out {filter: opacity(0.25)}
 
 h2 {
 	font-size: 0.75rem;
