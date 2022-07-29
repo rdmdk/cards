@@ -50,27 +50,37 @@ main {
 	z-index: 10;
 }
 
+main::before,
 main::after {
-	content: "next round..";
-	font-size: 0.5rem;
-	font-style: italic;
-	line-height: 2;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=) top left no-repeat;
-	background-size: 0% 100%;
+	transform: translateX(-50%);
+	position: absolute;
+}
+
+main::before {
+	width: 0;
+	transition: background 3.5s ease-out;
+	left: 25vw;
+}
+
+.over:not(.end)::before {
+	content: "";
+	background: white;
 	width: 50vw;
+	height: 0.5rem;
 	padding: 0 1rem;
 	border-radius: 1rem;
-	transition: background 3.5s ease-out;
-	transform: translateX(-50%);
-	display: none;
-	position: absolute;
+	display: block;
 	bottom: 1rem;
-	left: 50%;
 }
 
 .over:not(.end)::after {
+	content: "next round..";
+	font-size: 0.5rem;
+	font-style: italic;
+	line-height: 1;
 	background-size: 100%;
-	display: block;
+	bottom: 1.5rem;
+	left: 50%;
 }
 
 .grid {
