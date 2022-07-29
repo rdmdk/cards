@@ -75,7 +75,7 @@ function bust(a) {
 function bet(a) {
 	const banks = sessionStorage.banks ? sessionStorage.banks.split(',') : Array(r).fill(100),
 	      bank = Number(banks[[...players].indexOf(a)]),
-	      betting = a.classList.contains('high_roller') ? Math.floor((Math.random() * (bank - (bank / 3)) + (bank / 3)) / 5) * 5 : bank <= 10 && bank > 5 ? 5 : Math.floor((Math.random() * ((bank / 3) - 5) + 5) / 5) * 5
+	      betting = a.classList.contains('high_roller') ? Math.floor((Math.random() * (bank - (bank / 3)) + (bank / 3)) / 5) * 5 : bank === 10 || bank === 5 ? 5 : Math.floor((Math.random() * ((bank / 3) - 5) + 5) / 5) * 5
 	      		
 	a.querySelector('.bank').innerText = bank;
 	a.querySelector('.bet').innerText = betting;
