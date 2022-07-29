@@ -155,7 +155,8 @@ h3 span ~ span {margin-left: 0.25rem}
 	width: 2.5em;
 	height: 3.5em;
 	display: inline-grid;
-	place-content: center;
+	place-content: center;b
+	border: 0.15em solid #eee;
 	border-radius: 0.5em;
 	position: relative;
 }
