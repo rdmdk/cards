@@ -282,7 +282,7 @@ h3 span ~ span {margin-left: 0.25rem}
 
 .card span {
 	font-size: 2rem;
-	transform: translateY(-0.09rem);
+	transform: translateY(-0.05rem);
 }
 
 .card[class^=c] span::after {content: "♣"}
