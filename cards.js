@@ -80,7 +80,7 @@ function bet(a) {
 	a.querySelector('.bank').innerText = bank;
 	a.querySelector('.bet').innerText = betting;
 	
-	if (bank == 0) a.classList.add('done');
+	if (bank == 0) a.classList.add('out', 'done');
 }
 
 function winnings() {
@@ -114,7 +114,12 @@ function next_turn() {
 	setTimeout(() => m.classList.remove('hold'), 400);
 		
 	setTimeout(() => {
-		const condition = m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.done').length + 1 === players.length;
+		const condition = m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.busted').length + 1 === players.length;
+		
+		if (m.querySelector('.done:not(.out)') && m.querySelectorAll('.done').length + 1 === players.length) {
+			const score = Number(m.querySelector('.done:not(.out)').querySelector('h2').innerText);
+			condition = Number(active_player.querySelector('h2').innerText) > score ? true : false;
+		});
 		
 		if (condition) game_over();
 		else {
