@@ -140,7 +140,7 @@ function high_roller() {
 	const max = Math.max(...banks).toString();
 	const highroller = m.querySelector('.high_roller');
 	
-	if (highroller) highroller.classList.remove('.high_roller');
+	if (highroller) highroller.classList.remove('high_roller');
 	players[banks.indexOf(max)].classList.add('high_roller');
 }
 
