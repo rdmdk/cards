@@ -62,7 +62,7 @@ function stand(a) {
 }
 
 function blackjack(a) {
-	a.classList.add('blackjack', 'winner', 'done');
+	a.classList.add('blackjack', 'done');
 	a.querySelector('h2').innerHTML = '&nbsp;<em>blackjack!</em>';
 	//setTimeout(() => game_over(), 100);
 }
