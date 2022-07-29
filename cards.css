@@ -113,7 +113,7 @@ html[data-players="12"] .grid {grid-template-columns: repeat(3, auto)}
 h2 {
 	font-size: 0.75rem;
 	color: #fff;
-	margin: 0 0 0.75rem;
+	margin: 0 0 1rem;
 	filter: opacity(0.75);
 	transition: filter 0.6s ease;
 	position: relative;
