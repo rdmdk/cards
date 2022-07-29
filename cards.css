@@ -51,8 +51,9 @@ main {
 }
 
 .over:not(.end)::after {
-	content: "next round";
+	content: "next round..";
 	font-size: 0.5rem;
+	font-style: italic;
 	line-height: 2;
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=) top left no-repeat;
 	background-size: 0% 100%;
