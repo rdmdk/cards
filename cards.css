@@ -150,15 +150,12 @@ h3 span ~ span {margin-left: 0.25rem}
 
 .card {
 	font-size: 1rem;
-	background: rgb(255 255 255 / 80%);
+	background: white;
 	color: black;
 	width: 2.5em;
 	height: 3.5em;
 	display: inline-grid;
 	place-content: center;
-	-webkit-backdrop-filter: blur(8px);
-	backdrop-filter: blur(8px);
-	border: 0.15em solid white;
 	border-radius: 0.5em;
 	position: relative;
 }
