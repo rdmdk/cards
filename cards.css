@@ -87,9 +87,9 @@ html[data-players="12"] .grid {grid-template-columns: repeat(3, auto)}
 }
 
 h2 {
-	font-size: 1rem;
+	font-size: 0.75rem;
 	color: #fff;
-	margin: 0 0 0.5em;
+	margin: 0 0 0.5rem;
 	filter: opacity(0.5);
 	transition: filter 0.6s ease;
 	position: relative;
@@ -117,7 +117,7 @@ h2 em {font-style: inherit}
 }
 
 h3 {
-	font-size: 0.5rem;
+	font-size: 0.33rem;
 	margin: 0.5rem 0;
 	filter: opacity(0);
 	transition: filter 0.6s ease;
@@ -197,11 +197,11 @@ h3 span ~ span {margin-left: 0.25rem}
 
 .card::before,
 .card::after {
-	font-size: 0.5em;
+	font-size: 0.4em;
 	line-height: 1;
 	word-break: break-all;
 	width: 1em;
-	padding: 0.25em;
+	padding: 0.6em;
 	position: absolute;
 }
 
@@ -281,7 +281,7 @@ h3 span ~ span {margin-left: 0.25rem}
 .s10::before, .s10::after {width: 1.5em}
 
 .card span {
-	font-size: 1.5rem;
+	font-size: 2rem;
 	transform: translateY(-0.1rem);
 }
 
