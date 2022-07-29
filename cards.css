@@ -53,13 +53,13 @@ main::before,
 main::after {position: absolute}
 
 main::before {
+	content: "";
 	width: 0;
-	transition: width 3.5s ease-in-out;
+	transition: width 2.5s ease-in-out 1s;
 	left: 25vw;
 }
 
 .over:not(.end)::before {
-	content: "";
 	background: white;
 	width: 50vw;
 	height: 2px;
