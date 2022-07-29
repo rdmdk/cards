@@ -304,7 +304,7 @@ h3 span ~ span {margin-left: 0.25rem}
 
 button {
 	font-size: 0.35rem;
-	background: rgb(200 200 200 / 25%);
+	background: rgb(255 255 255 / 33%);
 	color: white;
 	width: 4.5em;
 	height: 4.5em;
@@ -316,7 +316,7 @@ button {
 	transition: background 0.6s ease;
 }
 
-button:hover {background: rgb(255 255 255 / 50%)}
+button:hover {background: rgb(255 255 255 / 66%)}
 
 button ~ button {margin-left: 0.5rem}
 
