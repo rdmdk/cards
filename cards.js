@@ -75,7 +75,7 @@ function bust(a) {
 function bet(a) {
 	const banks = sessionStorage.banks ? sessionStorage.banks.split(',') : Array(r).fill(100),
 	      bank = Number(banks[[...players].indexOf(a)]),
-	      betting = a.classList.contains('high_roller') ? Math.floor((Math.random() * (bank - (bank / 2)) + (bank / 2)) / 5) * 5 : bank == 5 ? 5 : Math.floor((Math.random() * ((bank / 2) - 5) + 5) / 5) * 5
+	      betting = a.classList.contains('high_roller') ? Math.floor((Math.random() * (bank - (bank / 3)) + (bank / 3)) / 5) * 5 : bank == 5 ? 5 : Math.floor((Math.random() * ((bank / 3) - 5) + 5) / 5) * 5
 	      		
 	a.querySelector('.bank').innerText = bank;
 	a.querySelector('.bet').innerText = betting;
@@ -174,7 +174,7 @@ function game_over(a) {
 	setTimeout(() => {
 		if ([...players].filter(p => p.querySelector('.bank').innerText === '0').length + 1 === players.length) {}
 		else window.location.reload();
-	}, 4e3);
+	}, 3e3);
 }
 
 if (sessionStorage.banks) high_roller();
