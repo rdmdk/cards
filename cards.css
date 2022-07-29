@@ -54,7 +54,7 @@ main::after {position: absolute}
 
 main::before {
 	width: 0;
-	transition: background 3.5s ease-out;
+	transition: width 3.5s ease-in-out;
 	left: 25vw;
 }
 
@@ -62,19 +62,19 @@ main::before {
 	content: "";
 	background: white;
 	width: 50vw;
-	height: 1.5rem;
+	height: 2px;
 	display: block;
 	bottom: 1rem;
 }
 
 .over:not(.end)::after {
-	content: "next round..";
+	content: "next round...";
 	font-size: 0.5rem;
 	font-style: italic;
-	line-height: 1.5rem;
+	line-height: 1;
 	background-size: 100%;
 	transform: translateX(-50%);
-	bottom: 1rem;
+	bottom: 1.5rem;
 	left: 50%;
 }
 
