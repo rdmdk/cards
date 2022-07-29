@@ -62,7 +62,7 @@ main::after {
 	left: 50%;
 }
 
-.over::after {filter: opacity(0.25)}
+.over:not(.ended)::after {filter: opacity(0.25)}
 
 .grid {
 	display: grid;
