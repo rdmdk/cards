@@ -116,9 +116,9 @@ function next_turn() {
 	setTimeout(() => {
 		let condition = m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.busted, .out').length + 1 === players.length;
 		
-		if (m.querySelector('.done:not(.out)') && m.querySelectorAll('.done').length + 1 === players.length) {
+		if (m.querySelectorAll('.done:not(.out)').length + 1 === players.length) {
 			const score = Number(m.querySelector('.done:not(.out) h2').innerText);
-			//if (Number(active_player.querySelector('h2').innerText) > score) condition = true;
+			if (Number(active_player.querySelector('h2').innerText) > score) condition = true;
 		}
 		
 		if (condition) game_over();
