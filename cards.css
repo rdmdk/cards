@@ -303,7 +303,7 @@ h3 span ~ span {margin-left: 0.25rem}
 .done .actions {filter: opacity(0)}
 
 button {
-	font-size: 0.35rem;
+	font: 0.35rem 'Ubuntu', arial, sans-serif;
 	background: rgb(255 255 255 / 33%);
 	color: white;
 	width: 4.5em;
