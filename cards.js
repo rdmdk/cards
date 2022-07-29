@@ -174,7 +174,7 @@ function game_over(a) {
 	setTimeout(() => {
 		if ([...players].filter(p => p.querySelector('.bank').innerText === '0').length + 1 === players.length) {}
 		else window.location.reload();
-	}, 3e3);
+	}, 3500);
 }
 
 if (sessionStorage.banks) high_roller();
