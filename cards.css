@@ -162,7 +162,7 @@ h3 span ~ span {margin-left: 0.25rem}
 
 .hand::before {
 	content: "♔";
-	font-size: 2.5rem;
+	font-size: 2.25rem;
 	line-height: 1;
 	color: gold;
 	transform: translate(56%, -100%) rotate(30deg);
