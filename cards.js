@@ -136,12 +136,13 @@ function next_turn() {
 }
 
 function high_roller() {
-	const banks = sessionStorage.banks.split(',');
-	const max = Math.max(...banks).toString();
-	const highroller = m.querySelector('.high_roller');
+	const banks = sessionStorage.banks.split(','),
+	      max = Math.max(...banks).toString(),
+	      min = Math.min(...banks).toString(),
+	      highroller = m.querySelector('.high_roller');
 	
 	if (highroller) highroller.classList.remove('high_roller');
-	players[banks.indexOf(max)].classList.add('high_roller');
+	if (max !== min) players[banks.indexOf(max)].classList.add('high_roller');
 }
 
 function game_over(a) {
