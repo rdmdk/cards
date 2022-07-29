@@ -119,7 +119,7 @@ function next_turn() {
 		if (m.querySelector('.done:not(.out)') && m.querySelectorAll('.done').length + 1 === players.length) {
 			const score = Number(m.querySelector('.done:not(.out)').querySelector('h2').innerText);
 			condition = Number(active_player.querySelector('h2').innerText) > score ? true : false;
-		});
+		}
 		
 		if (condition) game_over();
 		else {
