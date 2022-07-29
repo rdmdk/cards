@@ -51,10 +51,7 @@ main {
 }
 
 main::before,
-main::after {
-	transform: translateX(-50%);
-	position: absolute;
-}
+main::after {position: absolute}
 
 main::before {
 	width: 0;
@@ -66,9 +63,7 @@ main::before {
 	content: "";
 	background: white;
 	width: 50vw;
-	height: 0.5rem;
-	padding: 0 1rem;
-	border-radius: 1rem;
+	height: 1.5rem;
 	display: block;
 	bottom: 1rem;
 }
@@ -77,9 +72,10 @@ main::before {
 	content: "next round..";
 	font-size: 0.5rem;
 	font-style: italic;
-	line-height: 1;
+	line-height: 1.5rem;
 	background-size: 100%;
-	bottom: 1.5rem;
+	transform: translateX(-50%}
+	bottom: 1rem;
 	left: 50%;
 }
 
