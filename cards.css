@@ -334,7 +334,7 @@ button ~ button {margin-left: 0.2rem}
 
 @keyframes next {
   0%   {background-size: 0% 100%}
-  100% {border: 100%}
+  100% {background-size: 100%}
 }
 
 @media (orientation: landscape) {
