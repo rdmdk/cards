@@ -209,7 +209,7 @@ h3 span ~ span {margin-left: 0.25rem}
 .card:nth-child(7) {transform: translateY(2.4em)}
 .card:nth-child(8) {transform: translateY(2.8em)}
 
-.winner .card {transition-delay: 0s, 1.75s}
+.over .card {transition-delay: 0s, 1.75s}
 
 .winner .card:nth-child(2) {transform: translateY(1.2em)}
 .winner .card:nth-child(3) {transform: translateY(2.4em)}
