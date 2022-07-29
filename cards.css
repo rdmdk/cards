@@ -125,9 +125,9 @@ h3 {
 
 main[style] h3 {filter: opacity(1)}
 
-h3 .bet {filter: opacity(0.5)}
+h3 .bet {filter: opacity(0.8)}
 
-h3 .bank {filter: opacity(0.33)}
+h3 .bank {filter: opacity(0.4)}
 
 h3 span::before {
 	content: "$ ";
