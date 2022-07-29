@@ -50,7 +50,7 @@ main {
 	z-index: 10;
 }
 
-.over:not(.end)::after {
+main::after {
 	content: "next round..";
 	font-size: 0.5rem;
 	font-style: italic;
@@ -60,11 +60,17 @@ main {
 	width: 50vw;
 	padding: 0 1rem;
 	border-radius: 1rem;
+	transition: background 3.5s ease-out;
 	transform: translateX(-50%);
-	animation: 3.5s ease-out forwards next;
+	display: none;
 	position: absolute;
 	bottom: 1rem;
 	left: 50%;
+}
+
+.over:not(.end)::after {
+	background-size: 100%;
+	display: block;
 }
 
 .grid {
@@ -331,11 +337,6 @@ button {
 button:hover {background: rgb(255 255 255 / 66%)}
 
 button ~ button {margin-left: 0.2rem}
-
-@keyframes next {
-  0%   {background-size: 0% 100%}
-  100% {background-size: 100%}
-}
 
 @media (orientation: landscape) {
 	html {font-size: 2vw}
