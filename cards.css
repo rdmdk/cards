@@ -67,7 +67,7 @@ main::after {
 }
 
 .over:not(.end)::before {
-	background: white;
+	background: rgb(255 255 255 / 75%);
 	width: 50vw;
 	height: 2px;
 	display: block;
@@ -80,6 +80,7 @@ main::after {
 	font-style: italic;
 	line-height: 1;
 	background-size: 100%;
+	color: rgb(255 255 255 / 75%);
 	filter: opacity(1);
 	transform: translateX(-50%);
 	bottom: 1.5rem;
