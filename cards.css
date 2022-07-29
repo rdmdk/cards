@@ -73,7 +73,7 @@ main::before {
 	font-style: italic;
 	line-height: 1.5rem;
 	background-size: 100%;
-	transform: translateX(-50%};
+	transform: translateX(-50%);
 	bottom: 1rem;
 	left: 50%;
 }
