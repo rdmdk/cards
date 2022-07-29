@@ -176,10 +176,10 @@ function game_over(a) {
 	}, 1500);
 	
 	setTimeout(() => {
-		if ([...players].filter(p => p.classList.contains('out')).length + 1 === players.length) {
+		if (m.querySelectorAll('.out').length + 1 === players.length) {
 			m.classList.add('end');
-			game_over();
 			sessionStorage.clear();
+			game_over();
 		} else window.location.reload();
 	}, 4500);
 }
