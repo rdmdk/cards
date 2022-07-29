@@ -61,7 +61,7 @@ main {
 	padding: 0 1rem;
 	border-radius: 1rem;
 	transform: translateX(-50%);
-	animation: next 3.5s ease-out;
+	animation: 3.5s ease-out forwards next;
 	position: absolute;
 	bottom: 1rem;
 	left: 50%;
