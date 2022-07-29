@@ -57,13 +57,13 @@ main::after {
 
 main::before {
 	width: 0;
-	transition: width 2s ease-in-out 0.5s;
+	transition: width 2s ease-in-out 1s;
 	left: 25vw;
 }
 
 main::after {
 	filter: opacity(0);
-	transition: filter 0.6s ease;
+	transition: filter 2s ease;
 }
 
 .over:not(.end)::before {
