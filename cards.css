@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 * {font-size:1em;line-height:1em;text-decoration:none;margin:0;padding:0;box-sizing:border-box}h1,h2,h3,h4,h5,h6{font-weight:normal}ol,ul,li{list-style-type:none}table{border-collapse:collapse}
         
 html, body {
@@ -26,8 +28,8 @@ html[data-players="11"] {font-size: 3vh}
 html[data-players="12"] {font-size: 3vh}
         
 body {
-	font: 0 arial, sans-serif;
-	background: green;
+	font: 300 0 'Ubuntu', arial, sans-serif;
+	background: rgb(0 185 65);
 	color: white;
 	overflow: hidden;
 	user-select: none;
@@ -153,15 +155,16 @@ h3 span ~ span {margin-left: 0.25rem}
 
 .card {
 	font-size: 1rem;
-	background: center center no-repeat white;
-	background-size: 100%;
+	background: rgb(255 255 255 / 80%);
 	color: black;
 	width: 2.5em;
 	height: 3.5em;
 	display: inline-grid;
 	place-content: center;
-	border-radius: 0.1em;
-	box-shadow: 0 0 0.5em rgb(0 0 0 / 10%);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+	border: 0.25rem solid white;
+	border-radius: 0.5em;
 	position: relative;
 }
 
