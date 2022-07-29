@@ -118,7 +118,7 @@ function next_turn() {
 		
 		if (m.querySelector('.done:not(.out)') && m.querySelectorAll('.done').length + 1 === players.length) {
 			const score = Number(m.querySelector('.done:not(.out) h2').innerText);
-			if (Number(active_player.querySelector('h2').innerText) > score) condition = true;
+			//if (Number(active_player.querySelector('h2').innerText) > score) condition = true;
 		}
 		
 		if (condition) game_over();
@@ -158,7 +158,7 @@ function game_over(a) {
 			const h2 = p.querySelector('h2').innerText;
 			const player_total = !isNaN(h2) ? Number(p.querySelector('h2').innerText) : -1;
 
-			if (p.querySelector('.bank').innerText !== '0' && player_total > total) {
+			if (!p.classList.contains('out') && player_total > total) {
 				total = player_total;
 
 				if (m.querySelector('.winner')) m.querySelector('.winner').classList.remove('winner');
@@ -177,7 +177,7 @@ function game_over(a) {
 	}, 1500);
 	
 	setTimeout(() => {
-		if ([...players].filter(p => p.querySelector('.bank').innerText === '0').length + 1 === players.length) {
+		if ([...players].filter(p => p.classList.contains('out')).length + 1 === players.length) {
 			m.classList.add('end');
 			game_over();
 			sessionStorage.clear();
@@ -188,7 +188,7 @@ function game_over(a) {
 if (sessionStorage.banks) high_roller();
 
 players.forEach(p => {
-	if (p.querySelector('.bank').innerText == 0) p.classList.add('done');
+	if (p.classList.contains('out')) p.classList.add('done');
 	else {
 		bet(p);
 		hit(p);
