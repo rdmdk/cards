@@ -177,13 +177,13 @@ h3 span ~ span {margin-left: 0.25rem}
 	transform: translateY(0);
 }
 
-.card:nth-child(2) {transform: translateY(0.45em)}
-.card:nth-child(3) {transform: translateY(0.85em)}
-.card:nth-child(4) {transform: translateY(1.25em)}
-.card:nth-child(5) {transform: translateY(1.65em)}
-.card:nth-child(6) {transform: translateY(2.5em)}
-.card:nth-child(7) {transform: translateY(2.45em)}
-.card:nth-child(8) {transform: translateY(2.85em)}
+.card:nth-child(2) {transform: translateY(0.4em)}
+.card:nth-child(3) {transform: translateY(0.8em)}
+.card:nth-child(4) {transform: translateY(1.2em)}
+.card:nth-child(5) {transform: translateY(1.6em)}
+.card:nth-child(6) {transform: translateY(2em)}
+.card:nth-child(7) {transform: translateY(2.4em)}
+.card:nth-child(8) {transform: translateY(2.8em)}
 
 .winner .card {transition-delay: 0s, 1.75s}
 
@@ -282,7 +282,7 @@ h3 span ~ span {margin-left: 0.25rem}
 
 .card span {
 	font-size: 2rem;
-	transform: translateY(-0.1rem);
+	transform: translateY(-0.09rem);
 }
 
 .card[class^=c] span::after {content: "♣"}
