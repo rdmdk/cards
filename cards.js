@@ -94,16 +94,20 @@ function winnings() {
       banks = [];
   
   players.forEach(p => {
-	  const source = payday ? p.querySelector('.bank') : p.querySelector('.bet');
+    const source = payday ? p.querySelector('.bank') : p.querySelector('.bet');
 	  total += p.classList.contains('winner') ? 0 : Number(source.innerText);
+  });
     
-    let bank = p.classList.contains('winner') ? Number(p.querySelector('.bank').innerText) : Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
+  setTimeout(() => {
+    players.forEach(p => {
+    let bank = p.classList.contains('winner') ? Number(p.querySelector('.bank').innerText) + total : Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
 	    
     bank = bank <= 0 ? 0 : bank;
     banks.push(bank);
     
     if (bank === 0) p.classList.add('out');
   });
+  }, 100);
   
   winning_bank.innerText = Number(winning_bank.innerText) + total;
 	
