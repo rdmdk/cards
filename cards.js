@@ -183,7 +183,6 @@ function game_over(a) {
     if (m.querySelectorAll('.out').length + 1 === players.length) {
       m.classList.add('end');
       localStorage.clear();
-      game_over();
     } else window.location.reload();
   }, 4500);
 }
