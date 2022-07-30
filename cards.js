@@ -65,7 +65,7 @@ function blackjack(a) {
   const payday = a.querySelectorAll('.card[class$="7"]').length === 3;
 	
   if (payday) a.classList.add('blackjack', 'payday', 'done');
-  else a.classList.add('blackjack', 'done);
+  else a.classList.add('blackjack', 'done');
 	
   a.querySelector('h2').innerHTML = payday ? '&nsbp;<em>Payday!</em>' : '&nbsp;<em>blackjack!</em>';
 }
