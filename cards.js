@@ -107,13 +107,13 @@ function winnings() {
     
     if (bank === 0) p.classList.add('out');
   });
-  }, 100);
+  }, 250);
   
   winning_bank.innerText = Number(winning_bank.innerText) + total;
 	
   setTimeout(() => {
-    high_roller();
     localStorage.banks = banks;
+    high_roller();
   }, 500);
 }
 
