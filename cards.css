@@ -71,6 +71,7 @@ main::after {
 .over:not(.end)::before {
 	background: rgb(255 255 255 / 75%);
 	width: 50vw;
+	box-shadow: 0 0 1rem white;
 	display: block;
 	bottom: 1rem;
 }
