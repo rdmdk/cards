@@ -165,7 +165,7 @@ function game_over(a) {
 				p.classList.add('winner');
 			}
 			
-			if (player_total <= 0) p.classList.add('out');
+			//if (player_total <= 0) p.classList.add('out');
 		});
 	}
 	
