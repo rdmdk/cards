@@ -87,39 +87,30 @@ function bet(a) {
 }
 
 function winnings() {
-  const payday = m.querySelector('.payday');
+  const payday = m.querySelector('.payday'),
+        winning_bank = m.querySelector('.winner .bank');
 	
   let total = 0,
       banks = [];
   
   players.forEach(p => {
-	  const source = payday ? m.querySelector('.bank') : m.querySelector('.bet');
+	  const source = payday ? p.querySelector('.bank') : p.querySelector('.bet');
 	  total += p.classList.contains('winner') ? 0 : Number(source.innerText);
+    
+    let bank = p.classList.contains('winner') ? Number(p.querySelector('.bank').innerText) : Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
+	    
+    bank = bank <= 0 ? 0 : bank;
+    banks.push(bank);
+    
+    if (bank === 0) p.classList.add('out');
   });
+  
+  winning_bank.innerText = Number(winning_bank.innerText) + total;
 	
-  console.log(total);
-
   setTimeout(() => {
-    const winning_bank = m.querySelector('.winner .bank');
-    
-    winning_bank.innerText = Number(winning_bank.innerText) + total;
-    
-    players.forEach(p => {
-      let bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
-	    
-      bank = bank <= 0 ? 0 : bank;
-	    
-      console.log(bank);
-
-      banks.push(bank);
-	    
-      if (bank === 0) p.classList.add('out');
-    });
-    
+    high_roller();
     localStorage.banks = banks;
-    
-    setTimeout(() => high_roller(), 500);
-  }, 100);
+  }, 500);
 }
 
 function next_turn() {
