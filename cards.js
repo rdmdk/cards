@@ -87,8 +87,7 @@ function bet(a) {
 }
 
 function winnings() {
-  const payday = m.querySelector('.payday'),
-        winning_bank = m.querySelector('.winner .bank');
+  const payday = m.querySelector('.payday');
 	
   let total = 0,
       banks = [];
@@ -100,16 +99,14 @@ function winnings() {
     
   setTimeout(() => {
     players.forEach(p => {
-    let bank = p.classList.contains('winner') ? Number(p.querySelector('.bank').innerText) + total : Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
+      let bank = p.classList.contains('winner') ? Number(p.querySelector('.bank').innerText) + total : Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
 	    
-    bank = bank <= 0 ? 0 : bank;
-    banks.push(bank);
+      bank = bank <= 0 ? 0 : bank;
+      banks.push(bank);
     
-    if (bank === 0) p.classList.add('out');
-  });
+      if (bank === 0) p.classList.add('out');
+    });
   }, 250);
-  
-  winning_bank.innerText = Number(winning_bank.innerText) + total;
 	
   setTimeout(() => {
     localStorage.banks = banks;
