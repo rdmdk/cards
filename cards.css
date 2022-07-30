@@ -175,7 +175,6 @@ h3 span ~ span {margin-left: 0.25rem}
 	position: absolute;
 	top: 0;
 	right: 0;
-	z-index: 10;
 }
 
 .high_roller .hand::before {
@@ -184,6 +183,8 @@ h3 span ~ span {margin-left: 0.25rem}
 }
 
 .active .hand {box-shadow: 0 0 1rem white}
+
+.high_roller.active .hand::before {text-shadow: 0 0 0.1em}
 
 .card {
 	font-size: 1rem;
