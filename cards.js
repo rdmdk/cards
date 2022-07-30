@@ -88,7 +88,7 @@ function winnings() {
       banks = [];
   
   players.forEach(p => {
-	  const source = m.querySelector('.payday')) m.querySelector('.bank') : m.querySelector('.bet');
+	  const source = m.querySelector('.payday') ? m.querySelector('.bank') : m.querySelector('.bet');
 	  total += Number(source.innerText);
   });
 
