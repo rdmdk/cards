@@ -153,7 +153,7 @@ function high_roller() {
         highroller = m.querySelector('.high_roller');
   
   if (highroller) highroller.classList.remove('high_roller');
-  if (max !== min) players[banks.indexOf(max)].classList.add('high_roller');
+  if (max !== min && banks.filter(b => b === max).length === 1) players[banks.indexOf(max)].classList.add('high_roller');
 }
 
 function game_over(a) {
