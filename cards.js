@@ -62,7 +62,7 @@ function stand(a) {
 }
 
 function blackjack(a) {
-  if (a.querySelector('.card[class$="7"]').length === 3) a.classList.add('payday');
+  if (a.querySelectorAll('.card[class$="7"]').length === 3) a.classList.add('payday');
   a.classList.add('blackjack', 'done');
   a.querySelector('h2').innerHTML = '&nbsp;<em>blackjack!</em>';
 }
