@@ -57,6 +57,8 @@ main::after {
 
 main::before {
 	width: 0;
+	height: 2px;
+	border-radius: 50%;
 	transition: width 2.5s ease-in-out 2s;
 	left: 25vw;
 }
@@ -69,7 +71,6 @@ main::after {
 .over:not(.end)::before {
 	background: rgb(255 255 255 / 75%);
 	width: 50vw;
-	height: 2px;
 	display: block;
 	bottom: 1rem;
 }
@@ -186,7 +187,7 @@ h3 span ~ span {margin-left: 0.25rem}
 
 .card {
 	font-size: 1rem;
-	background: rgb(255 255 255 / 90%);
+	background: #fafafa;
 	color: black;
 	width: 2.5em;
 	height: 3.5em;
@@ -202,6 +203,7 @@ h3 span ~ span {margin-left: 0.25rem}
 .card:last-child {z-index: 5}
 
 .card ~ .card {
+	background: rgb(255 255 255 / 95%);
 	transition: filter 0.4s ease, transform 0.4s ease;
 	position: absolute;
 	top: 0;
