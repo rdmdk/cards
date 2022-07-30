@@ -94,6 +94,8 @@ function winnings() {
 	  const source = m.querySelector('.payday') ? m.querySelector('.bank') : m.querySelector('.bet');
 	  total += Number(source.innerText);
   });
+	
+  console.log(total);
 
   setTimeout(() => {
     const winning_bank = m.querySelector('.winner .bank');
@@ -104,6 +106,9 @@ function winnings() {
       let bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
 	    
       bank = bank <= 0 ? 0 : bank;
+	    
+      console.log(bank);
+
       banks.push(bank);
 	    
       if (bank === 0) p.classList.add('out');
