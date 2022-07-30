@@ -167,10 +167,10 @@ h3 span ~ span {margin-left: 0.25rem}
 
 .hand::before {
 	content: "♕";
-	font-size: 2.25rem;
+	font-size: 1.66rem;
 	line-height: 1;
 	color: gold;
-	transform: translate(56%, -100%) rotate(30deg);
+	transform: translate(53%, -100%) rotate(30deg);
 	filter: opacity(0);
 	transition: transform 1s ease, filter 1s ease, text-shadow 0.6s ease;
 	position: absolute;
@@ -180,7 +180,7 @@ h3 span ~ span {margin-left: 0.25rem}
 
 .high_roller .hand::before {
 	filter: opacity(1);
-	transform: translate(56%, -73%) rotate(30deg);
+	transform: translate(53%, -72%) rotate(30deg);
 }
 
 .active .hand {box-shadow: 0 0 1rem white}
