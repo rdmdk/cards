@@ -155,8 +155,9 @@ function game_over(a) {
 		let total = 0;
 
 		players.forEach(p => {
-			const h2 = p.querySelector('h2').innerText;
-			const player_total = !isNaN(h2) ? Number(p.querySelector('h2').innerText) : -1;
+			const h2 = p.querySelector('h2').innerText,
+			      player_total = !isNaN(h2) ? Number(p.querySelector('h2').innerText) : -1,
+			      player_bank = Number(p.querySelector('.bank').innerText);
 
 			if (p.classList.contains('high_roller') && player_total >= total || !p.classList.contains('out') && player_total > total) {
 				total = player_total;
@@ -165,7 +166,7 @@ function game_over(a) {
 				p.classList.add('winner');
 			}
 			
-			//if (player_total <= 0) p.classList.add('out');
+			if (player_bank === 0) p.classList.add('out');
 		});
 	}
 	
