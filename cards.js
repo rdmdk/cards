@@ -62,6 +62,7 @@ function stand(a) {
 }
 
 function blackjack(a) {
+  if (a.querySelector('.card[class$="7"]').length === 3) a.classList.add('payday');
   a.classList.add('blackjack', 'done');
   a.querySelector('h2').innerHTML = '&nbsp;<em>blackjack!</em>';
 }
@@ -86,7 +87,10 @@ function winnings() {
   let total = 0,
       banks = [];
   
-  players.forEach(p => total += Number(p.querySelector('.bet').innerText));
+  players.forEach(p => {
+	  const source = m.querySelector('.payday')) '.bank' : '.bet';
+	  total += Number(p.querySelector(source).innerText);
+  });
 
   setTimeout(() => {
     const winning_bank = m.querySelector('.winner .bank');
@@ -94,9 +98,11 @@ function winnings() {
     winning_bank.innerText = Number(winning_bank.innerText) + total;
     
     players.forEach(p => {
-      const bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
+      let bank = Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
 	    
+      bank = bank <= 0 ? 0 : bank;
       banks.push(bank);
+	    
       if (bank === 0) p.classList.add('out');
     });
     
