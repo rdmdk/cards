@@ -158,12 +158,14 @@ function game_over(a) {
 			const h2 = p.querySelector('h2').innerText;
 			const player_total = !isNaN(h2) ? Number(p.querySelector('h2').innerText) : -1;
 
-			if (!p.classList.contains('out') && player_total > total) {
+			if (p.classList.contains('high_roller') && player_total >= total || !p.classList.contains('out') && player_total > total) {
 				total = player_total;
 
 				if (m.querySelector('.winner')) m.querySelector('.winner').classList.remove('winner');
 				p.classList.add('winner');
 			}
+			
+			if (player_total <= 0) p.classList.add('out');
 		});
 	}
 	
