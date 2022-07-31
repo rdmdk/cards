@@ -182,10 +182,10 @@ function game_over(a) {
     const winner = m.querySelector('.winner');
     
     if (winner) {
-      winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
+      setTimeout(() => winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>', 1e3);
       setTimeout(() => winnings(), 250);
     } else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
-  }, 1500);
+  }, 500);
   
   setTimeout(() => {
     if (m.querySelectorAll('.out').length + 1 === players.length) {
