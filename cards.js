@@ -191,8 +191,8 @@ function game_over(a) {
     if (m.querySelectorAll('.out').length + 1 === players.length) {
       m.classList.add('end');
       localStorage.clear();
-    } else setTimeout(() => window.location.reload(), 2500);
-  }, 2e3);
+    } else setTimeout(() => window.location.reload(), 4400);
+  }, 100);
 }
 
 if (localStorage.banks) high_roller();
