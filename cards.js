@@ -106,12 +106,12 @@ function winnings() {
     
       if (bank === 0) p.classList.add('out');
     });
-  }, 250);
+  }, 100);
 	
   setTimeout(() => {
     localStorage.banks = banks;
     high_roller();
-  }, 500);
+  }, 250);
 }
 
 function next_turn() {
@@ -182,8 +182,8 @@ function game_over(a) {
     const winner = m.querySelector('.winner');
     
     if (winner) {
+      winnings();
       setTimeout(() => winner.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>', 1e3);
-      setTimeout(() => winnings(), 250);
     } else players.forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Draw</em>');
   }, 500);
   
