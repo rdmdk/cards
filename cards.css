@@ -372,12 +372,12 @@ button ~ button {margin-left: 0.2rem}
 
 .hold button {pointer-events: none}
 
-.hint {animation: hint 1.5s infinite}
+.hint {animation: hint 4s infinite}
 	
 @keyframes hint {
-	0% {box-shadow: 0 0 0 rgb(255 255 255 / 66%)}
-	70% {box-shadow: 0 0 0.33rem rgb(255 255 255 / 0%)}
-	100% {box-shadow: 0 0 0 rgb(255 255 255 / 0%)}
+	0% {box-shadow: 0 0 0 0 rgb(255 255 255 / 33%)}
+	20% {box-shadow: 0 0 0 0.33rem rgb(255 255 255 / 0%)}
+	100% {box-shadow: 0 0 0 0 rgb(255 255 255 / 0%)}
 }
 
 @media (orientation: landscape) {
