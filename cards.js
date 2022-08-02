@@ -7,7 +7,8 @@ const m = document.querySelector('main'),
 let deck = localStorage.deck && localStorage.deck.split(',').length > 15 ? localStorage.deck.split(',') : [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5),
     r = window.location.search ? Number(window.location.search.substring(1)) : localStorage.players ? Number(localStorage.players) : Math.floor(Math.random() * (12 - 2) + 2),
     players,
-    buttons;
+    buttons,
+    si;
 
 localStorage.deck = deck;
 
@@ -155,6 +156,8 @@ function next_turn() {
           iii = ++ii % players.length;
 
       players[iii].classList.add('active');
+      clearInterval(si);
+      si = setTimeout(() => hint(), 4e3);
 
       if (condition) game_over();
       else if (players[iii].classList.contains('done')) next_turn();
