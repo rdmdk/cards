@@ -57,6 +57,7 @@ function hit(a) {
   }, 50);
   
   deck.shift();
+  localStorage.deck = deck;
 }
 
 function stand(a) {
