@@ -50,7 +50,7 @@ function draw() {
   }
 }
 
-draw();
+if (localStorage.banks) draw();
 
 function hit(a) {
   const hand = a.querySelector('.hand');
