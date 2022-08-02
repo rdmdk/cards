@@ -184,8 +184,12 @@ function high_roller() {
 
 function hint() {
   if (m.querySelector('.hint')) m.querySelector('.hint').classList.remove('hint');
-		const active_player = m.querySelector('.active'),
-    total = Number(active_player.querySelector('h2').innerText);
+	
+	const active_player = m.querySelector('.active'),
+				total = Number(active_player.querySelector('h2').innerText),
+				hit = active_player.querySelector('.hit'),
+				stand = active_player.querySelector('.stand'),
+				roller = m.querySelector('.high_roller');
   
   let button;
   
@@ -197,11 +201,15 @@ function hint() {
       other_total = player_total > other_total ? player_total : other_total;
     });
     
-    if (m.querySelector('.high_roller') && Number(m.querySelector('.high_roller h2').innerText) === total) button = active_player.querySelector('.hit');
-    else if (other_total > total) button = active_player.querySelector('.hit');
-    else button = active_player.querySelector('.stand');
+		if (roller) {
+			const high_total = Number(roller.querySelector('h2').innerText);
+			if (p === roller && player_total === high_total) button = stand;
+			else button = hit;
+				
+		} else if (other_total > total) button = hit;
+    else button = stand;
       
-  } else button = active_player.querySelector('.hit');
+  } else button = hit;
   
   if (button) button.classList.add('hint');
 }
