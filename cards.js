@@ -36,11 +36,17 @@ function draw() {
   const banks = localStorage.banks.split(','),
         b1 = banks.filter(b => b != 0),
         b2 = new Set(b1).size === 1;
-  
-  if (b2 && window.confirm('Care to draw and split the winnings?')) {
-    m.querySelectorAll('.player:not(.out)').forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Winner!</em>');
-    localStorage.clear();
-  }
+	
+  if (b2) {
+    m.classList.add('hold');
+    
+    setTimeout(() => {
+      if (window.confirm('Care to draw and split the winnings?')) {
+        m.querySelectorAll('.player:not(.out)').forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Winner!</em>');
+        localStorage.clear();
+        window.location.reload();
+      }
+  }, 2e3);
 }
 
 draw();
