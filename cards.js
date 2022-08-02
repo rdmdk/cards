@@ -180,9 +180,8 @@ function high_roller() {
 }
 
 function hint() {
-  m.querySelector('.hint').classList.remove('hint');
-  
-	const active_player = m.querySelector('active'),
+  if (m.querySelector('.hint')) m.querySelector('.hint').classList.remove('hint');
+		const active_player = m.querySelector('.active'),
     total = Number(active_player.querySelector('h2').innerText);
   
   let button;
