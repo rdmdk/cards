@@ -135,11 +135,11 @@ function winnings() {
 
 function next_turn() {
   const active_player = m.querySelector('.active'),
-        to = m.querySelectorAll('.done').length + 1 === players.length ? 100 : 400;
+        to = m.querySelectorAll('.done').length + 1 === players.length ? 100 : 200;
   
   active_player.classList.remove('active');
   m.classList.add('hold');
-  setTimeout(() => m.classList.remove('hold'), 400);
+  setTimeout(() => m.classList.remove('hold'), to);
     
   setTimeout(() => {
     let condition = m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.busted, .out').length + 1 === players.length;
@@ -163,7 +163,7 @@ function next_turn() {
   
   if (m.hasAttribute('style')) m.removeAttribute('style');
 	
-	if (!deck.length) {
+  if (!deck.length) {
     deck = [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5);
     localStorage.deck = deck;
   }
