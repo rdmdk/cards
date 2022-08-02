@@ -203,7 +203,7 @@ function hint() {
     
 		if (roller) {
 			const high_total = Number(roller.querySelector('h2').innerText);
-			if (active_player === roller && player_total === total) button = stand;
+			if (active_player === roller && total === other_total) button = stand;
 			else button = hit;
 				
 		} else if (other_total > total) button = hit;
