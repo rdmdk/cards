@@ -58,7 +58,7 @@ main::after {
 main::before {
 	width: 0;
 	height: 2px;
-	border-radius: 25%;
+	border-radius: 1px;
 	transition: width 1.5s ease-in-out 3s;
 	left: 25vw;
 }
