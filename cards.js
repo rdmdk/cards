@@ -46,7 +46,7 @@ function draw() {
         localStorage.clear();
         window.location.reload();
       }
-  }, 2e3);
+  }, 3e3);
 }
 
 draw();
