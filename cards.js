@@ -256,6 +256,8 @@ players.forEach(p => {
   }
 });
 
+hint();
+
 [...players].filter(p => !p.classList.contains('done'))[0].classList.add('active');
 
 if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) {
