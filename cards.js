@@ -256,14 +256,14 @@ players.forEach(p => {
   }
 });
 
-hint();
-
 [...players].filter(p => !p.classList.contains('done'))[0].classList.add('active');
 
 if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) {
   game_over();
   localStorage.clear();
 }
+
+hint();
 
 buttons.forEach(b => {
   const player = b.closest('.player');
