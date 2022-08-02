@@ -179,6 +179,31 @@ function high_roller() {
   if (max !== min && banks.filter(b => b === max).length === 1) players[banks.indexOf(max)].classList.add('high_roller');
 }
 
+function hint() {
+  m.querySelector('.hint').classList.remove('hint');
+  
+	const active_player = m.querySelector('active'),
+    total = Number(active_player.querySelector('h2').innerText);
+  
+  let button;
+  
+  if (total >= 14) {
+    let other_total = 0;
+    
+    m.querySelectorAll('.player:not(.active)').forEach(p => {
+      const player_total = Number(p.querySelector('h2').innerText);
+      other_total = player_total > other_total ? player_total : other_total;
+    });
+    
+    if (m.querySelector('.high_roller') && Number(m.querySelector('.high_roller h2').innerText) === total) button = active_player.querySelector('.hit');
+    else if (other_total > total) button = active_player.querySelector('.hit');
+    else button = active_player.querySelector('.stand');
+      
+  } else button = active_player.querySelector('.hit');
+  
+  if (button) button.classList.add('hint');
+}
+
 function game_over(a) {
   m.classList.add('over');
 
