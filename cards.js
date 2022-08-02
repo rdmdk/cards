@@ -40,6 +40,11 @@ function hit(a) {
   const hand = a.querySelector('.hand');
   let total = 0;
 
+  if (!deck.length) {
+    deck = [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5);
+    localStorage.deck = deck;
+  }
+	
   hand.insertAdjacentHTML('beforeend', '<span style class="' + deck[0] + ' card"><span></span></span>');
   
   setTimeout(() => {
