@@ -28,13 +28,22 @@ for (i = 0; i < r; i++) {
 players = m.querySelectorAll('.player');
 buttons = m.querySelectorAll('button');
 
-if (localStorage.winner) {
-  if (localStorage.jackpot) players[localStorage.winner].querySelector('h3 .bank').innerText = localStorage.jackpot;
-}
-
 if (players.length > 2 && players.length % 2 === 0 || players.length > 3) m.classList.add('grid');
 
 document.querySelector('html').dataset.players = players.length;
+
+function draw() {
+  const banks = localStorage.banks.split(','),
+        b1 = banks.filter(b => b != 0),
+        b2 = new Set(b1).size === 1;
+  
+  if (b2 && window.prompt('Care to draw and split the winnings?')) {
+    m.querySelectorAll('.player:not(.out)').forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Winner!</em>');
+    localStorage.clear();
+  }
+}
+
+draw();
 
 function hit(a) {
   const hand = a.querySelector('.hand');
