@@ -375,8 +375,18 @@ button ~ button {margin-left: 0.2rem}
 .hint {animation: hint 1.5s infinite}
 	
 @keyframes hint {
-	0%, 100% {box-shadow: none}
-	50% {box-shadow: 0 0 1rem rgb(255 255 255 / 33%)}
+	0% {
+		box-shadow: 0 0 0 rgb(255 255 255 / 33%);
+    transform: scale(0.95);
+  }
+	70% {
+    box-shadow: 0 0 1rem rgb(255 255 255 / 0%);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 0 rgb(255 255 255 / 0%);
+    transform: scale(0.95);
+  }
 }
 
 @media (orientation: landscape) {
