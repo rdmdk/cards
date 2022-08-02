@@ -242,7 +242,7 @@ h3 span ~ span {margin-left: 0.25rem}
 	font-size: 0.4em;
 	line-height: 1;
 	word-break: break-all;
-	width: 1em;
+	width: 0.9em;
 	padding: 0.6em;
 	position: absolute;
 }
