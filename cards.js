@@ -202,16 +202,9 @@ function hint() {
     }
   });
   
-  if (other_total === active_total) {
-    if (active_player.classList.contains('high_roller')) button = stand;
-    else {
-      const active_index = [...players].indexOf(m.querySelector('.player.active')),
-            next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText === other_total && !p.classList.contains('active'))[0]);
-      button = next_index > active_index ? stand : hit;
-    }
-  } else if (player1) button = hit;
-  else if (active_total >= 14) {
-    if (active_player.classList.contains('high_roller') && !player1) button = stand;
+  if (active_total >= 14 || active_total === other_total) {
+    if (active_player.classList.contains('high_roller') && active_total < other_total) button = hit;
+    else if (active_player.classList.contains('high_roller')) button = stand;
     else {
       const active_index = [...players].indexOf(m.querySelector('.player.active')),
             next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText === other_total && !p.classList.contains('active'))[0]);
