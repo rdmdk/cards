@@ -186,31 +186,31 @@ function hint() {
   if (m.querySelector('.hint')) m.querySelector('.hint').classList.remove('hint');
 	
 	const active_player = m.querySelector('.active'),
-				active_total = Number(active_player.querySelector('h2').innerText),
+				active_total = active_player.querySelector('h2').innerText,
 				hit = active_player.querySelector('.hit'),
-				stand = active_player.querySelector('.stand'),
-				roller = m.querySelector('.high_roller');
+				stand = active_player.querySelector('.stand');
   
-  let button;
+  let button, other_total = 0, player1, player2;
   
-  if (active_total >= 14) {
-    let other_total = 0;
+  m.querySelectorAll('.player:not(.active)').forEach(p => {
+    const player_total = p.querySelector('h2').innerText;
     
-    m.querySelectorAll('.player:not(.active)').forEach(p => {
-      const player_total = Number(p.querySelector('h2').innerText);
-      other_total = player_total > other_total ? player_total : other_total;
-    });
-    
-		if (roller) {
-			const high_total = Number(roller.querySelector('h2').innerText);
-      
-			if (active_player === roller && active_total >= other_total) button = stand;
-			else button = hit;
-				
-		} else if (other_total > active_total) button = hit;
-    else button = stand;
-      
-  } else button = hit;
+    if (player_total > other_total) {
+      other_total = player_total;
+      if (player1) player2 = p;
+      else player1 = p;
+    }
+  });
+  
+  if (other_total === active_total) {
+    if (active_player.classList.contains('high_roller')) button = stand;
+    else {
+      const active_index = [...players].indexOf(m.querySelector('.player.active')),
+            next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText === other_total && !p.classList.contains('active'))[0]);
+      button = next_index > active_index ? stand : hit;
+    }
+  } else if (player1) button = hit;
+  else button = stand;
   
   if (button) button.classList.add('hint');
 }
