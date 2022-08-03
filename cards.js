@@ -194,7 +194,7 @@ function hint() {
   let button, total = 0;
   
   m.querySelectorAll('.player h2').forEach(h => {
-    const player_total = h.innerText;
+    const player_total = Number(h.innerText);
     if (player_total > total) total = player_total;
   });
   	
