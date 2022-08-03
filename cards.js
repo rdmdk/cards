@@ -190,10 +190,10 @@ function hint() {
 				hit = active_player.querySelector('.hit'),
 				stand = active_player.querySelector('.stand');
   
-  let button, total = 0, player1;
+  let button, total = 0;
   
-  m.querySelectorAll('.player').forEach(p => {
-    const player_total = p.querySelector('h2').innerText;
+  m.querySelectorAll('.player h2').forEach(h => {
+    const player_total = h.innerText;
     total = player_total > total ? player_total : total;
   });
   	
