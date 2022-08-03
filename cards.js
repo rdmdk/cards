@@ -209,7 +209,8 @@ function hint() {
             next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText === other_total && !p.classList.contains('active'))[0]);
       button = next_index > active_index ? stand : hit;
     }
-  } else button = hit;
+  } else if (active_total > other_total) button = stand;
+	else button = hit;
   
   if (button) button.classList.add('hint');
 }
