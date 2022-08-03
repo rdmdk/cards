@@ -198,7 +198,7 @@ function hint() {
     if (player_total > total) total = player_total;
   });
   	
-  if (total < 14) button = hit;
+  if (total < 14 || active_total < total) button = hit;
 	else if (active_total === total) {
 		if (active_player.classList.contains('high_roller')) button = stand;
 		else {
@@ -206,8 +206,7 @@ function hint() {
             next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText === total && !p.classList.contains('active'))[0]);
       button = next_index >= 0 && active_index > next_index ? hit : stand;
     }
-	} else if (active_total < total) button = hit;
-	else button = stand;
+	} else button = stand;
   
   if (button) button.classList.add('hint');
 }
