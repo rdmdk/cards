@@ -193,7 +193,7 @@ function hint() {
   
   let button;
   
-  if (total >= 14) {
+  if (active_total >= 14) {
     let other_total = 0;
     
     m.querySelectorAll('.player:not(.active)').forEach(p => {
