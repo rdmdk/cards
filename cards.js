@@ -190,27 +190,23 @@ function hint() {
 				hit = active_player.querySelector('.hit'),
 				stand = active_player.querySelector('.stand');
   
-  let button, other_total = 0, player1;
+  let button, total = 0, player1;
   
-  m.querySelectorAll('.player:not(.active)').forEach(p => {
+  m.querySelectorAll('.player').forEach(p => {
     const player_total = p.querySelector('h2').innerText;
-    
-    if (player_total > other_total) {
-      other_total = player_total;
-      player1 = p;
-    }
+    total = player_total > total ? player_total : total;
   });
-  
-  if (active_total >= 14 || active_total === other_total) {
-    if (active_player.classList.contains('high_roller') && active_total < other_total) button = hit;
-    else if (active_player.classList.contains('high_roller')) button = stand;
-    else {
+  	
+  if (total < 14) button = hit;
+	else if (active_total === total) {
+		if (active_player.classList.contains('high_roller')) button = stand;
+		else {
       const active_index = [...players].indexOf(m.querySelector('.player.active')),
-            next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText === other_total && !p.classList.contains('active'))[0]);
-      button = next_index > active_index ? stand : hit;
+            next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText === total && !p.classList.contains('active'))[0]);
+      button = next_index >= 0 && active_index > next_index ? hit : stand;
     }
-  } else if (active_total > other_total) button = stand;
-	else button = hit;
+	} else if (active_total < total) button = hit;
+	else button = stand;
   
   if (button) button.classList.add('hint');
 }
