@@ -203,7 +203,7 @@ function hint() {
 		if (active_player.classList.contains('high_roller')) button = stand;
 		else {
       const active_index = [...players].indexOf(m.querySelector('.player.active')),
-            next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText === total && !p.classList.contains('active'))[0]);
+            next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText == total && !p.classList.contains('active'))[0]);
       button = next_index >= 0 && active_index > next_index ? hit : stand;
     }
 	} else button = stand;
