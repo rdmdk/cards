@@ -204,7 +204,11 @@ function hint() {
 		else {
       const active_index = [...players].indexOf(m.querySelector('.player.active')),
             next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText == total && !p.classList.contains('active'))[0]);
-      button = next_index >= 0 && active_index > next_index ? hit : stand;
+      
+      if (next_index !== -1) {
+        if (players[next_index].classList.contains('high_roller') || active_index > next_index) button = hit;
+        else button = stand;
+      }
     }
 	} else button = stand;
   
