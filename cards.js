@@ -158,8 +158,8 @@ function next_turn() {
           iii = ++ii % players.length;
 
       players[iii].classList.add('active');
-      clearInterval(si);
-      si = setTimeout(() => hint(), 4e3);
+      //clearInterval(si);
+      //si = setTimeout(() => hint(), 4e3);
 
       if (condition) game_over();
       else if (players[iii].classList.contains('done')) next_turn();
