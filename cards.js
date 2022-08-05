@@ -273,7 +273,7 @@ if ([...players].filter(p => p.classList.contains('done')).length + 1 === player
   localStorage.clear();
 }
 
-hint();
+//hint();
 
 buttons.forEach(b => {
   const player = b.closest('.player');
