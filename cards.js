@@ -99,7 +99,7 @@ function bust(a) {
 function bet(a) {
   const banks = localStorage.banks ? localStorage.banks.split(',') : Array(r).fill(100),
         bank = Number(banks[[...players].indexOf(a)]),
-        betting = Math.floor((Math.random() * (bank - 5) + 5) / 5) * 5 : bank <= 10 ? 5 : 5;
+        betting = bank <= 10 ? 5 : Math.floor((Math.random() * (bank - 5) + 5) / 5) * 5;
             
   a.querySelector('.bank').innerText = bank;
   a.querySelector('.bet').innerText = betting;
