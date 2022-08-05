@@ -121,7 +121,7 @@ function winnings() {
     
   setTimeout(() => {
     players.forEach(p => {
-      let bank = p.classList.contains('winner') ? Number(p.querySelector('.bank').innerText) + total : p.classList.contains('busted') ? Number(p.querySelector('.bank').innerText) - (Number(p.querySelector('.bet').innerText) * 2) :  Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet');
+      let bank = p.classList.contains('winner') ? Number(p.querySelector('.bank').innerText) + total : p.classList.contains('busted') ? Number(p.querySelector('.bank').innerText) - (Number(p.querySelector('.bet').innerText) * 2) :  Number(p.querySelector('.bank').innerText) - Number(p.querySelector('.bet').innerText);
 	    
       bank = bank <= 0 ? 0 : bank;
       banks.push(bank);
