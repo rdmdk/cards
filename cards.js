@@ -113,7 +113,7 @@ function winnings() {
   let total = 0,
       banks = [];
   
-  players.forEach(p => {
+  [...players].filter(p => !p.classList.contains('out')).forEach(p => {
     const source = payday ? p.querySelector('.bank') : p.querySelector('.bet');
     
     total += p.classList.contains('winner') ? 0 : !payday && p.classList.contains('busted') ? Number(source.innerText) * 2 : Number(source.innerText);
