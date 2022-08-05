@@ -99,7 +99,7 @@ function bust(a) {
 function bet(a) {
   const banks = localStorage.banks ? localStorage.banks.split(',') : Array(r).fill(100),
         bank = Number(banks[[...players].indexOf(a)]),
-        betting = bank <= 10 ? 5 : Math.floor((Math.random() * (bank - 5) + 5) / 5) * 5;
+        betting = bank <= 10 ? 5 : Math.floor((Math.random() * ((bank / 2) - 5) + 5) / 5) * 5;
             
   a.querySelector('.bank').innerText = bank;
   a.querySelector('.bet').innerText = betting;
@@ -115,7 +115,8 @@ function winnings() {
   
   players.forEach(p => {
     const source = payday ? p.querySelector('.bank') : p.querySelector('.bet');
-	  total += p.classList.contains('winner') ? 0 : Number(source.innerText);
+    
+    total += p.classList.contains('winner') ? 0 : !payday && p.classList.contains('busted') ? Number(source.innerText) * 2 : Number(source.innerText);
   });
     
   setTimeout(() => {
