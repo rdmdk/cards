@@ -46,7 +46,6 @@ function draw() {
       if (window.confirm('Care to draw and split the winnings?')) {
         m.querySelectorAll('.player:not(.out)').forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Winner!</em>');
         localStorage.clear();
-        setTimeout(() => window.location.reload(), 4e3);
         
       } else m.classList.remove('hold');
     }, 2e3);
