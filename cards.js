@@ -46,8 +46,9 @@ function draw() {
       if (window.confirm('Care to draw and split the winnings?')) {
         m.querySelectorAll('.player:not(.out)').forEach(p => p.querySelector('h2').innerHTML = '&nbsp;<em>Winner!</em>');
         localStorage.clear();
-        window.location.reload();
-      }
+        setTimeout(() => window.location.reload(), 4e3);
+        
+      } else m.classList.remove('hold');
     }, 2e3);
   }
 }
@@ -200,8 +201,8 @@ function hint() {
   	
   if (total < 14 || active_total < total) button = hit;
 	else if (active_total === total) {
-		if (active_player.classList.contains('high_roller')) button = stand;
-		else {
+	if (active_player.classList.contains('high_roller')) button = stand;
+	else {
       const active_index = [...players].indexOf(m.querySelector('.player.active')),
             next_index = [...players].indexOf([...players].filter(p => p.querySelector('h2').innerText == total && !p.classList.contains('active'))[0]);
       
