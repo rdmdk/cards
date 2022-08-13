@@ -52,8 +52,6 @@ function draw() {
   }
 }
 
-if (localStorage.banks) draw();
-
 function hit(a) {
   const hand = a.querySelector('.hand');
   let total = 0;
@@ -256,7 +254,11 @@ function game_over(a) {
   }, 2e3);
 }
 
-if (localStorage.banks) high_roller();
+if (localStorage.banks) {
+	if (eval(localStorage.banks.replace(/,/g,'+')) % 2 !== 0} localStorage.banks = localStorage.banks.replace(/(\d{1,2})5/, '$10');
+	draw();
+	high_roller();
+}
 
 players.forEach(p => {
   if (p.classList.contains('out')) p.classList.add('done');
