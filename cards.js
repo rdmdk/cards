@@ -255,7 +255,7 @@ function game_over(a) {
 }
 
 if (localStorage.banks) {
-	if (eval(localStorage.banks.replace(/,/g,'+')) % 2 !== 0} localStorage.banks = localStorage.banks.replace(/(\d{1,2})5/, '$10');
+	if (eval(localStorage.banks.replace(/,/g,'+')) % 2 !== 0) localStorage.banks = localStorage.banks.replace(/(\d{1,2})5/, '$10');
 	draw();
 	high_roller();
 }
