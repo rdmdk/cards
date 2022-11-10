@@ -125,6 +125,7 @@ function winnings() {
       banks.push(bank);
     
       if (bank === 0) p.classList.add('out');
+      else if (bank === 5) p.classList.add('poor');
     });
   }, 100);
 	
@@ -179,7 +180,13 @@ function high_roller() {
         highroller = m.querySelector('.high_roller');
   
   if (highroller) highroller.classList.remove('high_roller');
-  if (max !== min && banks.filter(b => b === max).length === 1) players[banks.indexOf(max)].classList.add('high_roller');
+  if (max !== min && banks.filter(b => b === max).length === 1) {
+	  const hr = players[banks.indexOf(max)];
+	  if (hr.classList.contains('poor')) {
+		  hr.classList.remove('poor')
+		  hr.classList.add('high_roller', 'cinderella');
+	  } else hr.classList.add('high_roller');
+  }
 }
 
 function hint() {
