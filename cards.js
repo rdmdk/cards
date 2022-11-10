@@ -187,6 +187,9 @@ function high_roller() {
 		  hr.classList.add('high_roller', 'cinderella');
 	  } else hr.classList.add('high_roller');
   }
+  for (i = 0; i < banks.length; i++) {
+    if (banks[i] == 5) players[i].classList.add('poor');
+  }
 }
 
 function hint() {
