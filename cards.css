@@ -115,6 +115,21 @@ html[data-players="12"] .grid {grid-template-columns: repeat(3, auto)}
 
 .out {filter: opacity(0.25)}
 
+.cinderella::after {
+	content: "";
+	font-size: 1rem;
+	letter-spacing: 1em;
+	text-align: center;
+	text-shadow: 0 0 1em;
+	color: #fff;
+	width: 100%;
+	animation sparkle 1.5s linear forwards;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 h2 {
 	font-size: 0.75rem;
 	color: #fff;
@@ -380,6 +395,36 @@ button ~ button {margin-left: 0.2rem}
 	0% {box-shadow: 0 0 0 0 rgb(255 255 255 / 33%)}
 	20% {box-shadow: 0 0 0 0.33rem rgb(255 255 255 / 0%)}
 	100% {box-shadow: 0 0 0 0 rgb(255 255 255 / 0%)}
+}
+
+@keyframes sparkle {
+	0% {
+		content: "⋇⋆✦⋆⋇";
+		filter: opacity(0);
+		top: 0;
+	}
+	20% {
+		content: "✧⋆⋇⋆✧";
+		filter: none;
+		top: 20%;
+	}
+	40% {
+		content: "⋇⋆✦⋆⋇";
+		top: 40%;
+	}
+	60% {
+		content: "✧⋆⋇⋆✧";
+		top: 60%;
+	}
+	80% {
+		content: "⋇⋆✦⋆⋇";
+		top: 80%;
+	}
+	100% {
+		content: "✧⋆⋇⋆✧";
+		filter: opacity(0);
+		top: 100%;
+	}
 }
 
 @media (orientation: landscape) {
