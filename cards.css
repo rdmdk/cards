@@ -120,10 +120,10 @@ html[data-players="12"] .grid {grid-template-columns: repeat(3, auto)}
 	font-size: 1rem;
 	letter-spacing: 1em;
 	text-align: center;
-	text-shadow: 0 0 1em;
-	color: #fff;
+	text-shadow: 0 0 1em #7cffea;
+	color: #fff7c1;
 	width: 100%;
-	animation: sparkle 1.5s linear forwards;
+	animation: sparkle 2s linear forwards;
 	display: block;
 	position: absolute;
 	top: 0;
