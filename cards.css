@@ -146,6 +146,8 @@ main[style] h3 {filter: opacity(1)}
 
 h3 .bet {filter: opacity(0.8)}
 
+.done h3 .bet {display: none}
+
 h3 .bank {filter: opacity(0.6)}
 
 h3 span::before {
@@ -154,7 +156,7 @@ h3 span::before {
 	vertical-align: bottom;
 }
 
-h3 span ~ span {margin-left: 0.25rem}
+h3 span:first-child {margin-right: 0.25rem}
 
 .hand {
 	text-align: center;
