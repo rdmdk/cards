@@ -47,7 +47,7 @@ function draw() {
         m.querySelectorAll('.player:not(.out)').forEach(p => {
 		p.classList.remove('active');
 		p.classList.add('winner', 'done');
-		p.querySelector('h2').innerHTML = '&nbsp;<em>Winner!</em>');
+		p.querySelector('h2').innerHTML = '&nbsp;<em>Winner!</em>';
 	});
         localStorage.clear();
         
