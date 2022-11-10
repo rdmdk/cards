@@ -117,7 +117,7 @@ html[data-players="12"] .grid {grid-template-columns: repeat(3, auto)}
 
 .cinderella::after {
 	content: "";
-	font-size: 1rem;
+	font-size: 0.615rem;
 	letter-spacing: 1em;
 	text-align: center;
 	text-shadow: 0 0 1em #7cffea;
