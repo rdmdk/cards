@@ -125,7 +125,6 @@ function winnings() {
       banks.push(bank);
     
       if (bank === 0) p.classList.add('out');
-      else if (bank === 5) p.classList.add('poor');
     });
   }, 100);
 	
