@@ -183,7 +183,7 @@ function high_roller() {
   if (max !== min && banks.filter(b => b === max).length === 1) {
 	  const hr = players[banks.indexOf(max)];
 	  if (hr.classList.contains('poor')) {
-		  hr.classList.remove('poor')
+		  hr.classList.remove('poor');
 		  hr.classList.add('high_roller', 'cinderella');
 	  } else hr.classList.add('high_roller');
   }
