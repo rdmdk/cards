@@ -9,7 +9,9 @@ let deck = localStorage.deck && localStorage.deck.split(',').length > 15 ? local
     r = window.location.search ? Number(window.location.search.substring(1)) : localStorage.players ? Number(localStorage.players) : Math.floor(Math.random() * (12 - 2) + 2),
     players,
     buttons,
-    si;
+    si,
+    start_time = localStorage.start_time ? localStorage.start_time : new Date().getTime(),
+    end_time = localStorage.end_time ? localStorage.end_time : '';
 
 localStorage.deck = deck;
 
@@ -263,6 +265,7 @@ function game_over(a) {
   setTimeout(() => {
     if (m.querySelectorAll('.out').length + 1 === players.length) {
       m.classList.add('end');
+      console.log(localStorage.end_time - localStorage.start_time);
       localStorage.clear();
     } else setTimeout(() => window.location.reload(), 2500);
   }, 2e3);
