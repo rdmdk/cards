@@ -272,7 +272,7 @@ function game_over(a) {
 }
 
 function game_time(a, b) {
-	const date = new Date(a * 1000),
+	const date = new Date(a),
 	      d = date.getDays(),
 	      h = date.getHours(),
 	      m = date.getMinutes(),
