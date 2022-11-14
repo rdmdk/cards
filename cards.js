@@ -9,9 +9,9 @@ let deck = localStorage.deck && localStorage.deck.split(',').length > 15 ? local
     r = window.location.search ? Number(window.location.search.substring(1)) : localStorage.players ? Number(localStorage.players) : Math.floor(Math.random() * (12 - 2) + 2),
     players,
     buttons,
-    si,
-    start_time = localStorage.start_time ? localStorage.start_time : new Date().getTime(),
-    end_time = localStorage.end_time ? localStorage.end_time : '';
+    si;
+
+if (!localStorage.start_time) localStorage.start_time = new Date().getTime();
 
 localStorage.deck = deck;
 
@@ -265,10 +265,21 @@ function game_over(a) {
   setTimeout(() => {
     if (m.querySelectorAll('.out').length + 1 === players.length) {
       m.classList.add('end');
-      console.log(localStorage.end_time - localStorage.start_time);
+      game_time(localStorage.start_time, new Date().getTime());
       localStorage.clear();
     } else setTimeout(() => window.location.reload(), 2500);
   }, 2e3);
+}
+
+function game_time(a, b) {
+	const date = new Date(a * 1000),
+	      d = date.getDays(),
+	      h = date.getHours(),
+	      m = date.getMinutes(),
+	      s = date.getSeconds(),
+	      x = 'Game duration: ' + d + ' days, ' + h + ' hours, ' + m + ' minutes, ' + s + ' seconds';
+	
+	console.log(x);
 }
 
 if (localStorage.banks) {
