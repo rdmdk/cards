@@ -272,14 +272,19 @@ function game_over(a) {
 }
 
 function game_time(a, b) {
-	const date = new Date(a),
-	      d = date.getDays(),
-	      h = date.getHours(),
-	      m = date.getMinutes(),
-	      s = date.getSeconds(),
-	      x = 'Game duration: ' + d + ' days, ' + h + ' hours, ' + m + ' minutes, ' + s + ' seconds';
+	const start_date = new Date(a),
+	      s_d = start_date.getDay(),
+	      s_h = start_date.getHours(),
+	      s_m = start_date.getMinutes(),
+	      s_s = start_date.getSeconds(),
+	      end_date = new Date(b),
+	      e_d = end_date.getDay(),
+	      e_h = end_date.getHours(),
+	      e_m = end_date.getMinutes(),
+	      e_s = end_date.getSeconds(),
+	      x_y = 'Game duration: ' + (e_d - s_d) + ' days, ' + (e_h - s_h) + ' hours, ' + (e_m - s_m) + ' minutes, ' + (e_s - s_s) + ' seconds';
 	
-	console.log(x);
+	console.log(x_y);
 }
 
 if (localStorage.banks) {
