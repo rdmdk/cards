@@ -73,7 +73,7 @@ function hit(a) {
       c.removeAttribute('style');
     });
 	  
-    bet.innerText = Number(bet.innerText) === 5 ? 5 : Number(bet.innerText) - 5;
+    if (hand.querySelectorAll('.card').length > 1) bet.innerText = Number(bet.innerText) === 5 ? 5 : Number(bet.innerText) - 5;
     
     setTimeout(() => {
       if (total > 21) bust(a);
@@ -109,7 +109,7 @@ function bet(a) {
         bank = Number(banks[[...players].indexOf(a)]),
 	//min_bet = a.classList.contains('high_roller') ? bank * 0.25 : 5,
         //betting = bank <= 10 ? 5 : Math.floor((Math.random() * ((bank / 2) - min_bet) + min_bet) / 5) * 5;
-	betting = bank <= 10 ? 5 : Math.floor((bank / 3) / 5) * 5;
+	betting = bank <= 10 ? 5 : a.querySelector('.card[class*="a "]') ? Math.floor((bank / 2) / 5) * 5 : Math.floor((bank / 3) / 5) * 5;
             
   a.querySelector('.bank').innerText = bank;
   a.querySelector('.bet').innerText = betting;
