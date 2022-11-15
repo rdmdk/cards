@@ -60,7 +60,8 @@ function draw() {
 }
 
 function hit(a) {
-  const hand = a.querySelector('.hand');
+  const hand = a.querySelector('.hand'),
+	bet = hand.querySelector('.bet');
   let total = 0;
 	
   hand.insertAdjacentHTML('beforeend', '<span style class="' + deck[0] + ' card"><span></span></span>');
@@ -71,6 +72,8 @@ function hit(a) {
       total += value;
       c.removeAttribute('style');
     });
+	  
+    bet.innerText = Number(bet.innerText) - 5;
     
     setTimeout(() => {
       if (total > 21) bust(a);
@@ -104,8 +107,9 @@ function bust(a) {
 function bet(a) {
   const banks = localStorage.banks ? localStorage.banks.split(',') : Array(r).fill(100),
         bank = Number(banks[[...players].indexOf(a)]),
-	min_bet = a.classList.contains('high_roller') ? bank * 0.25 : 5,
-        betting = bank <= 10 ? 5 : Math.floor((Math.random() * ((bank / 2) - min_bet) + min_bet) / 5) * 5;
+	//min_bet = a.classList.contains('high_roller') ? bank * 0.25 : 5,
+        //betting = bank <= 10 ? 5 : Math.floor((Math.random() * ((bank / 2) - min_bet) + min_bet) / 5) * 5;
+	betting = bank <= 10 ? 5 : Math.floor((bank / 3) / 5) * 5;
             
   a.querySelector('.bank').innerText = bank;
   a.querySelector('.bet').innerText = betting;
