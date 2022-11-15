@@ -9,9 +9,15 @@ let deck = localStorage.deck && localStorage.deck.split(',').length > 15 ? local
     r = window.location.search ? Number(window.location.search.substring(1)) : localStorage.players ? Number(localStorage.players) : Math.floor(Math.random() * (12 - 2) + 2),
     players,
     buttons,
-    si;
+    si,
+    time = localStorage.time ? Number(localStorage.time) : 0;
 
 if (!localStorage.start_time) localStorage.start_time = new Date().getTime();
+
+setInterval(() => {
+	time++;
+	localStorage.time = time;
+}, 1e3);
 
 localStorage.deck = deck;
 
@@ -343,3 +349,8 @@ document.addEventListener('keydown', e => {
     }
   } else if (e.code === 'Space') window.location.reload();
 });
+
+if (time >= 3600 && window.confirm('This game has gone on long enough! Care to end it with a draw?')) {
+	draw();
+	localStorage.clear();
+}
