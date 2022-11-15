@@ -61,7 +61,7 @@ function draw() {
 
 function hit(a) {
   const hand = a.querySelector('.hand'),
-	bet = hand.querySelector('.bet');
+	bet = a.querySelector('.bet');
   let total = 0;
 	
   hand.insertAdjacentHTML('beforeend', '<span style class="' + deck[0] + ' card"><span></span></span>');
