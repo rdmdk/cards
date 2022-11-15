@@ -202,7 +202,7 @@ h3 span:first-child {margin-right: 0.25rem}
 
 .active .hand {box-shadow: 0 0 1rem white}
 
-.poor .hand {animation: shake 2s ease-in-out infinite}
+.poor .hand {animation: shake 1s ease-in-out infinite}
 
 .high_roller.active .hand::before {text-shadow: 0 0 0.33em}
 
@@ -400,8 +400,8 @@ button ~ button {margin-left: 0.2rem}
 }
 
 @keyframes shake {
-	0, 100% {transform: rotate(-5deg)}
-	50% {transform: rotate(5deg)}
+	0%, 100% {transform: rotate(-2deg)}
+	50% {transform: rotate(2deg)}
 }
 
 @keyframes sparkle {
