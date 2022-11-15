@@ -51,6 +51,7 @@ function draw() {
 		p.classList.add('winner', 'done');
 		p.querySelector('h2').innerHTML = '&nbsp;<em>Winner!</em>';
 	});
+	game_time(Number(localStorage.start_time), new Date().getTime());
         localStorage.clear();
         
       } else m.classList.remove('hold');
