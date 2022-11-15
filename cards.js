@@ -342,7 +342,9 @@ document.addEventListener('keydown', e => {
   } else if (e.code === 'Space') window.location.reload();
 });
 
-if (time >= 3600 && window.confirm('This game has gone on long enough! Care to end it with a draw?')) {
-	draw();
-	localStorage.clear();
+if (time >= 3600) {
+	if (!localStorage.got_it && window.confirm('This game has gone on long enough! Care to end it with a draw?')) {
+		draw();
+		localStorage.clear();
+	} else localStorage.got_it = true;
 }
