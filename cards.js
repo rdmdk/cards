@@ -9,11 +9,13 @@ let deck = localStorage.deck && localStorage.deck.split(',').length > 15 ? local
 	players,
 	buttons,
 	si,
-	seconds = localStorage.seconds ? Number(localStorage.seconds) : 0;
+	seconds = localStorage.seconds && localStorage.banks ? Number(localStorage.seconds) : 0;
 
 setInterval(() => {
-	seconds++;
-	localStorage.seconds = seconds;
+	if (localStorage.banks) {
+		seconds++;
+		localStorage.seconds = seconds;
+	}
 }, 1e3);
 
 localStorage.deck = deck;
