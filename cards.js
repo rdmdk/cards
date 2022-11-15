@@ -312,8 +312,8 @@ if (localStorage.banks) {
 players.forEach(p => {
   if (p.classList.contains('out')) p.classList.add('done');
   else {
-    bet(p);
     hit(p);
+    bet(p);
   }
 });
 
