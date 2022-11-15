@@ -400,9 +400,8 @@ button ~ button {margin-left: 0.2rem}
 }
 
 @keyframes shake {
-	0%, 50%, 100% {transform: rotate(0deg)}
-	25% {transform: rotate(-15deg)}
-	75% {transform: rotate(15deg)}
+	0, 100% {transform: rotate(-5deg)}
+	50% {transform: rotate(5deg)}
 }
 
 @keyframes sparkle {
