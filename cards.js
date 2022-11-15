@@ -296,10 +296,10 @@ function game_over(a) {
 
 function game_time(a, b) {
 	const s = seconds,
-		m = Math.floor(s / 60),
-		h = Math.floor(m / 60),
-		d = Math.floor(h / 24),
-		x = 'Game duration: ' + d + ' days / ' + h + ' hours / ' + m + ' minutes / ' + s + ' seconds';
+		m = s / 60,
+		h = m / 60,
+		d = h / 24,
+		x = 'Game duration: ' + Math.floor(d) + ' days / ' + Math.floor(h) + ' hours / ' + Math.floor(m) + ' minutes / ' + s + ' seconds';
 
 	console.log(x);
 }
