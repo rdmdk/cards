@@ -73,7 +73,7 @@ function hit(a) {
       c.removeAttribute('style');
     });
 	  
-    bet.innerText = Number(bet.innerText) - 5;
+    bet.innerText = Number(bet.innerText) === 5 ? 5 : Number(bet.innerText) - 5;
     
     setTimeout(() => {
       if (total > 21) bust(a);
