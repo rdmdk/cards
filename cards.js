@@ -284,8 +284,8 @@ function game_time(a, b) {
 	const s = time,
 	      m = Math.floor(s / 60),
 	      h = Math.floor(m / 60),
-	      d = Math.floor(s / 24),
-	      x = 'Game duration: ' + d + ' days, ' + h + ' hours, ' + m + ' minutes, ' + s + ' seconds';
+	      d = Math.floor(h / 24),
+	      x = 'Game duration: ' + d + ' days / ' + h + ' hours / ' + m + ' minutes / ' + s + ' seconds';
 	
 	console.log(x);
 }
