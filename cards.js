@@ -48,7 +48,7 @@ function draw(a) {
 			m.querySelectorAll('.player:not(.out)').forEach(p => {
 				p.classList.remove('active');
 				p.classList.add('winner', 'done');
-				p.querySelector('h2').innerHTML = '&nbsp;<em>Winner!</em>';
+				p.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 			});
 			game_time();
 			localStorage.clear();
@@ -66,7 +66,7 @@ function draw(a) {
 					m.querySelectorAll('.player:not(.out)').forEach(p => {
 						p.classList.remove('active');
 						p.classList.add('winner', 'done');
-						p.querySelector('h2').innerHTML = '&nbsp;<em>Winner!</em>';
+						p.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 					});
 					game_time();
 					localStorage.clear();
@@ -109,12 +109,12 @@ function stand(a) {
 }
 
 function blackjack(a) {
-	const payday = a.querySelectorAll('.card[class$="7"]').length === 3;
+	const payday = a.querySelectorAll('.card[class*="7 "]').length === 3;
 
 	if (payday) a.classList.add('blackjack', 'payday', 'done');
 	else a.classList.add('blackjack', 'done');
 
-	a.querySelector('h2').innerHTML = payday ? '&nsbp;<em>Payday!</em>' : '&nbsp;<em>blackjack!</em>';
+	a.querySelector('h2').innerHTML = payday ? '&nsbp;<em>payday!</em>' : '&nbsp;<em>blackjack!</em>';
 }
 
 function bust(a) {
