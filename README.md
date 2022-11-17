@@ -15,6 +15,7 @@ It's like Blackjack except instead of playing against the dealer, you're playing
 ## knockout rules
 - Same as above, however...
 - Each player starts out with $100 and loses $10 with each round lost
+- Hit it to win it so unless you have the high score, don't hold back - 21 or bust
 - Last standing player wins the jackpot
 
 # etc
