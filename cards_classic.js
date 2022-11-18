@@ -26,7 +26,7 @@ r = r < 2 ? 2 : r > 12 ? 12 : r;
 
 if (window.location.search !== '') {
 	localStorage.clear();
-	history.pushState(null, null, 'https://rdmdk.github.io/cards/');
+	history.pushState(null, null, 'https://rdmdk.github.io/cards/?classic');
 }
 
 localStorage.players = r;
