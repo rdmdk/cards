@@ -294,14 +294,18 @@ function game_over(a) {
 	}, 2e3);
 }
 
-function game_time(a, b) {
-	const s = seconds,
+function game_time() {
+	let s = seconds,
 		m = s / 60,
 		h = m / 60,
 		d = h / 24,
-		x = 'Game duration: ' + Math.floor(d) + ' days / ' + Math.floor(h) + ' hours / ' + Math.floor(m) + ' minutes / ' + s + ' seconds';
+		x = s + ' seconds';
+	
+	if (h >= 24) x = Math.floor(d) + ' days, ' + Math.floor(h % 24) + ' hours, ' + Math.floor(m % 60) + ' minutes, ' + Math.floor(s % 60) + ' seconds';
+	else if (m >= 60) x = Math.floor(h) + ' hours, ' + Math.floor(m % 60) + ' minutes, ' + Math.floor(s % 60) + ' seconds';
+	else if (s >= 60) x = Math.floor(m) + ' minutes, ' + Math.floor(s % 60) + ' seconds';
 
-	console.log(x);
+	console.log('Game duration: ' + x);
 }
 
 if (localStorage.banks) {
