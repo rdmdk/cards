@@ -366,3 +366,10 @@ if (seconds >= 3600) {
 		localStorage.clear();
 	} else localStorage.got_it = true;
 }
+
+setTimeout(() => {
+	if (players.length === 0) {
+		localStorage.clear();
+		window.location.reload();
+	}
+}, 4e3);
