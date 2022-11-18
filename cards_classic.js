@@ -242,3 +242,10 @@ document.addEventListener('keydown', e => {
 		}
 	} else if (e.code === 'Space') window.location.reload();
 });
+
+setTimeout(() => {
+	if (!players.length) {
+		localStorage.clear();
+		window.location.reload();
+	}
+}, 4e3);
