@@ -358,7 +358,7 @@ document.addEventListener('keydown', e => {
 			setTimeout(() => next_turn(), 100);
 		}
 	} else if (e.code === 'Space') window.location.reload();
-	else if (e.code === 'Shift') window.alert(game_time());
+	else if (e.code === 'KeyT') window.alert(game_time());
 });
 
 if (seconds >= 3600) {
