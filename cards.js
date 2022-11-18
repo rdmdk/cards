@@ -288,7 +288,7 @@ function game_over(a) {
 	setTimeout(() => {
 		if (m.querySelectorAll('.out').length + 1 === players.length) {
 			m.classList.add('end');
-			game_time(Number(localStorage.start_time), new Date().getTime());
+			console.log(game_time());
 			localStorage.clear();
 		} else setTimeout(() => window.location.reload(), 2500);
 	}, 2e3);
