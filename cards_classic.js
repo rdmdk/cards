@@ -27,7 +27,7 @@ if (window.location.search) {
 	      x = q.filter(Number),
 	      y = q.filter(Boolean);
 	
-	if (x.length) {
+	if (x.length && !isNaN(x[0])) {
 		r = x[0];
 		localStorage.clear();
 	}
