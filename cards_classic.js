@@ -200,11 +200,11 @@ function game_time() {
 		m = s / 60,
 		h = m / 60,
 		d = h / 24,
-		x = s + ' seconds';
+		x = s + ' s';
 	
-	if (h >= 24) x = Math.floor(d) + ' days, ' + Math.floor(h % 24) + ' hours, ' + Math.floor(m % 60) + ' minutes, ' + Math.floor(s % 60) + ' seconds';
-	else if (m >= 60) x = Math.floor(h) + ' hours, ' + Math.floor(m % 60) + ' minutes, ' + Math.floor(s % 60) + ' seconds';
-	else if (s >= 60) x = Math.floor(m) + ' minutes, ' + Math.floor(s % 60) + ' seconds';
+	if (h >= 24) x = Math.floor(d) + ' d, ' + Math.floor(h % 24) + ' h, ' + Math.floor(m % 60) + ' m, ' + Math.floor(s % 60) + ' s';
+	else if (m >= 60) x = Math.floor(h) + ' h, ' + Math.floor(m % 60) + ' m, ' + Math.floor(s % 60) + ' s';
+	else if (s >= 60) x = Math.floor(m) + ' m, ' + Math.floor(s % 60) + ' s';
 
 	return 'Game duration: ' + x;
 }
