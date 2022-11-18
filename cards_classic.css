@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+
+* {font-size:1em;line-height:1em;text-decoration:none;margin:0;padding:0;box-sizing:border-box}h1,h2,h3,h4,h5,h6{font-weight:normal}ol,ul,li{list-style-type:none}table{border-collapse:collapse}
+        
+html, body {
+	width: 100%;
+	height: 100vh;
+	height: -webkit-fill-available;
+}
+
+html {
+	font-size: 2vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+html[data-players="2"] {font-size: 4vh}
+html[data-players="3"] {font-size: 3vh}
+html[data-players="4"] {font-size: 4vh}
+html[data-players="5"] {font-size: 3vh}
+html[data-players="6"] {font-size: 3vh}
+html[data-players="7"] {font-size: 3vh}
+html[data-players="8"] {font-size: 3vh}
+html[data-players="9"] {font-size: 3vh}
+html[data-players="10"] {font-size: 3vh}
+html[data-players="11"] {font-size: 3vh}
+html[data-players="12"] {font-size: 3vh}
+        
+body {
+	font: 300 0 'Ubuntu', arial, sans-serif;
+	background: rgb(0 185 70);
+	color: white;
+	box-shadow: inset 0 0 5rem #00ddaf;
+	overflow: hidden;
+	user-select: none;
+	position: relative;
+}
+
+main {
+	width: 100%;
+	height: 100%;
+	height: -webkit-fill-available;
+	padding: 0.5rem;
+	overflow: auto;
+	display: flex;
+	justify-content: space-evenly;
+	position: relative;
+	z-index: 10;
+}
+
+main::before,
+main::after {
+	content: "";
+	position: absolute;
+}
+
+main::before {
+	width: 0;
+	height: 2px;
+	border-radius: 1px;
+	transition: width 1.5s ease-in-out 3s;
+	left: 25vw;
+}
+
+main::after {
+	filter: opacity(0);
+	transition: filter 2s ease-in-out 1s;
+}
+
+.over:not(.end)::before {
+	background: rgb(255 255 255 / 75%);
+	width: 50vw;
+	box-shadow: 0 0 1rem white;
+	display: block;
+	bottom: 1rem;
+}
+
+.over:not(.end)::after {
+	content: "next round...";
+	font-size: 0.33rem;
+	font-style: italic;
+	line-height: 1;
+	background-size: 100%;
+	color: rgb(255 255 255 / 75%);
+	filter: opacity(1);
+	transform: translateX(-50%);
+	bottom: 1.5rem;
+	left: 50%;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+    	grid-auto-flow: row;
+}
+
+html[data-players="4"] .grid {grid-template-columns: repeat(2, auto)}
+html[data-players="5"] .grid {grid-template-columns: repeat(2, auto)}
+html[data-players="6"] .grid {grid-template-columns: repeat(2, auto)}
+html[data-players="7"] .grid {grid-template-columns: repeat(3, auto)}
+html[data-players="8"] .grid {grid-template-columns: repeat(3, auto)}
+html[data-players="9"] .grid {grid-template-columns: repeat(3, auto)}
+html[data-players="10"] .grid {grid-template-columns: repeat(3, auto)}
+html[data-players="11"] .grid {grid-template-columns: repeat(3, auto)}
+html[data-players="12"] .grid {grid-template-columns: repeat(3, auto)}
+
+.player {
+	text-align: center;
+	align-self: center;
+	padding: 0.5rem;
+	transition: filter 0.6s ease;
+	position: relative;
+}
+
+.out {filter: opacity(0.25)}
+
+.cinderella::after {
+	content: "";
+	font-size: 0.615rem;
+	letter-spacing: 1em;
+	text-align: center;
+	text-shadow: 0 0 1em #7cffea;
+	color: #fff7c1;
+	width: 100%;
+	animation: sparkle 2s linear forwards;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+h2 {
+	font-size: 0.75rem;
+	color: #fff;
+	margin: 0 0 1rem;
+	filter: opacity(0.75);
+	transition: filter 0.6s ease;
+	position: relative;
+}
+
+.over .player:not(.winner) h2 {filter: opacity(0)}
+
+h2 em {font-style: inherit}
+
+.done h2 em {
+	transform: translateX(-50%);
+	position: absolute;
+	top: 0;
+	left: 50%;
+}
+
+h3 {
+	font-size: 0.33rem;
+	margin: 0.5rem 0;
+	filter: opacity(0);
+	transition: filter 0.6s ease;
+}
+
+main[style] h3 {filter: opacity(1)}
+
+h3 span::before {
+	content: "$";
+	font-size: 0.8em;
+	vertical-align: bottom;
+	margin-right: 0.2em;
+}
+
+.hand {
+	text-align: center;
+	border-radius: 0.5rem;
+	display: inline-block;
+	box-shadow: none;
+	transition: box-shadow 0.6s ease;
+	position: relative;
+}
+
+.hand::before {
+	content: "♕";
+	font-size: 1.66rem;
+	line-height: 1;
+	color: gold;
+	transform: translate(53%, -100%) rotate(30deg);
+	filter: opacity(0);
+	transition: transform 1s ease, filter 1s ease, text-shadow 0.6s ease;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.high_roller .hand::before {
+	filter: opacity(1);
+	transform: translate(53%, -72%) rotate(30deg);
+}
+
+.active .hand {box-shadow: 0 0 1rem white}
+
+.poor:not(.done) .hand {animation: shake 1s ease-in-out infinite}
+
+.high_roller.active .hand::before {text-shadow: 0 0 0.33em}
+
+.card {
+	font-size: 1rem;
+	background: #fafafa;
+	color: black;
+	width: 2.5em;
+	height: 3.5em;
+	display: inline-grid;
+	place-content: center;
+	border: 0.15em solid white;
+	border-radius: 0.5em;
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	position: relative;
+}
+
+.card:last-child {z-index: 5}
+
+.card ~ .card {
+	background: rgb(255 255 255 / 95%);
+	transition: filter 0.4s ease, transform 0.4s ease;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card ~ .card[style] {
+	filter: opacity(0);
+	transform: translateY(0);
+}
+
+.card:nth-child(2) {transform: translateY(0.4em)}
+.card:nth-child(3) {transform: translateY(0.8em)}
+.card:nth-child(4) {transform: translateY(1.2em)}
+.card:nth-child(5) {transform: translateY(1.6em)}
+.card:nth-child(6) {transform: translateY(2em)}
+.card:nth-child(7) {transform: translateY(2.4em)}
+.card:nth-child(8) {transform: translateY(2.8em)}
+
+.over .card {transition-delay: 0s, 1.75s}
+
+.winner .card:nth-child(2) {transform: translateY(1.2em)}
+.winner .card:nth-child(3) {transform: translateY(2.4em)}
+.winner .card:nth-child(4) {transform: translateY(3.6em)}
+.winner .card:nth-child(5) {transform: translateY(4.8em)}
+.winner .card:nth-child(6) {transform: translateY(6em)}
+.winner .card:nth-child(7) {transform: translateY(7.2em)}
+.winner .card:nth-child(8) {transform: translateY(8.4em)}
+
+.over .player:not(.winner) .card {transform: none !important}
+
+.card::before,
+.card::after {
+	font-size: 0.4em;
+	line-height: 1;
+	word-break: break-all;
+	width: 0.9em;
+	padding: 0.6em;
+	position: absolute;
+}
+
+.card::before {
+	top: 0;
+	left: 0;
+}
+
+.card::after {
+	transform: rotate(180deg);
+	bottom: 0;
+	right: 0;
+}
+
+.card[class^=d],
+.card[class^=h] {color: red}
+
+.c2::before, .c2::after {content: "2♣"}
+.c3::before, .c3::after {content: "3♣"}
+.c4::before, .c4::after {content: "4♣"}
+.c5::before, .c5::after {content: "5♣"}
+.c6::before, .c6::after {content: "6♣"}
+.c7::before, .c7::after {content: "7♣"}
+.c8::before, .c8::after {content: "8♣"}
+.c9::before, .c9::after {content: "9♣"}
+.c10::before, .c10::after {content: "10♣"}
+.cj::before, .cj::after {content: "J♣"}
+.cq::before, .cq::after {content: "Q♣"}
+.ck::before, .ck::after {content: "K♣"}
+.ca::before, .ca::after {content: "A♣"}
+
+.d2::before, .d2::after {content: "2♦"}
+.d3::before, .d3::after {content: "3♦"}
+.d4::before, .d4::after {content: "4♦"}
+.d5::before, .d5::after {content: "5♦"}
+.d6::before, .d6::after {content: "6♦"}
+.d7::before, .d7::after {content: "7♦"}
+.d8::before, .d8::after {content: "8♦"}
+.d9::before, .d9::after {content: "9♦"}
+.d10::before, .d10::after {content: "10♦"}
+.dj::before, .dj::after {content: "J♦"}
+.dq::before, .dq::after {content: "Q♦"}
+.dk::before, .dk::after {content: "K♦"}
+.da::before, .da::after {content: "A♦"}
+
+.h2::before, .h2::after {content: "2♥"}
+.h3::before, .h3::after {content: "3♥"}
+.h4::before, .h4::after {content: "4♥"}
+.h5::before, .h5::after {content: "5♥"}
+.h6::before, .h6::after {content: "6♥"}
+.h7::before, .h7::after {content: "7♥"}
+.h8::before, .h8::after {content: "8♥"}
+.h9::before, .h9::after {content: "9♥"}
+.h10::before, .h10::after {content: "10♥"}
+.hj::before, .hj::after {content: "J♥"}
+.hq::before, .hq::after {content: "Q♥"}
+.hk::before, .hk::after {content: "K♥"}
+.ha::before, .ha::after {content: "A♥"}
+
+.s2::before, .s2::after {content: "2♠"}
+.s3::before, .s3::after {content: "3♠"}
+.s4::before, .s4::after {content: "4♠"}
+.s5::before, .s5::after {content: "5♠"}
+.s6::before, .s6::after {content: "6♠"}
+.s7::before, .s7::after {content: "7♠"}
+.s8::before, .s8::after {content: "8♠"}
+.s9::before, .s9::after {content: "9♠"}
+.s10::before, .s10::after {content: "10♠"}
+.sj::before, .sj::after {content: "J♠"}
+.sq::before, .sq::after {content: "Q♠"}
+.sk::before, .sk::after {content: "K♠"}
+.sa::before, .sa::after {content: "A♠"}
+
+.c10::before, .c10::after,
+.d10::before, .d10::after,
+.h10::before, .h10::after,
+.s10::before, .s10::after {width: 1.5em}
+
+.card span {
+	font-size: 2rem;
+	transform: translateY(-0.05rem);
+}
+
+.card[class^=c] span::after {content: "♣"}
+.card[class^=d] span::after {content: "♦"}
+.card[class^=h] span::after {content: "♥"}
+.card[class^=s] span::after {content: "♠"}
+
+
+.actions {
+	white-space: nowrap;
+	margin: 0;
+	filter: opacity(0.25);
+	display: block;
+	transition: filter 0.6s ease;
+	pointer-events: none;
+	position: relative;
+	z-index: 10;
+}
+
+.active .actions {
+	filter: none;
+	pointer-events: unset;
+}
+
+.blackjack .actions,
+.done .actions {filter: opacity(0)}
+
+button {
+	font: 0.35rem 'Ubuntu', arial, sans-serif;
+	background: rgb(255 255 255 / 33%);
+	color: white;
+	width: 4.5em;
+	height: 4.5em;
+	border-radius: 100%;
+	border: none;
+	cursor: pointer;
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	transition: background 0.6s ease;
+}
+
+.active button:hover {background: rgb(255 255 255 / 66%)}
+
+button ~ button {margin-left: 0.2rem}
+
+.hold button {pointer-events: none}
+
+.hint {animation: hint 4s infinite}
+	
+@keyframes hint {
+	0% {box-shadow: 0 0 0 0 rgb(255 255 255 / 33%)}
+	20% {box-shadow: 0 0 0 0.33rem rgb(255 255 255 / 0%)}
+	100% {box-shadow: 0 0 0 0 rgb(255 255 255 / 0%)}
+}
+
+@keyframes shake {
+	0%, 100% {transform: rotate(-2deg)}
+	50% {transform: rotate(2deg)}
+}
+
+@keyframes sparkle {
+	0% {
+		content: "⋇⋆✦⋆✧";
+		filter: opacity(0);
+		top: 0;
+	}
+	20% {
+		content: "✧⋆⋇⋆✦";
+		filter: none;
+		top: 20%;
+	}
+	40% {
+		content: "✦⋆✧⋆⋇";
+		top: 40%;
+	}
+	60% {
+		content: "⋇⋆✦⋆✧";
+		top: 60%;
+	}
+	80% {
+		content: "✧⋆⋇⋆✦";
+		top: 80%;
+	}
+	100% {
+		content: "✦⋆✧⋆⋇";
+		filter: opacity(0);
+		top: 100%;
+	}
+}
+
+@media (orientation: landscape) {
+	html {font-size: 2vw}
+	
+	html[data-players="2"] {font-size: 7vh}
+	html[data-players="3"] {font-size: 7vh}
+	html[data-players="4"] {font-size: 5vh}
+	html[data-players="5"] {font-size: 5vh}
+	html[data-players="6"] {font-size: 5vh}
+	html[data-players="7"] {font-size: 5vh}
+	html[data-players="8"] {font-size: 5vh}
+	html[data-players="9"] {font-size: 5vh}
+	html[data-players="10"] {font-size: 5vh}
+	html[data-players="11"] {font-size: 5vh}
+	html[data-players="12"] {font-size: 5vh}
+	
+	html[data-players="4"] .grid {grid-template-columns: repeat(4, auto)}
+	html[data-players="5"] .grid {grid-template-columns: repeat(4, auto)}
+	html[data-players="6"] .grid {grid-template-columns: repeat(4, auto)}
+	html[data-players="7"] .grid {grid-template-columns: repeat(4, auto)}
+	html[data-players="8"] .grid {grid-template-columns: repeat(4, auto)}
+	html[data-players="9"] .grid {grid-template-columns: repeat(5, auto)}
+	html[data-players="10"] .grid {grid-template-columns: repeat(5, auto)}
+	html[data-players="11"] .grid {grid-template-columns: repeat(6, auto)}
+	html[data-players="12"] .grid {grid-template-columns: repeat(6, auto)}
+	
+	.card {}
+}
+
+@media (orientation: landscape) and (min-width: 1920px) {
+	html {font-size: 4vh !important}
+}
