@@ -189,7 +189,7 @@ function game_over(a) {
 	setTimeout(() => {
 		if (m.querySelectorAll('.out').length + 1 === players.length) {
 			m.classList.add('end');
-			game_time();
+			console.log(game_time());
 			localStorage.clear();
 		} else setTimeout(() => window.location.reload(), 2500);
 	}, 2e3);
@@ -206,7 +206,7 @@ function game_time() {
 	else if (m >= 60) x = Math.floor(h) + ' hours, ' + Math.floor(m % 60) + ' minutes, ' + Math.floor(s % 60) + ' seconds';
 	else if (s >= 60) x = Math.floor(m) + ' minutes, ' + Math.floor(s % 60) + ' seconds';
 
-	console.log('Game duration: ' + x);
+	return 'Game duration: ' + x;
 }
 
 players.forEach(p => {
@@ -241,6 +241,7 @@ document.addEventListener('keydown', e => {
 			setTimeout(() => next_turn(), 100);
 		}
 	} else if (e.code === 'Space') window.location.reload();
+	else if (e.code === 'Shift') window.alert(game_time());
 });
 
 setTimeout(() => {
