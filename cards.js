@@ -368,7 +368,7 @@ if (seconds >= 3600) {
 }
 
 setTimeout(() => {
-	if (players.length === 0) {
+	if (!players.length) {
 		localStorage.clear();
 		window.location.reload();
 	}
