@@ -21,6 +21,7 @@ It's like Blackjack except instead of playing against the dealer, you're playing
 - https://rdmdk.github.io/cards/?classic (or https://rdmdk.github.io/cards/?classic&4)
 
 # etc
-To play with a set number of players, append ?x (x being the number) to the end of the URL below (eg. https://rdmdk.github.io/cards/?4)
+- To play with a set number of players, append ?x (x being the number) to the end of the URL below (eg. https://rdmdk.github.io/cards/?4)
+- Hit T on the keyboard at any time to see how long you have been playing! 
 
 # play https://rdmdk.github.io/cards/
