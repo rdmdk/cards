@@ -11,7 +11,7 @@
 <body>
 <main style></main>
 <script>
-  let js = document.create('script');
+  let js = document.createElement('script');
   js.src = window.location.search && window.location.search.includes('classic') ? 'cards.js' : 'https://raw.githubusercontent.com/rdmdk/cards/knockout/cards.js';
   document.body.appendChild(js);
 </script>
