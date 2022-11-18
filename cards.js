@@ -296,14 +296,18 @@ function game_over(a) {
 
 function game_time() {
 	let s = seconds,
-		m = s / 60,
-		h = m / 60,
-		d = h / 24,
-		x = s + ' s';
+	    m = s / 60,
+	    h = m / 60,
+	    d = h / 24,
+	    ss = Math.floor(s % 60) + 'second' + (Math.floor(s % 60) > 1 ? 's' : ''),
+	    mm = Math.floor(m % 60) + 'minute' + (Math.floor(m % 60) > 1 ? 's' : ''),
+	    hh = Math.floor(h % 24) + 'hour' + (Math.floor(h % 24) > 1 ? 's' : ''),
+	    dd = Math.floor(d) + 'day' + (Math.floor(d) > 1 ? 's' : ''),
+	    x = ss;
 	
-	if (h >= 24) x = Math.floor(d) + ' d, ' + Math.floor(h % 24) + ' h, ' + Math.floor(m % 60) + ' m, ' + Math.floor(s % 60) + ' s';
-	else if (m >= 60) x = Math.floor(h) + ' h, ' + Math.floor(m % 60) + ' m, ' + Math.floor(s % 60) + ' s';
-	else if (s >= 60) x = Math.floor(m) + ' m, ' + Math.floor(s % 60) + ' s';
+	if (h >= 24) x = dd + ', ' + hh + ', ' + mm + ', ' + ss;
+	else if (m >= 60) x = hh + ', ' + mm + ', ' + ss;
+	else if (s >= 60) x = mm + ', ' + ss;
 
 	return 'Game duration: ' + x;
 }
