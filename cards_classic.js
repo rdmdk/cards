@@ -5,7 +5,7 @@ const m = document.querySelector('main'),
 	spades = [...clubs].map(x => x.replace(/c/gm, 's'));
 
 let deck = localStorage.deck && localStorage.deck.split(',').length > 15 ? localStorage.deck.split(',') : [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5),
-	r = window.location.search && window.location.search.split(/\W/).filter(Number) ? Number(window.location.search.split(/\W/).filter(Number)[0]) : localStorage.players ? Number(localStorage.players) : Math.floor(Math.random() * (12 - 2) + 2), : localStorage.players ? Number(localStorage.players) : Math.floor(Math.random() * (12 - 2) + 2),
+	r = window.location.search && window.location.search.split(/\W/).filter(Number) ? Number(window.location.search.split(/\W/).filter(Number)[0]) : localStorage.players ? Number(localStorage.players) : Math.floor(Math.random() * (12 - 2) + 2),
 	players,
 	buttons,
 	si,
