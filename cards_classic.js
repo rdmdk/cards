@@ -200,11 +200,11 @@ function game_time() {
 	    m = s / 60,
 	    h = m / 60,
 	    d = h / 24,
-	    ss = Math.floor(s % 60) + ' second' + (Math.floor(s % 60) > 1 ? 's' : ''),
-	    mm = Math.floor(m % 60) + ' minute' + (Math.floor(m % 60) > 1 ? 's' : ''),
-	    hh = Math.floor(h % 24) + ' hour' + (Math.floor(h % 24) > 1 ? 's' : ''),
-	    dd = Math.floor(d) + ' day' + (Math.floor(d) > 1 ? 's' : ''),
-	    x = Math.floor(s) + ' second' + (Math.floor(s) > 1 ? 's' : '');
+	    ss = Math.floor(s % 60) + ' second' + (Math.floor(s % 60) !== 1 ? 's' : ''),
+	    mm = Math.floor(m % 60) + ' minute' + (Math.floor(m % 60) !== 1 ? 's' : ''),
+	    hh = Math.floor(h % 24) + ' hour' + (Math.floor(h % 24) !== 1 ? 's' : ''),
+	    dd = Math.floor(d) + ' day' + (Math.floor(d) !== 1 ? 's' : ''),
+	    x = Math.floor(s) + ' second' + (Math.floor(s) !== 1 ? 's' : '');
 	
 	if (h >= 24) x = dd + ', ' + hh + ', ' + mm + ', ' + ss;
 	else if (m >= 60) x = hh + ', ' + mm + ', ' + ss;
