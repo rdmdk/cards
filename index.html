@@ -5,14 +5,20 @@
 <title>Cards</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<link rel="stylesheet" href="cards.css" />
 </head>
 
 <body>
 <main style></main>
 <script>
+  let css = document.createElement('link');
   let js = document.createElement('script');
-  js.src = window.location.search && window.location.search.includes('classic') ? 'https://raw.githubusercontent.com/rdmdk/cards/knockout/cards.js' : 'cards.js';
+  
+  css.setAttribute('rel', 'stylesheet');
+  
+  css.href = window.location.search && window.location.search.includes('classic') ? 'cards_classic.css' : 'cards.css';
+  js.src = window.location.search && window.location.search.includes('classic') ? 'cards_classic.js' : 'cards.js';
+  
+  document.head.appendChild(css);
   document.body.appendChild(js);
 </script>
 </body>
