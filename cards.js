@@ -305,7 +305,7 @@ function game_time() {
 	else if (m >= 60) x = Math.floor(h) + ' hours, ' + Math.floor(m % 60) + ' minutes, ' + Math.floor(s % 60) + ' seconds';
 	else if (s >= 60) x = Math.floor(m) + ' minutes, ' + Math.floor(s % 60) + ' seconds';
 
-	console.log('Game duration: ' + x);
+	return 'Game duration: ' + x;
 }
 
 if (localStorage.banks) {
@@ -358,6 +358,7 @@ document.addEventListener('keydown', e => {
 			setTimeout(() => next_turn(), 100);
 		}
 	} else if (e.code === 'Space') window.location.reload();
+	else if (e.code === 'Shift') window.alert(game_time());
 });
 
 if (seconds >= 3600) {
