@@ -27,12 +27,12 @@ if (window.location.search) {
 	      x = q.filter(Number),
 	      y = q.filter(Boolean);
 	
-	if (x) {
+	if (x.length) {
 		r = x[0];
 		localStorage.clear();
 	}
 	
-	if (y) history.pushState(null, null, 'https://rdmdk.github.io/cards/?classic');
+	if (y.length) history.pushState(null, null, 'https://rdmdk.github.io/cards/?classic');
 }
 
 r = r < 2 ? 2 : r > 12 ? 12 : r;
