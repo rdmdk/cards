@@ -109,9 +109,13 @@ function blackjack(a) {
 }
 
 function joker(a) {
-	a.classList.add('joker', 'done');
-	a.querySelector('h2').innerHTML = '&nbsp;<em>joker!</em>';
-	if (!a.classList.contains('out')) game_over();
+	const condition = a.querySelector('.hand .card ~ .x'));
+	
+	if (condition) {
+		a.classList.add('joker', 'done');
+		a.querySelector('h2').innerHTML = '&nbsp;<em>joker!</em>';
+		if (!a.classList.contains('out')) game_over();
+	} else a.classList.add('done');
 }
 
 function bust(a) {
