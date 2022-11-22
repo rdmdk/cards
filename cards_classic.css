@@ -211,6 +211,7 @@ h3 span::before {
 	border-radius: 0.5em;
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
+	overflow: hidden;
 	position: relative;
 }
 
@@ -343,7 +344,13 @@ h3 span::before {
 .card[class^=d] span::after {content: "♦"}
 .card[class^=h] span::after {content: "♥"}
 .card[class^=s] span::after {content: "♠"}
-.card[class^=x] span::after {content: "🃟"}
+
+.card.x span {
+	font-size: 5rem;
+	transform: translateY(0.16rem;
+}
+
+.card.x span::after {content: "🃟"}
 
 .actions {
 	white-space: nowrap;
