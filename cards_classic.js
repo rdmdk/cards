@@ -111,6 +111,7 @@ function blackjack(a) {
 function joker(a) {
 	a.classList.add('joker', 'done');
 	a.querySelector('h2').innerHTML = '&nbsp;<em>joker!</em>';
+}
 
 function bust(a) {
 	a.classList.add('busted', 'done');
