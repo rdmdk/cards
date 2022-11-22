@@ -109,7 +109,7 @@ function blackjack(a) {
 }
 
 function joker(a) {
-	const condition = a.querySelector('.hand .card ~ .x'));
+	const condition = a.querySelector('.hand .card ~ .x');
 	
 	if (condition) {
 		a.classList.add('joker', 'done');
