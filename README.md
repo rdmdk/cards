@@ -18,6 +18,7 @@ It's like Blackjack except instead of playing against the dealer, you're playing
 - Each player starts out with $100 and loses $10 with each round lost
 - Hit it to win it so unless you have/share the high score, don't hold back - 21 or bust and ties are permitted
 - Last standing player wins the jackpot
+- Jokers wild so beware as landing a Joker will cost you the round (if it's your first card) or give you the win (if it isn't)
 - https://rdmdk.github.io/cards/?classic (or https://rdmdk.github.io/cards/?classic&4)
 
 # etc
