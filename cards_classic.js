@@ -111,7 +111,7 @@ function blackjack(a) {
 function joker(a) {
 	a.classList.add('joker', 'done');
 	a.querySelector('h2').innerHTML = '&nbsp;<em>joker!</em>';
-	game_over();
+	if (!a.classList.contains('out')) game_over();
 }
 
 function bust(a) {
@@ -128,7 +128,7 @@ function next_turn() {
 	setTimeout(() => m.classList.remove('hold'), to);
 
 	setTimeout(() => {
-		let condition = m.querySelector('.joker') || m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.busted, .out').length + 1 === players.length;
+		let condition = m.querySelector('.joker:not(.out)') || m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.busted, .out').length + 1 === players.length;
 
 		if (m.querySelectorAll('.done:not(.out)').length + 1 === players.length) {
 			const score = Number(m.querySelector('.done:not(.out) h2').innerText);
@@ -163,7 +163,7 @@ function game_over() {
 	players.forEach(p => p.classList.add('done'));
 
 	if (m.querySelector('.blackjack')) m.querySelector('.blackjack').classList.add('winner');
-	else if (m.querySelector('.joker')) m.querySelector('.joker').classList.add('winner');
+	else if (m.querySelector('.joker:not(.out)')) m.querySelector('.joker').classList.add('winner');
 	else {
 		let total = 0;
 
