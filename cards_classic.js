@@ -127,7 +127,7 @@ function next_turn() {
 	setTimeout(() => m.classList.remove('hold'), to);
 
 	setTimeout(() => {
-		let condition = m.querySelector('.x') || m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.busted, .out').length + 1 === players.length;
+		let condition = m.querySelector('.joker') || m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.busted, .out').length + 1 === players.length;
 
 		if (m.querySelectorAll('.done:not(.out)').length + 1 === players.length) {
 			const score = Number(m.querySelector('.done:not(.out) h2').innerText);
