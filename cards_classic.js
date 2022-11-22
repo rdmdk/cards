@@ -4,7 +4,7 @@ const m = document.querySelector('main'),
 	hearts = [...clubs].map(x => x.replace(/c/gm, 'h')),
 	spades = [...clubs].map(x => x.replace(/c/gm, 's'));
 
-let deck = localStorage.deck && localStorage.deck.split(',').length > 15 ? localStorage.deck.split(',') : [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5),
+let deck = localStorage.deck && localStorage.deck.split(',').length > 15 ? localStorage.deck.split(',') : [...clubs, ...diamonds, ...hearts, ...spades, 'x', 'x'].sort(() => Math.random() - 0.5),
 	r = localStorage.players ? Number(localStorage.players) : Math.floor(Math.random() * (12 - 2) + 2),
 	players,
 	buttons,
@@ -88,7 +88,8 @@ function hit(a) {
 		});
 
 		setTimeout(() => {
-			if (total > 21) bust(a);
+			if (hand.querySelector('.x')) joker(a);
+			else if (total > 21) bust(a);
 			else if (total === 21) blackjack(a);
 			else a.querySelector('h2').innerText = total;
 		}, 200);
@@ -107,6 +108,10 @@ function blackjack(a) {
 	a.querySelector('h2').innerHTML = '&nbsp;<em>blackjack!</em>';
 }
 
+function joker(a) {
+	a.classList.add('joker', 'done');
+	a.querySelector('h2').innerHTML = '&nbsp;<em>joker!</em>';
+
 function bust(a) {
 	a.classList.add('busted', 'done');
 	a.querySelector('h2').innerHTML = '&nbsp;<em>busted</em>';
@@ -121,7 +126,7 @@ function next_turn() {
 	setTimeout(() => m.classList.remove('hold'), to);
 
 	setTimeout(() => {
-		let condition = m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.busted, .out').length + 1 === players.length;
+		let condition = m.querySelector('.x') || m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.busted, .out').length + 1 === players.length;
 
 		if (m.querySelectorAll('.done:not(.out)').length + 1 === players.length) {
 			const score = Number(m.querySelector('.done:not(.out) h2').innerText);
@@ -156,6 +161,7 @@ function game_over(a) {
 	players.forEach(p => p.classList.add('done'));
 
 	if (m.querySelector('.blackjack')) m.querySelector('.blackjack').classList.add('winner');
+	else if (m.querySelector('.joker')) m.querySelector('.joker').classList.add('winner');
 	else {
 		let total = 0;
 
