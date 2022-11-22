@@ -111,6 +111,7 @@ function blackjack(a) {
 function joker(a) {
 	a.classList.add('joker', 'done');
 	a.querySelector('h2').innerHTML = '&nbsp;<em>joker!</em>';
+	game_over();
 }
 
 function bust(a) {
@@ -154,7 +155,7 @@ function next_turn() {
 	}
 }
 
-function game_over(a) {
+function game_over() {
 	let scores = [];
 	
 	m.classList.add('over');
