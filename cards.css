@@ -350,7 +350,7 @@ h3 span:first-child {margin-right: 0.25rem}
 .card[class^=d] span::after {content: "♦"}
 .card[class^=h] span::after {content: "♥"}
 .card[class^=s] span::after {content: "♠"}
-
+.card[class^=x] span::after {content: "🃟"}
 
 .actions {
 	white-space: nowrap;
