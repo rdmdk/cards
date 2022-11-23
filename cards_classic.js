@@ -117,7 +117,7 @@ function joker(a) {
 		//if (!a.classList.contains('out')) game_over();
 	} else {
 		a.classList.add('done');
-		if (a === players[0]) next_turn();
+		if (a === m.querySelectorAll('.player:not(.out)')[0]) next_turn();
 	}
 }
 
