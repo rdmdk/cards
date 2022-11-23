@@ -115,7 +115,10 @@ function joker(a) {
 		a.classList.add('joker', 'done');
 		a.querySelector('h2').innerHTML = '&nbsp;<em>joker!</em>';
 		if (!a.classList.contains('out')) game_over();
-	} else a.classList.add('done');
+	} else {
+		a.classList.add('done');
+		if (a === players[0]) next_turn();
+	}
 }
 
 function bust(a) {
