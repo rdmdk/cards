@@ -138,8 +138,10 @@ function next_turn() {
 		let condition = m.querySelector('.joker:not(.out)') || m.querySelector('.blackjack') || m.querySelectorAll('.done').length === players.length || m.querySelectorAll('.busted, .out').length + 1 === players.length;
 
 		if (m.querySelectorAll('.done:not(.out)').length + 1 === players.length) {
-			const score = Number(m.querySelector('.done:not(.out) h2').innerText);
-			if (Number(active_player.querySelector('h2').innerText) > score) condition = true;
+			let scores = [];
+			
+			m.querySelectorAll('.done:not(.out) h2').forEach(h => scores.push(Number(h.innerText)));
+			if (Number(active_player.querySelector('h2').innerText) > Math.max(...scores)) condition = true;
 		}
 
 		if (condition) game_over();
