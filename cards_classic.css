@@ -337,7 +337,7 @@ h3 span::before {
 
 .card span {
 	font-size: 2rem;
-	transform: translateY(-0.05rem);
+	transform: translateY(-0.15rem);
 }
 
 .card[class^=c] span::after {content: "♣"}
