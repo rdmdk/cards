@@ -141,7 +141,7 @@ function next_turn() {
 			let scores = [];
 			
 			m.querySelectorAll('.done:not(.out) h2').forEach(h => scores.push(Number(h.innerText)));
-			if (Number(active_player.querySelector('h2').innerText) > Math.max(...scores)) condition = true;
+			if (Number(active_player.querySelector('h2').innerText) > Math.max(...scores.filter(Number))) condition = true;
 		}
 
 		if (condition) game_over();
