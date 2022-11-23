@@ -350,7 +350,10 @@ h3 span::before {
 	transform: translateY(0.3rem);
 }
 
-.card.x span::after {content: "🃟"}
+.card.x span::after {
+	content: "🃟";
+	border-radius: 100%;
+}
 
 .actions {
 	white-space: nowrap;
@@ -458,8 +461,6 @@ button ~ button {margin-left: 0.2rem}
 	html[data-players="10"] .grid {grid-template-columns: repeat(5, auto)}
 	html[data-players="11"] .grid {grid-template-columns: repeat(6, auto)}
 	html[data-players="12"] .grid {grid-template-columns: repeat(6, auto)}
-	
-	.card {}
 }
 
 @media (orientation: landscape) and (min-width: 1920px) {
