@@ -346,13 +346,18 @@ h3 span::before {
 .card[class^=s] span::after {content: "♠"}
 
 .card.x span {
-	font-size: 5rem;
-	transform: translateY(0.3rem);
+	font-size: 3rem;
 }
 
 .card.x span::after {
 	content: "🃟";
+	line-height: 0.45;
+	text-indent: -0.11em;
+	width: 0.5em;
+    	height: 0.6em;
 	border-radius: 100%;
+	display: inline-block;
+	overflow: hidden;
 }
 
 .actions {
