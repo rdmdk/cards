@@ -10,16 +10,17 @@
 <body>
 <main style></main>
 <script>
-  let css = document.createElement('link');
-  let js = document.createElement('script');
+  const n = 'cards' + (window.location.search && window.location.search.includes('classic') ? '_classic' : '');
+  let c = document.createElement('link');
+  let j = document.createElement('script');
   
-  css.setAttribute('rel', 'stylesheet');
+  c.setAttribute('rel', 'stylesheet');
   
-  css.href = window.location.search && window.location.search.includes('classic') ? 'cards_classic.css' : 'cards.css';
-  js.src = window.location.search && window.location.search.includes('classic') ? 'cards_classic.js' : 'cards.js';
+  c.href = n + '.css';
+  j.src = j + '.js';
   
-  document.head.appendChild(css);
-  document.body.appendChild(js);
+  document.head.appendChild(c);
+  document.body.appendChild(j);
 </script>
 </body>
 </html>
