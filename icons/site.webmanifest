@@ -1,7 +1,7 @@
 {
     "name": "Cards",
     "short_name": "Cards",
-    "start_url": "/",
+    "start_url": "/cards",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
