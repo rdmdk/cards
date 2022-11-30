@@ -367,6 +367,8 @@ document.addEventListener('keydown', e => {
 	else if (e.code === 'KeyT') window.alert(game_time());
 });
 
+document.querySelector('.time').addEventListener('click', () => game_time());
+
 if (seconds >= 3600) {
 	if (!localStorage.got_it && window.confirm('This game has gone on long enough! Care to end it with a draw?')) {
 		draw(true);
