@@ -89,6 +89,14 @@ main::after {
 	left: 50%;
 }
 
+.time {
+	font-size: 1rem;
+	margin: 3rem;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
 .grid {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
