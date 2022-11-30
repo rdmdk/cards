@@ -91,12 +91,16 @@ main::after {
 
 .time {
 	font-size: 1rem;
-	color: rgb(255 255 255 / 50%);
+	color: #fff;
 	padding: 1em;
+	filter: opacity(0.4);
+	transition: filter 0.6s ease;
 	position: fixed;
 	bottom: 0;
 	right: 0;
 }
+
+.time:hover {filter: none}
 
 .grid {
 	display: grid;
