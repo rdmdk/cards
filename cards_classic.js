@@ -265,6 +265,8 @@ document.addEventListener('keydown', e => {
 	else if (e.code === 'KeyT') window.alert(game_time());
 });
 
+document.querySelector('.time').addEventListener('click', () => game_time());
+
 setTimeout(() => {
 	if (!players.length) {
 		localStorage.clear();
