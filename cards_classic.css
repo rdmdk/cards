@@ -90,7 +90,7 @@ main::after {
 }
 
 .time {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	color: #fff;
 	padding: 1em;
 	filter: opacity(0.25);
@@ -479,6 +479,8 @@ button ~ button {margin-left: 0.2rem}
 	html[data-players="10"] .grid {grid-template-columns: repeat(5, auto)}
 	html[data-players="11"] .grid {grid-template-columns: repeat(6, auto)}
 	html[data-players="12"] .grid {grid-template-columns: repeat(6, auto)}
+	
+	.time {font-size: 1rem}
 }
 
 @media (orientation: landscape) and (min-width: 1920px) {
