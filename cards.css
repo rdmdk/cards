@@ -98,6 +98,7 @@ main::after {
 	position: fixed;
 	bottom: 0;
 	right: 0;
+	z-index: 10;
 }
 
 .time:hover {filter: none}
