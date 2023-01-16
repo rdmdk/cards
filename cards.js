@@ -382,3 +382,7 @@ setTimeout(() => {
 		window.location.reload();
 	}
 }, 4e3);
+
+if ('serviceWorker' in navigator) 
+navigator.serviceWorker.register('service-worker.js');
+
