@@ -1,6 +1,6 @@
 {
-    "name": "Cards",
-    "short_name": "Cards",
+    "name": "Cards Classic",
+    "short_name": "Cards Classic",
     "start_url": "/cards/?classic",
     "icons": [
         {
