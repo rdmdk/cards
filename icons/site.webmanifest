@@ -1,6 +1,7 @@
 {
     "name": "Cards",
     "short_name": "Cards",
+    "start_url": "/cards/",
     "icons": [
         {
             "src": "icons/android-chrome-192x192.png",
@@ -15,6 +16,5 @@
     ],
     "theme_color": "#5bc881",
     "background_color": "#5bc881",
-    "display": "standalone",
-    "start_url": "/cards"
+    "display": "standalone"
 }
