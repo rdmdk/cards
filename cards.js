@@ -9,6 +9,7 @@ let deck = localStorage.deck && localStorage.deck.split(',').length > 15 ? local
 	players,
 	buttons,
 	si,
+	st,
 	seconds = localStorage.seconds && localStorage.banks ? Number(localStorage.seconds) : 0;
 
 setInterval(() => {
@@ -168,6 +169,8 @@ function next_turn() {
 	const active_player = m.querySelector('.active'),
 		to = m.querySelectorAll('.done').length + 1 === players.length ? 100 : 200;
 
+	if (st) clearTimeout(st);
+
 	active_player.classList.remove('active');
 	m.classList.add('hold');
 	setTimeout(() => m.classList.remove('hold'), to);
@@ -194,6 +197,10 @@ function next_turn() {
 			if (condition) game_over();
 			else if (players[iii].classList.contains('done')) next_turn();
 		}
+
+		const o_t = active_player.offsetTop + active_player.querySelector('.actions').offsetTop;
+		const w_s = o_t >= window.innerHeight ? o_t : 0;
+		m.scrollTop(0, w_s);
 	}, to);
 
 	if (m.hasAttribute('style')) m.removeAttribute('style');
