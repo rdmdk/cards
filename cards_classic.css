@@ -443,6 +443,11 @@ button ~ button {margin-left: 0.2rem}
 	html[data-players="10"] {font-size: 5vh}
 	html[data-players="11"] {font-size: 5vh}
 	html[data-players="12"] {font-size: 5vh}
+
+	.grid {
+		display: grid;
+	    	grid-auto-flow: row;
+	}
 	
 	html[data-players="4"] .grid {grid-template-columns: repeat(4, auto)}
 	html[data-players="5"] .grid {grid-template-columns: repeat(4, auto)}
