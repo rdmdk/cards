@@ -158,9 +158,9 @@ function next_turn() {
 		setTimeout(() => {
 			const a_p = m.querySelector('.active');
 			const a_o = a_p.offsetTop + a_p.querySelector('.actions').offsetTop;
-			const i_v = a_o > m.scrollTop && a_o < m.scrollTop + window.innerHeight;
+			const i_v = a_o > m.scrollTop && a_p.offsetTop < m.scrollTop + window.innerHeight;
 			if (!i_v) m.scrollTo(0, a_p.offsetTop);
-		}, 500);
+		}, 100);
 	}, to);
 
 	if (m.hasAttribute('style')) m.removeAttribute('style');
@@ -192,6 +192,13 @@ function game_over() {
 		
 		[...players].filter(p => Number(p.querySelector('h2').innerText) === total).forEach(p => p.classList.add('winner'));
 	}
+
+	setTimeout(() => {
+		const w_p = m.querySelector('.winner');
+		const w_o = w_p.offsetTop + w_p.querySelector('.actions').offsetTop;
+		const i_v = w_o > m.scrollTop && w_p.offsetTop < m.scrollTop + window.innerHeight;
+		if (!i_v) m.scrollTo(0, w_p.offsetTop);
+	}, 100);
 
 	setTimeout(() => {		
 		players.forEach(p => {
