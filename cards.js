@@ -199,8 +199,9 @@ function next_turn() {
 		}
 
 		setTimeout(() => {
-			const o_t = m.querySelector('.active').offsetTop + m.querySelector('.active .actions').offsetTop;
-			const w_s = o_t + m.scrollTop >= window.innerHeight ? window.innerHeight : 0;
+			const a_p = m.querySelector('.active');
+			const a_o = a_p.offsetTop + a_p.querySelector('.actions').offsetTop;
+			const w_s = a_o + m.scrollTop >= window.innerHeight ? a_p.offsetTop : 0;
 			m.scrollTo(0, w_s);
 		}, 500);
 	}, to);
