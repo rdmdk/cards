@@ -42,7 +42,8 @@ main {
 main::before,
 main::after {
 	content: "";
-	position: absolute;
+	position: fixed;
+	z-index: 1000;
 }
 
 main::before {
