@@ -155,9 +155,11 @@ function next_turn() {
 			else if (players[iii].classList.contains('done')) next_turn();
 		}
 
-		const o_t = active_player.offsetTop + active_player.querySelector('.actions').offsetTop;
-		const w_s = o_t + m.scrollTop >= window.innerHeight ? window.innerHeight : 0;
-		m.scrollTo(0, w_s);
+		setTimeout (() => {
+			const o_t = m.querySelector('.active').offsetTop + m.querySelector('.active .actions').offsetTop;
+			const w_s = o_t + m.scrollTop >= window.innerHeight ? window.innerHeight : 0;
+			m.scrollTo(0, w_s);
+		}, 500);
 	}, to);
 
 	if (m.hasAttribute('style')) m.removeAttribute('style');
