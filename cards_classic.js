@@ -155,7 +155,7 @@ function next_turn() {
 			else if (players[iii].classList.contains('done')) next_turn();
 		}
 
-		setTimeout (() => {
+		setTimeout(() => {
 			const o_t = m.querySelector('.active').offsetTop + m.querySelector('.active .actions').offsetTop;
 			const w_s = o_t + m.scrollTop >= window.innerHeight ? window.innerHeight : 0;
 			m.scrollTo(0, w_s);
