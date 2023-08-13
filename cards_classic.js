@@ -158,7 +158,7 @@ function next_turn() {
 		setTimeout(() => {
 			const a_p = m.querySelector('.active');
 			const a_o = a_p.offsetTop + a_p.querySelector('.actions').offsetTop;
-			const i_v = a_o > m.scrollTop && a_o.offsetTop < m.scrollTop + m.scrollHeight;
+			const i_v = a_o > m.scrollTop && a_o < m.scrollTop + window.innerHeight;
 			if (!i_v) m.scrollTo(0, a_p.offsetTop);
 		}, 500);
 	}, to);
