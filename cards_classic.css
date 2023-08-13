@@ -9,24 +9,12 @@ html, body {
 }
 
 html {
-	font-size: 2vh;
+	font-size: 4vh;
 	position: fixed;
 	left: 0;
 	top: 0;
 }
 
-html[data-players="2"] {font-size: 4vh}
-html[data-players="3"] {font-size: 3vh}
-html[data-players="4"] {font-size: 4vh}
-html[data-players="5"] {font-size: 3vh}
-html[data-players="6"] {font-size: 3vh}
-html[data-players="7"] {font-size: 3vh}
-html[data-players="8"] {font-size: 3vh}
-html[data-players="9"] {font-size: 3vh}
-html[data-players="10"] {font-size: 3vh}
-html[data-players="11"] {font-size: 3vh}
-html[data-players="12"] {font-size: 3vh}
-        
 body {
 	font: 300 0 'Ubuntu', arial, sans-serif;
 	background: rgb(0 185 70);
@@ -44,6 +32,7 @@ main {
 	padding: 0.5rem;
 	overflow: auto;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-evenly;
 	position: relative;
 	z-index: 10;
@@ -102,22 +91,6 @@ main::after {
 }
 
 .time:hover {filter: none}
-
-.grid {
-	display: grid;
-	grid-template-columns: repeat(2, auto);
-    	grid-auto-flow: row;
-}
-
-html[data-players="4"] .grid {grid-template-columns: repeat(2, auto)}
-html[data-players="5"] .grid {grid-template-columns: repeat(2, auto)}
-html[data-players="6"] .grid {grid-template-columns: repeat(2, auto)}
-html[data-players="7"] .grid {grid-template-columns: repeat(3, auto)}
-html[data-players="8"] .grid {grid-template-columns: repeat(3, auto)}
-html[data-players="9"] .grid {grid-template-columns: repeat(3, auto)}
-html[data-players="10"] .grid {grid-template-columns: repeat(3, auto)}
-html[data-players="11"] .grid {grid-template-columns: repeat(3, auto)}
-html[data-players="12"] .grid {grid-template-columns: repeat(3, auto)}
 
 .player {
 	text-align: center;
