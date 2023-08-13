@@ -199,8 +199,8 @@ function next_turn() {
 		}
 
 		const o_t = active_player.offsetTop + active_player.querySelector('.actions').offsetTop;
-		const w_s = o_t >= window.innerHeight ? o_t : 0;
-		m.scrollTop(0, w_s);
+		const w_s = o_t + m.scrollTop >= window.innerHeight ? window.innerHeight : 0;
+		m.scrollTo(0, w_s);
 	}, to);
 
 	if (m.hasAttribute('style')) m.removeAttribute('style');
