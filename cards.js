@@ -201,8 +201,8 @@ function next_turn() {
 		setTimeout(() => {
 			const a_p = m.querySelector('.active');
 			const a_o = a_p.offsetTop + a_p.querySelector('.actions').offsetTop;
-			if (a_o >= m.scrollTop + window.innerHeight)) m.scrollTo(0, a_p.offsetTop);
-			else if (a_o < m.scrollTop - window.innerHeight)) m.scrollTo(0, 0);
+			if (a_o >= m.scrollTop + window.innerHeight) m.scrollTo(0, a_p.offsetTop);
+			else if (a_o < m.scrollTop - window.innerHeight) m.scrollTo(0, 0);
 		}, 500);
 	}, to);
 
