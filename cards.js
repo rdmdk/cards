@@ -330,7 +330,7 @@ function game_time() {
 }
 
 function reset() {
-	Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
+	Object.keys(localStorage).filter(a => /cards(?!_classic)/.test(a)).forEach(a => localStorage.removeItem(a));
 }
 
 if (localStorage.cards_banks) {
