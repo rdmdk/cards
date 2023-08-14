@@ -4,31 +4,31 @@ const m = document.querySelector('main'),
 	hearts = [...clubs].map(x => x.replace(/c/gm, 'h')),
 	spades = [...clubs].map(x => x.replace(/c/gm, 's'));
 
-let deck = localStorage.deck && localStorage.deck.split(',').length > 15 ? localStorage.deck.split(',') : [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5),
-	r = window.location.search && window.location.search.split(/\W/).filter(Number) ? Number(window.location.search.split(/\W/).filter(Number)[0]) : localStorage.players ? Number(localStorage.players) : Math.floor(Math.random() * (12 - 2) + 2),
+let deck = localStorage.cards_deck && localStorage.cards_deck.split(',').length > 15 ? localStorage.cards_deck.split(',') : [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5),
+	r = window.location.search && window.location.search.split(/\W/).filter(Number) ? Number(window.location.search.split(/\W/).filter(Number)[0]) : localStorage.cards_players ? Number(localStorage.cards_players) : Math.floor(Math.random() * (12 - 2) + 2),
 	players,
 	buttons,
 	si,
 	st,
-	seconds = localStorage.seconds && localStorage.banks ? Number(localStorage.seconds) : 0;
+	seconds = localStorage.cards_seconds && localStorage.cards_banks ? Number(localStorage.cards_seconds) : 0;
 
 setInterval(() => {
-	if (localStorage.banks) {
+	if (localStorage.cards_banks) {
 		seconds++;
-		localStorage.seconds = seconds;
+		localStorage.cards_seconds = seconds;
 	}
 }, 1e3);
 
-localStorage.deck = deck;
+localStorage.cards_deck = deck;
 
 r = r < 2 ? 2 : r > 12 ? 12 : r;
 
 if (window.location.search !== '') {
-	localStorage.clear();
+	Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
 	history.pushState(null, null, 'https://rdmdk.github.io/cards/');
 }
 
-localStorage.players = r;
+localStorage.cards_players = r;
 
 for (i = 0; i < r; i++) {
 	const h = '<section class="player"><h2>&nbsp;</h2><div class="hand"></div><h3><span class="bet">0</span><span class="bank">100</span></h3><span class="actions"><button class="hit">hit</button><button class="stand">stand</button></span></section>';
@@ -52,10 +52,10 @@ function draw(a) {
 				p.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 			});
 			game_time();
-			localStorage.clear();
+			Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
 		}, 2e3);
 	} else {
-		const banks = localStorage.banks.split(','),
+		const banks = localStorage.cards_banks.split(','),
 			b1 = banks.filter(b => b != 0),
 			b2 = new Set(b1).size === 1;
 
@@ -70,7 +70,7 @@ function draw(a) {
 						p.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 					});
 					game_time();
-					localStorage.clear();
+					Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
 
 				} else m.classList.remove('hold');
 			}, 2e3);
@@ -102,7 +102,7 @@ function hit(a) {
 	}, 50);
 
 	deck.shift();
-	localStorage.deck = deck;
+	localStorage.cards_deck = deck;
 }
 
 function stand(a) {
@@ -124,7 +124,7 @@ function bust(a) {
 }
 
 function bet(a) {
-	const banks = localStorage.banks ? localStorage.banks.split(',') : Array(r).fill(100),
+	const banks = localStorage.cards_banks ? localStorage.cards_banks.split(',') : Array(r).fill(100),
 		bank = Number(banks[[...players].indexOf(a)]),
 		//min_bet = a.classList.contains('high_roller') ? bank * 0.25 : 5,
 		//betting = bank <= 10 ? 5 : Math.floor((Math.random() * ((bank / 2) - min_bet) + min_bet) / 5) * 5;
@@ -160,7 +160,7 @@ function winnings() {
 	}, 100);
 
 	setTimeout(() => {
-		localStorage.banks = banks;
+		localStorage.cards_banks = banks;
 		high_roller();
 	}, 250);
 }
@@ -205,7 +205,7 @@ function next_turn() {
 
 	if (!deck.length) {
 		deck = [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5);
-		localStorage.deck = deck;
+		localStorage.cards_deck = deck;
 	}
 }
 
@@ -218,7 +218,7 @@ function scroll_to_next_player() {
 }
 
 function high_roller() {
-	const banks = localStorage.banks.split(','),
+	const banks = localStorage.cards_banks.split(','),
 		max = Math.max(...banks).toString(),
 		min = Math.min(...banks).toString(),
 		highroller = m.querySelector('.high_roller');
@@ -306,7 +306,7 @@ function game_over(a) {
 		if (m.querySelectorAll('.out').length + 1 === players.length) {
 			m.classList.add('end');
 			console.log(game_time());
-			localStorage.clear();
+			Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
 		} else setTimeout(() => window.location.reload(), 2500);
 	}, 2e3);
 }
@@ -329,11 +329,11 @@ function game_time() {
 	return 'Game duration: ' + x;
 }
 
-if (localStorage.banks) {
-	const ev = eval(localStorage.banks.replace(/,/g, '+'));
+if (localStorage.cards_banks) {
+	const ev = eval(localStorage.cards_banks.replace(/,/g, '+'));
 
 	if (ev / 100 !== players.length) {
-		if (ev % 2 !== 0) localStorage.banks = localStorage.banks.replace(/(\d{1,2})5/, '$10');
+		if (ev % 2 !== 0) localStorage.cards_banks = localStorage.cards_banks.replace(/(\d{1,2})5/, '$10');
 	}
 
 	draw();
@@ -352,7 +352,7 @@ players.forEach(p => {
 
 if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) {
 	game_over();
-	localStorage.clear();
+	Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
 }
 
 //hint();
@@ -385,15 +385,15 @@ document.addEventListener('keydown', e => {
 document.querySelector('.time').addEventListener('click', () => alert(game_time()));
 
 if (seconds >= 3600) {
-	if (!localStorage.got_it && window.confirm('This game has gone on long enough! Care to end it with a draw?')) {
+	if (!localStorage.cards_got_it && window.confirm('This game has gone on long enough! Care to end it with a draw?')) {
 		draw(true);
-		localStorage.clear();
-	} else localStorage.got_it = true;
+		Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
+	} else localStorage.cards_got_it = true;
 }
 
 setTimeout(() => {
 	if (!players.length) {
-		localStorage.clear();
+		Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
 		window.location.reload();
 	}
 }, 4e3);
