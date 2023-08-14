@@ -24,7 +24,7 @@ localStorage.cards_deck = deck;
 r = r < 2 ? 2 : r > 12 ? 12 : r;
 
 if (window.location.search !== '') {
-	Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
+	reset();
 	history.pushState(null, null, 'https://rdmdk.github.io/cards/');
 }
 
@@ -52,7 +52,7 @@ function draw(a) {
 				p.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 			});
 			game_time();
-			Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
+			reset();
 		}, 2e3);
 	} else {
 		const banks = localStorage.cards_banks.split(','),
@@ -70,7 +70,7 @@ function draw(a) {
 						p.querySelector('h2').innerHTML = '&nbsp;<em>winner!</em>';
 					});
 					game_time();
-					Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
+					reset();
 
 				} else m.classList.remove('hold');
 			}, 2e3);
@@ -306,7 +306,7 @@ function game_over(a) {
 		if (m.querySelectorAll('.out').length + 1 === players.length) {
 			m.classList.add('end');
 			console.log(game_time());
-			Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
+			reset();
 		} else setTimeout(() => window.location.reload(), 2500);
 	}, 2e3);
 }
@@ -327,6 +327,10 @@ function game_time() {
 	else if (s >= 60) x = mm + ', ' + ss;
 
 	return 'Game duration: ' + x;
+}
+
+function reset() {
+	Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
 }
 
 if (localStorage.cards_banks) {
@@ -352,7 +356,7 @@ players.forEach(p => {
 
 if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) {
 	game_over();
-	Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
+	reset();
 }
 
 //hint();
@@ -387,13 +391,13 @@ document.querySelector('.time').addEventListener('click', () => alert(game_time(
 if (seconds >= 3600) {
 	if (!localStorage.cards_got_it && window.confirm('This game has gone on long enough! Care to end it with a draw?')) {
 		draw(true);
-		Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
+		reset();
 	} else localStorage.cards_got_it = true;
 }
 
 setTimeout(() => {
 	if (!players.length) {
-		Object.keys(localStorage).filter(a => a.includes('cards_')).forEach(a => localStorage.removeItem(a));
+		reset();
 		window.location.reload();
 	}
 }, 4e3);
