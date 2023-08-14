@@ -40,7 +40,7 @@ buttons = m.querySelectorAll('button');
 
 if (players.length > 2 && players.length % 2 === 0 || players.length > 3) m.classList.add('grid');
 
-document.querySelector('html').dataset.players = players.length;
+m.dataset.layout = Math.floor(players.length / 2) * 2;
 
 function draw(a) {
 
