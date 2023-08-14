@@ -211,9 +211,10 @@ function next_turn() {
 
 function scroll_to_next_player() {
 	const n_p = m.querySelector('.winner') ? m.querySelector('.winner') : m.querySelector('.active');
-	const n_o = n_p.offsetTop + n_p.querySelector('.actions').offsetTop;
-	const i_v = n_o > m.scrollTop && n_p.offsetTop < m.scrollTop + window.innerHeight;
-	if (!i_v) m.scrollTo(0, n_p.offsetTop);
+	const n_o = n_p.offsetTop + n_p.clientHeight;
+	const n_s = n_o > m.scrollTop + window.innerHeight || n_o < m.scrollTop;
+
+	if (n_s) m.scrollTo(0, n_p.offsetTop);
 }
 
 function high_roller() {
