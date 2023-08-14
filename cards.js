@@ -291,7 +291,7 @@ function game_over(a) {
 		});
 	}
 
-	setTimeout(() => scroll_to_next_player(), 250);
+	setTimeout(() => scroll_to_next_player(), 100);
 
 	setTimeout(() => {
 		const winner = m.querySelector('.winner');
