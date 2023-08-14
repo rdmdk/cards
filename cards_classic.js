@@ -29,7 +29,7 @@ if (window.location.search) {
 	
 	if (x.length && !isNaN(x[0])) {
 		r = x[0];
-		Object.keys(localStorage).filter(a => a.includes('cards_classic_')).forEach(a => localStorage.removeItem(a));
+		reset();
 	}
 	
 	if (y.length) history.pushState(null, null, 'https://rdmdk.github.io/cards/?classic');
@@ -219,7 +219,7 @@ function game_over() {
 		if (m.querySelectorAll('.out').length + 1 === players.length) {
 			m.classList.add('end');
 			console.log(game_time());
-			Object.keys(localStorage).filter(a => a.includes('cards_classic_')).forEach(a => localStorage.removeItem(a));
+			reset();
 		} else setTimeout(() => window.location.reload(), 2500);
 	}, 2e3);
 }
@@ -242,6 +242,10 @@ function game_time() {
 	return 'Game duration: ' + x;
 }
 
+function reset() {
+	Object.keys(localStorage).filter(a => a.includes('cards_classic_')).forEach(a => localStorage.removeItem(a));
+}
+
 players.forEach(p => {
 	if (p.classList.contains('out')) p.classList.add('done');
 	else hit(p);
@@ -249,7 +253,7 @@ players.forEach(p => {
 
 if ([...players].filter(p => p.classList.contains('done')).length + 1 === players.length) {
 	game_over();
-	Object.keys(localStorage).filter(a => a.includes('cards_classic_')).forEach(a => localStorage.removeItem(a));
+	reset();
 }
 
 buttons.forEach(b => {
@@ -281,7 +285,7 @@ document.querySelector('.time').addEventListener('click', () => alert(game_time(
 
 setTimeout(() => {
 	if (!players.length) {
-		Object.keys(localStorage).filter(a => a.includes('cards_classic_')).forEach(a => localStorage.removeItem(a));
+		reset();
 		window.location.reload();
 	}
 }, 4e3);
