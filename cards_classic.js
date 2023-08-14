@@ -196,7 +196,7 @@ function game_over() {
 		[...players].filter(p => Number(p.querySelector('h2').innerText) === total).forEach(p => p.classList.add('winner'));
 	}
 
-	setTimeout(() => scroll_to_next_player(), 100);
+	setTimeout(() => scroll_to_next_player(), 500);
 
 	setTimeout(() => {		
 		players.forEach(p => {
