@@ -198,12 +198,7 @@ function next_turn() {
 			else if (players[iii].classList.contains('done')) next_turn();
 		}
 
-		setTimeout(() => {
-			const a_p = m.querySelector('.active');
-			const a_p_r = a_p.getBoundingClientRect();
-			const i_v = a_p_r.height + a_p_r.top > m.scrollTop + window.innerHeight || a_p_r.height + a_p_r.top < m.scrollTop + window.innerHeight;
-			if (i_v) a_p.scrollIntoView();
-		}, 250);
+		setTimeout(() => scroll_to_next_player(), 250);
 	}, to);
 
 	if (m.hasAttribute('style')) m.removeAttribute('style');
@@ -212,6 +207,13 @@ function next_turn() {
 		deck = [...clubs, ...diamonds, ...hearts, ...spades].sort(() => Math.random() - 0.5);
 		localStorage.deck = deck;
 	}
+}
+
+function scroll_to_next_player() {
+	const n_p = m.querySelector('.winner') ? m.querySelector('.winner') : m.querySelector('.active');
+	const n_o = n_p.offsetTop + n_p.querySelector('.actions').offsetTop;
+	const i_v = n_o > m.scrollTop && n_p.offsetTop < m.scrollTop + window.innerHeight;
+	if (!i_v) m.scrollTo(0, n_p.offsetTop);
 }
 
 function high_roller() {
@@ -288,12 +290,7 @@ function game_over(a) {
 		});
 	}
 
-	setTimeout(() => {
-		const w_p = m.querySelector('.winner');
-		const w_o = w_p.offsetTop + w_p.querySelector('.actions').offsetTop;
-		const i_v = w_o > m.scrollTop && w_p.offsetTop < m.scrollTop + window.innerHeight;
-		if (!i_v) m.scrollTo(0, w_p.offsetTop);
-	}, 100);
+	setTimeout(() => scroll_to_next_player(), 250);
 
 	setTimeout(() => {
 		const winner = m.querySelector('.winner');
