@@ -200,10 +200,10 @@ function next_turn() {
 
 		setTimeout(() => {
 			const a_p = m.querySelector('.active');
-			const a_o = a_p.offsetTop + a_p.querySelector('.actions').offsetTop;
-			const i_v = a_o > m.scrollTop && a_p.offsetTop < m.scrollTop + window.innerHeight;
-			if (!i_v) m.scrollTo(0, a_p.offsetTop);
-		}, 100);
+			const a_p_r = a_p.getBoundingClientRect();
+			const i_v = a_p_r.height + a_p_r.top > m.scrollTop + window.innerHeight || a_p_r.height + a_p_r.top < m.scrollTop + window.innerHeight;
+			if (!i_v) a_p.scrollIntoView();
+		}, 250);
 	}, to);
 
 	if (m.hasAttribute('style')) m.removeAttribute('style');
