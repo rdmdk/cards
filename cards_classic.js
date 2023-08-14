@@ -155,7 +155,7 @@ function next_turn() {
 			else if (players[iii].classList.contains('done')) next_turn();
 		}
 
-		setTimeout(() => scroll_to_next_player(), 100);
+		setTimeout(() => scroll_to_next_player(), 250);
 	}, to);
 
 	if (m.hasAttribute('style')) m.removeAttribute('style');
@@ -195,7 +195,7 @@ function game_over() {
 		[...players].filter(p => Number(p.querySelector('h2').innerText) === total).forEach(p => p.classList.add('winner'));
 	}
 
-	setTimeout(() => scroll_to_next_player(), 100);
+	setTimeout(() => scroll_to_next_player(), 250);
 
 	setTimeout(() => {		
 		players.forEach(p => {
