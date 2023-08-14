@@ -27,12 +27,12 @@ body {
 
 body::after {
 	content: "classic";
-	font-size: 30vw;
+	font-size: 38vw;
 	mix-blend-mode: overlay;
-	opacity: 0.25;
-	transform: translate(-50%, -50%);
+	opacity: 0.15;
+	transform: translate(-50%, 0.35em);
 	position: fixed;
-	top: 50%;
+	top: 0;
 	left: 50%;
 	z-index: -1;
 }
