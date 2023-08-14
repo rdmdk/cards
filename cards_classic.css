@@ -27,7 +27,9 @@ body {
 
 body::after {
 	content: "classic";
-	font-size: 4vw;
+	font-size: 30vw;
+	mix-blend-mode: overlay:
+	opacity: 0.5;
 	transform: translate(-50%, -50%);
 	position: fixed;
 	top: 50%;
