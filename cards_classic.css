@@ -432,10 +432,10 @@ button ~ button {margin-left: 0.2rem}
 }
 
 @media (orientation: landscape) {
-	html {font-size: 2vw}
+	main[data-layout="4"] .player {width: 50%}
+	main[data-layout="6"] .player {width: 33.33%}
+	main[data-layout="8"] .player {width: 25%}
+	main[data-layout="10"] .player {width: 20%}
+	main[data-layout="12"] .player {width: 25%}
 	.time {font-size: 1rem}
-}
-
-@media (orientation: landscape) and (min-width: 1920px) {
-	html {font-size: 4vh !important}
 }
