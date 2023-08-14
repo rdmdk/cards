@@ -433,34 +433,6 @@ button ~ button {margin-left: 0.2rem}
 
 @media (orientation: landscape) {
 	html {font-size: 2vw}
-	
-	html[data-players="2"] {font-size: 7vh}
-	html[data-players="3"] {font-size: 7vh}
-	html[data-players="4"] {font-size: 5vh}
-	html[data-players="5"] {font-size: 5vh}
-	html[data-players="6"] {font-size: 5vh}
-	html[data-players="7"] {font-size: 5vh}
-	html[data-players="8"] {font-size: 5vh}
-	html[data-players="9"] {font-size: 5vh}
-	html[data-players="10"] {font-size: 5vh}
-	html[data-players="11"] {font-size: 5vh}
-	html[data-players="12"] {font-size: 5vh}
-
-	.grid {
-		display: grid;
-	    	grid-auto-flow: row;
-	}
-	
-	html[data-players="4"] .grid {grid-template-columns: repeat(4, auto)}
-	html[data-players="5"] .grid {grid-template-columns: repeat(4, auto)}
-	html[data-players="6"] .grid {grid-template-columns: repeat(4, auto)}
-	html[data-players="7"] .grid {grid-template-columns: repeat(4, auto)}
-	html[data-players="8"] .grid {grid-template-columns: repeat(4, auto)}
-	html[data-players="9"] .grid {grid-template-columns: repeat(5, auto)}
-	html[data-players="10"] .grid {grid-template-columns: repeat(5, auto)}
-	html[data-players="11"] .grid {grid-template-columns: repeat(6, auto)}
-	html[data-players="12"] .grid {grid-template-columns: repeat(6, auto)}
-	
 	.time {font-size: 1rem}
 }
 
