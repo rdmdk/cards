@@ -28,13 +28,13 @@ body {
 body::after {
 	content: "classic";
 	font-size: 30vw;
-	mix-blend-mode: overlay:
-	opacity: 0.5;
+	mix-blend-mode: overlay;
+	opacity: 0.25;
 	transform: translate(-50%, -50%);
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	z-index: 0;
+	z-index: -1;
 }
 
 main {
