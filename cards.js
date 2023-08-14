@@ -202,7 +202,7 @@ function next_turn() {
 			const a_p = m.querySelector('.active');
 			const a_p_r = a_p.getBoundingClientRect();
 			const i_v = a_p_r.height + a_p_r.top > m.scrollTop + window.innerHeight || a_p_r.height + a_p_r.top < m.scrollTop + window.innerHeight;
-			if (!i_v) a_p.scrollIntoView();
+			if (i_v) a_p.scrollIntoView();
 		}, 250);
 	}, to);
 
