@@ -92,6 +92,7 @@ main::after {
 	left: 50%;
 }
 
+.refresh,
 .time {
 	font-size: 1.25rem;
 	color: #fff;
@@ -100,10 +101,14 @@ main::after {
 	transition: filter 0.6s ease;
 	position: fixed;
 	bottom: 0;
-	right: 0;
 	z-index: 10;
 }
 
+.refresh {left: 0}
+
+.time {right: 0}
+
+.refresh:hover,
 .time:hover {filter: none}
 
 .player {
