@@ -83,7 +83,7 @@ main::after {
 .refresh,
 .time {
 	color: #fff;
-	padding: 2rem;
+	padding: 1rem;
 	filter: opacity(0.25);
 	transition: filter 0.6s ease;
 	position: fixed;
