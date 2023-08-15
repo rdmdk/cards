@@ -16,7 +16,10 @@
 </head>
 
 <body>
-  <main style><a href="#" title="How long have I been playing?" class="time">⧖</a></main>
+  <main style>
+    <a href="#" title="Start a new game" class="refresh">⟳</a>
+    <a href="#" title="How long have I been playing?" class="time">⧖</a>
+  </main>
 <script>
   const n = 'cards' + (window.location.search && window.location.search.includes('classic') ? '_classic' : '');
   let mf = document.createElement('link');
