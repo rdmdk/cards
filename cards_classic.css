@@ -95,7 +95,7 @@ main::after {
 .refresh,
 .time {
 	color: #fff;
-	padding: 1em;
+	padding: 2rem;
 	filter: opacity(0.25);
 	transition: filter 0.6s ease;
 	position: fixed;
@@ -112,7 +112,7 @@ main::after {
 .end .refresh {display: unset}
 
 .time {
-	font-size: 1.25rem;
+	font-size: 1.75rem;
 	right: 0;
 }
 
