@@ -281,6 +281,7 @@ document.addEventListener('keydown', e => {
 	else if (e.code === 'KeyT') window.alert(game_time());
 });
 
+document.querySelector('.refresh').addEventListener('click', () => window.location.reload());
 document.querySelector('.time').addEventListener('click', () => alert(game_time()));
 
 setTimeout(() => {
