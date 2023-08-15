@@ -92,7 +92,12 @@ main::after {
 	z-index: 10;
 }
 
-.refresh {left: 0}
+.refresh {
+	display: none;
+	left: 0;
+}
+
+.end .refresh {display: unset}
 
 .time {right: 0}
 
