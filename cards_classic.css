@@ -104,7 +104,7 @@ main::after {
 }
 
 .refresh {
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 	display: none;
 	left: 0;
 }
@@ -112,7 +112,7 @@ main::after {
 .end .refresh {display: unset}
 
 .time {
-	font-size: 1.75rem;
+	font-size: 1.25rem;
 	right: 0;
 }
 
