@@ -29,7 +29,7 @@ body::after {
 	content: "classic";
 	font-size: 38vw;
 	mix-blend-mode: overlay;
-	opacity: 0.15;
+	opacity: 0.33;
 	transform: translate(-50%, 0.35em);
 	position: fixed;
 	bottom: 0;
