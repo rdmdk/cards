@@ -94,7 +94,6 @@ main::after {
 
 .refresh,
 .time {
-	font-size: 1.25rem;
 	color: #fff;
 	padding: 1em;
 	filter: opacity(0.25);
@@ -105,13 +104,17 @@ main::after {
 }
 
 .refresh {
+	font-size: 1.5rem;
 	display: none;
 	left: 0;
 }
 
 .end .refresh {display: unset}
 
-.time {right: 0}
+.time {
+	font-size: 1.25rem;
+	right: 0;
+}
 
 .refresh:hover,
 .time:hover {filter: none}
