@@ -32,7 +32,7 @@ body::after {
 	opacity: 0.15;
 	transform: translate(-50%, 0.35em);
 	position: fixed;
-	top: 0;
+	bottom: 0;
 	left: 50%;
 	z-index: -1;
 }
