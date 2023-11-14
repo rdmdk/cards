@@ -13,6 +13,10 @@
 <meta name="application-name" content="Cards">
 <meta name="msapplication-TileColor" content="#5bc881">
 <meta name="theme-color" content="#5bc881">
+<style>
+  main {opacity: 0}
+  script + main {opacity: unset}
+</style>
 </head>
 
 <body>
@@ -33,9 +37,9 @@
   c.href = n + '.css';
   j.src = n + '.js';
   
-  document.head.appendChild(mf);
-  document.head.appendChild(c);
-  document.body.insertAdjacentElement('afterbegin', j);
+  document.head.append(mf);
+  document.head.append(c);
+  document.body.prepend(j);
 </script>
 </body>
 </html>
